@@ -1,0 +1,3250 @@
+{
+  "schemaVersion": 1,
+  "source": "reverse_engineering/metadata/MProgService.json",
+  "generator": "tools/generate_phase3.py",
+  "contracts": {
+    "modern": {
+      "namespace": "MProgServiceElect",
+      "type": "IServiceElect",
+      "operations": [
+        {
+          "name": "Authenticate",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Bare",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "creds",
+              "type": "Credentials",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "test",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListAccounts",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<Accounts>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "m",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "g",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "p",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "acctid",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListGroup",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<pGroup>",
+          "parameters": [
+            {
+              "name": "no_mstlm",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListPlaces",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<plocation>",
+          "parameters": [
+            {
+              "name": "nou",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBoxMove",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBoxMoves>",
+          "parameters": [
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBoxMoveDetails",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBoxMovesDetals>",
+          "parameters": [
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepExpenses",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBoxMovesDetals>",
+          "parameters": [
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListUserPlaces",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<UserPlaces>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListReadingCounter",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<ItemReading>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "isnull",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "notblh",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "nomstlm",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "nogroup",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "SaveReading",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "kh",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListUsers",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<Users>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepReadingHeader",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepReading>",
+          "parameters": [
+            {
+              "name": "type",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBalanceDetailsByDate",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBalanceDetails>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBalanceHeader",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBalanceHeader>",
+          "parameters": [
+            {
+              "name": "date",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBondsHeader",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBondsHeader>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetBondRecieptRcordNext",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListBonds",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<ItemBonds>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "nou",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "SaveBond",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "UpdateBond",
+          "httpMethod": "PUT",
+          "uriTemplate": "UpdateBond?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "DeleteBond",
+          "httpMethod": "DELETE",
+          "uriTemplate": "DeleteBond?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetBondPaymentRecordNext",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListBondsPayment",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<ItemBonds>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "SaveBondPayment",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "UpdateBondPayment",
+          "httpMethod": "PUT",
+          "uriTemplate": "UpdateBondPayment?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "DeleteBondPayment",
+          "httpMethod": "DELETE",
+          "uriTemplate": "DeleteBondPayment?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "Login",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "Users",
+          "parameters": [
+            {
+              "name": "username",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "password",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "secureId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetAccountBalanceInfo",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<AccountBalanceInfo>",
+          "parameters": [
+            {
+              "name": "date",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "accountid",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetAccountBalance",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "accountid",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetCompanyInfo",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "CompanyInfo",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetCompanyData",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "DataComp",
+          "parameters": [],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "ReSetPassword",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ChangePasswordRespons",
+          "parameters": [
+            {
+              "name": "username",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "password",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "newpassword",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "uId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "InsertMessage",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "customerN",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "phoneNo",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "customerName",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "ms1",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "tg",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nos",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "uId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [
+            "MProgService.models.ServiceFault"
+          ],
+          "webAttrKind": "WebInvoke"
+        }
+      ]
+    },
+    "legacy": {
+      "namespace": "MProgService",
+      "type": "IService1",
+      "operations": [
+        {
+          "name": "Index",
+          "httpMethod": "GET",
+          "uriTemplate": "/",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Bare",
+          "returnType": "Stream",
+          "parameters": [],
+          "faultContracts": [],
+          "webAttrKind": "WebGet"
+        },
+        {
+          "name": "GetCallerIdentity",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [],
+          "faultContracts": [],
+          "webAttrKind": ""
+        },
+        {
+          "name": "Authenticate",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Bare",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "creds",
+              "type": "Credentials",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListAccounts",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<Accounts>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListCurrency",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<Currency>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListUsers",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<Users>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListAccountsLedger",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<AccountsLedger>",
+          "parameters": [
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBalanceDetails",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBalanceDetails>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBalanceDetailsByDate",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBalanceDetails>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBalanceHeader",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBalanceHeader>",
+          "parameters": [
+            {
+              "name": "date",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "type",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetRepBondsHeader",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<RepBondsHeader>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetBondRecieptRcordNext",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListBonds",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<ItemBonds>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "SaveBond",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "UpdateBond",
+          "httpMethod": "PUT",
+          "uriTemplate": "UpdateBond?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "DeleteBond",
+          "httpMethod": "DELETE",
+          "uriTemplate": "DeleteBond?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetBondPaymentRecordNext",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetListBondsPayment",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<ItemBonds>",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "sdate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "edate",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "SaveBondPayment",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "UpdateBondPayment",
+          "httpMethod": "PUT",
+          "uriTemplate": "UpdateBondPayment?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "num",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "num_s",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "nmstnd",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mden",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "mdate",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes_box",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "currencyid",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "dain",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "price_trans",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "equal",
+              "type": "Double",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "notes2",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "DeleteBondPayment",
+          "httpMethod": "DELETE",
+          "uriTemplate": "DeleteBondPayment?appId={appId}&id={id}",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "ResultPost",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "id",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "Login",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "Users",
+          "parameters": [
+            {
+              "name": "username",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "password",
+              "type": "String",
+              "in": "body",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "UserAuth",
+          "httpMethod": "POST",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Bare",
+          "returnType": "Users",
+          "parameters": [
+            {
+              "name": "authd",
+              "type": "AuthData",
+              "in": "body",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetAccountBalanceInfo",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "List<AccountBalanceInfo>",
+          "parameters": [
+            {
+              "name": "date",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "accountid",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetAccountBalance",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "String",
+          "parameters": [
+            {
+              "name": "accountid",
+              "type": "String",
+              "in": "query",
+              "required": true
+            },
+            {
+              "name": "currency",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetCompanyInfo",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "CompanyInfo",
+          "parameters": [
+            {
+              "name": "appId",
+              "type": "String",
+              "in": "query",
+              "required": true
+            }
+          ],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        },
+        {
+          "name": "GetCompanyData",
+          "httpMethod": "GET",
+          "uriTemplate": "",
+          "requestFormat": "Json",
+          "responseFormat": "Json",
+          "bodyStyle": "Wrapped",
+          "returnType": "DataComp",
+          "parameters": [],
+          "faultContracts": [],
+          "webAttrKind": "WebInvoke"
+        }
+      ]
+    }
+  },
+  "dtos": [
+    {
+      "name": "AccountBalanceInfo",
+      "fullName": "MProgService.models.AccountBalanceInfo",
+      "properties": [
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "currencyname",
+          "type": "String"
+        },
+        {
+          "name": "balancelocal",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "fullName": "MProgService.models.Accounts",
+      "properties": [
+        {
+          "name": "type",
+          "type": "Int32"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "mden",
+          "type": "Double"
+        },
+        {
+          "name": "dain",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "notblh",
+          "type": "String"
+        },
+        {
+          "name": "nomstlm",
+          "type": "String"
+        },
+        {
+          "name": "noadad",
+          "type": "String"
+        },
+        {
+          "name": "nog",
+          "type": "String"
+        },
+        {
+          "name": "tel",
+          "type": "String"
+        },
+        {
+          "name": "statH",
+          "type": "Int32"
+        },
+        {
+          "name": "namet",
+          "type": "String"
+        },
+        {
+          "name": "namep",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "AccountsLedger",
+      "fullName": "MProgService.models.AccountsLedger",
+      "properties": [
+        {
+          "name": "Type",
+          "type": "Int32"
+        },
+        {
+          "name": "Notes",
+          "type": "String"
+        },
+        {
+          "name": "Num",
+          "type": "String"
+        },
+        {
+          "name": "Mden",
+          "type": "Double"
+        },
+        {
+          "name": "Dain",
+          "type": "Double"
+        },
+        {
+          "name": "Balance",
+          "type": "Double"
+        },
+        {
+          "name": "MDate",
+          "type": "String"
+        },
+        {
+          "name": "Pnum",
+          "type": "String"
+        },
+        {
+          "name": "Nref",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ChangePasswordRespons",
+      "fullName": "MProgService.models.ChangePasswordRespons",
+      "properties": [
+        {
+          "name": "Success",
+          "type": "Boolean"
+        },
+        {
+          "name": "Message",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RepBoxMovesDetals",
+      "fullName": "MProgService.models.RepBoxMovesDetals",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "typems",
+          "type": "String"
+        },
+        {
+          "name": "nmstnd",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "amount",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RepBoxMoves",
+      "fullName": "MProgService.models.RepBoxMoves",
+      "properties": [
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "balance",
+          "type": "String"
+        },
+        {
+          "name": "mden",
+          "type": "String"
+        },
+        {
+          "name": "dain",
+          "type": "String"
+        },
+        {
+          "name": "fbalance",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ServiceFault",
+      "fullName": "MProgService.models.ServiceFault",
+      "properties": [
+        {
+          "name": "ErrorCode",
+          "type": "String"
+        },
+        {
+          "name": "Message",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "UserPlaces",
+      "fullName": "MProgService.models.UserPlaces",
+      "properties": [
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "no_mstlm",
+          "type": "String"
+        },
+        {
+          "name": "RED",
+          "type": "String"
+        },
+        {
+          "name": "SDAD",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RepReading",
+      "fullName": "MProgService.models.RepReading",
+      "properties": [
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "ast",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "LPlaces",
+      "fullName": "MProgService.models.LPlaces",
+      "properties": [
+        {
+          "name": "no",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "pGroup",
+      "fullName": "MProgService.models.pGroup",
+      "properties": [
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "nomk2",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "plocation",
+      "fullName": "MProgService.models.plocation",
+      "properties": [
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "no_mstlm",
+          "type": "String"
+        },
+        {
+          "name": "red",
+          "type": "String"
+        },
+        {
+          "name": "sdad",
+          "type": "String"
+        },
+        {
+          "name": "GetListGroup",
+          "type": "List<pGroup>"
+        }
+      ]
+    },
+    {
+      "name": "Grops",
+      "fullName": "MProgService.models.Grops",
+      "properties": [
+        {
+          "name": "no",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ListData",
+      "fullName": "MProgService.models.ListData",
+      "properties": [
+        {
+          "name": "no",
+          "type": "String"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "AuthData",
+      "fullName": "MProgService.models.AuthData",
+      "properties": [
+        {
+          "name": "username",
+          "type": "String"
+        },
+        {
+          "name": "password",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "CompanyInfo",
+      "fullName": "MProgService.models.CompanyInfo",
+      "properties": [
+        {
+          "name": "compname",
+          "type": "String"
+        },
+        {
+          "name": "compaddress",
+          "type": "String"
+        },
+        {
+          "name": "compactive",
+          "type": "String"
+        },
+        {
+          "name": "comptelephone",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Credentials",
+      "fullName": "MProgService.models.Credentials",
+      "properties": [
+        {
+          "name": "User",
+          "type": "String"
+        },
+        {
+          "name": "Password",
+          "type": "String"
+        },
+        {
+          "name": "appId",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Currency",
+      "fullName": "MProgService.models.Currency",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "fls",
+          "type": "String"
+        },
+        {
+          "name": "sars",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "name": "ItemReading",
+      "fullName": "MProgService.models.ItemReading",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "namet",
+          "type": "String"
+        },
+        {
+          "name": "notblh",
+          "type": "String"
+        },
+        {
+          "name": "ind",
+          "type": "String"
+        },
+        {
+          "name": "nomstlm",
+          "type": "String"
+        },
+        {
+          "name": "noadad",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "nog",
+          "type": "String"
+        },
+        {
+          "name": "ks",
+          "type": "String"
+        },
+        {
+          "name": "kh",
+          "type": "String"
+        },
+        {
+          "name": "cas",
+          "type": "String"
+        },
+        {
+          "name": "asts",
+          "type": "String"
+        },
+        {
+          "name": "sk",
+          "type": "String"
+        },
+        {
+          "name": "mt",
+          "type": "String"
+        },
+        {
+          "name": "kmsn",
+          "type": "String"
+        },
+        {
+          "name": "matm33",
+          "type": "String"
+        },
+        {
+          "name": "rtrdn",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ItemBonds",
+      "fullName": "MProgService.models.ItemBonds",
+      "properties": [
+        {
+          "name": "type",
+          "type": "Int32"
+        },
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "name_s",
+          "type": "String"
+        },
+        {
+          "name": "nmstnd",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "notes2",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "num_s",
+          "type": "String"
+        },
+        {
+          "name": "mden",
+          "type": "Double"
+        },
+        {
+          "name": "dain",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "mdate",
+          "type": "String"
+        },
+        {
+          "name": "price_trans",
+          "type": "Double"
+        },
+        {
+          "name": "notes_box",
+          "type": "String"
+        },
+        {
+          "name": "cas",
+          "type": "String"
+        },
+        {
+          "name": "currencyid",
+          "type": "String"
+        },
+        {
+          "name": "currencyname",
+          "type": "String"
+        },
+        {
+          "name": "currency",
+          "type": "Currency"
+        },
+        {
+          "name": "account",
+          "type": "Accounts"
+        }
+      ]
+    },
+    {
+      "name": "RepBalanceDetails",
+      "fullName": "MProgService.models.RepBalanceDetails",
+      "properties": [
+        {
+          "name": "type",
+          "type": "String"
+        },
+        {
+          "name": "nmstnd",
+          "type": "String"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "mden",
+          "type": "Double"
+        },
+        {
+          "name": "dain",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "mdate",
+          "type": "String"
+        },
+        {
+          "name": "pnum",
+          "type": "String"
+        },
+        {
+          "name": "nref",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RepBalanceHeader",
+      "fullName": "MProgService.models.RepBalanceHeader",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "Int32"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "smden",
+          "type": "Double"
+        },
+        {
+          "name": "sdain",
+          "type": "Double"
+        },
+        {
+          "name": "mden",
+          "type": "Double"
+        },
+        {
+          "name": "dain",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "mdate",
+          "type": "String"
+        },
+        {
+          "name": "pnum",
+          "type": "String"
+        },
+        {
+          "name": "nref",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "RepBondsHeader",
+      "fullName": "MProgService.models.RepBondsHeader",
+      "properties": [
+        {
+          "name": "name",
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "type": "Int32"
+        },
+        {
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "name": "num",
+          "type": "String"
+        },
+        {
+          "name": "smden",
+          "type": "Double"
+        },
+        {
+          "name": "sdain",
+          "type": "Double"
+        },
+        {
+          "name": "mden",
+          "type": "Double"
+        },
+        {
+          "name": "dain",
+          "type": "Double"
+        },
+        {
+          "name": "balance",
+          "type": "Double"
+        },
+        {
+          "name": "mdate",
+          "type": "String"
+        },
+        {
+          "name": "currencyid",
+          "type": "String"
+        },
+        {
+          "name": "currencyname",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "DataComp",
+      "fullName": "MProgService.models.DataComp",
+      "properties": [
+        {
+          "name": "compname",
+          "type": "String"
+        },
+        {
+          "name": "compaddress",
+          "type": "String"
+        },
+        {
+          "name": "comptelephone",
+          "type": "String"
+        },
+        {
+          "name": "compactive",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "ResultPost",
+      "fullName": "MProgService.models.ResultPost",
+      "properties": [
+        {
+          "name": "Result",
+          "type": "String"
+        },
+        {
+          "name": "StatusCode",
+          "type": "String"
+        },
+        {
+          "name": "Error_msg",
+          "type": "String"
+        },
+        {
+          "name": "Balance",
+          "type": "Double"
+        }
+      ]
+    },
+    {
+      "name": "Token",
+      "fullName": "MProgService.models.Token",
+      "properties": [
+        {
+          "name": "CreateDate",
+          "type": "System.DateTime"
+        },
+        {
+          "name": "UserId",
+          "type": "Int32"
+        },
+        {
+          "name": "token",
+          "type": "String"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "fullName": "MProgService.models.Users",
+      "properties": [
+        {
+          "name": "NOU",
+          "type": "Int32"
+        },
+        {
+          "name": "NAME_U",
+          "type": "String"
+        },
+        {
+          "name": "NOA",
+          "type": "Int32"
+        },
+        {
+          "name": "ED",
+          "type": "Int32"
+        },
+        {
+          "name": "DE",
+          "type": "Int32"
+        },
+        {
+          "name": "S_K",
+          "type": "Int32"
+        },
+        {
+          "name": "S_S",
+          "type": "Int32"
+        },
+        {
+          "name": "REP",
+          "type": "Int32"
+        },
+        {
+          "name": "SYS",
+          "type": "Int32"
+        },
+        {
+          "name": "PASS",
+          "type": "String"
+        },
+        {
+          "name": "access_token",
+          "type": "String"
+        },
+        {
+          "name": "version",
+          "type": "String"
+        },
+        {
+          "name": "error_no",
+          "type": "Int32"
+        },
+        {
+          "name": "error_msg",
+          "type": "String"
+        },
+        {
+          "name": "date_server",
+          "type": "String"
+        }
+      ]
+    }
+  ]
+}
