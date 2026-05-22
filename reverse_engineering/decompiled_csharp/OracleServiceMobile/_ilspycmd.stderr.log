@@ -1,0 +1,5 @@
+System.AggregateException: One or more errors occurred. (Error decompiling @0600002C OracleServiceMobile.CryptoHelper.GetTripleDESEncryptHash) (Error decompiling @06000015 OracleServiceMobile.AppSetting.set_pin) (Error decompiling @0600000C OracleServiceMobile.AppConfigHelper.KeyValuePair..ctor)
+ ---> Error decompiling @0600002C OracleServiceMobile.CryptoHelper.GetTripleDESEncryptHash
+in assembly "/home/user/webapp/binaries/OracleServiceMobile.exe"
+
+[truncated — full trace was ~87 lines; key signal: BadImageFormatException 'Read out of bounds' from ILParser → confirms ConfuserEx body tampering]

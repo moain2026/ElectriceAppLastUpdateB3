@@ -1,0 +1,5 @@
+System.AggregateException: One or more errors occurred. (Error decompiling @0600005B MProgService.AuthTokenService.Authenticate) (Error decompiling @06000030 MProgServiceElect.ServiceElect.Authenticate) (Error decompiling for 'MProgService/DataBaseHelper.cs') (Error decompiling @06000066 MProgService.CustomLogger.Error)
+ ---> Error decompiling @0600005B MProgService.AuthTokenService.Authenticate
+in assembly "/home/user/webapp/binaries/MProgService.dll"
+
+[truncated — full trace was ~111 lines; key signal: BadImageFormatException 'Read out of bounds' from ILParser → confirms ConfuserEx body tampering]
