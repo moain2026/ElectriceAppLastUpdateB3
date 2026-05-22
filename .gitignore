@@ -44,6 +44,10 @@ tools/bin/
 tools/metadata_extractor/bin/
 tools/metadata_extractor/obj/
 
+# .NET build artefacts for our custom UserStringDump tool (Phase 4, regenerable)
+tools/userstrings_extract/bin/
+tools/userstrings_extract/obj/
+
 # Re-allow the small ilspycmd diagnostic logs (they document tampered methods)
 !reverse_engineering/decompiled_csharp/**/_ilspycmd.stdout.log
 !reverse_engineering/decompiled_csharp/**/_ilspycmd.stderr.log
