@@ -58,8 +58,9 @@
 - [x] Confirm `ConfusedByAttribute` defined-but-not-applied (evasion technique)
 - [x] Confirm target runtime: **.NET Framework 4.5.1**
 - [x] Confirm build year **2024**, vendor `YDsoft-773035387`, GUIDs captured
-- [x] Survey **68 types** in MProgService (IService1 27 ops, IServiceElect
-      33 ops, 27 DTOs, full JWT pipeline)
+- [x] Survey **68 types** in MProgService (IService1 27 endpoints =
+      26 `[OperationContract]` + 1 bare `[WebGet]` root route `Index`,
+      IServiceElect 33 operations, 27 DTOs, full JWT pipeline)
 - [x] Survey **24 types** in OracleServiceMobile (Defence 14 methods,
       CryptoHelper, AppSetting, IdealRegistry, WinForms hybrid)
 - [x] Survey **11 types** in License.dll — confirmed clear VB.NET 2014,
@@ -104,7 +105,7 @@
 
 | Category | Count | Confidence |
 |---|---:|:---:|
-| WCF endpoints documented (surface: name + verb + URI + formats)  | **60 / 60** (27 legacy + 33 modern) | 95% |
+| WCF endpoints documented (surface: name + verb + URI + formats)  | **60 / 60** (27 legacy endpoints [26 ops + 1 root `[WebGet]`] + 33 modern operations) | 95% |
 | WCF endpoints with full per-endpoint detail blocks               | **60 / 60** | 95% |
 | OpenAPI 3.0 spec emitted + validated                             | ✅ `api_contracts/openapi.yaml` | 95% |
 | Postman v2.1 collection emitted + validated                      | ✅ `api_contracts/postman_collection.json` (11 folders × 60 req) | 95% |

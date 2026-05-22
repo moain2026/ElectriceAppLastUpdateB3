@@ -2207,7 +2207,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceFault'
-  /Index:
+  /:
     get:
       operationId: IService1_Index
       summary: 'IService1 :: Index'

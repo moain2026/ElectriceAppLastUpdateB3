@@ -471,7 +471,7 @@ export const ENDPOINTS = {
   // ───────── IService1 (legacy, deprecated) ─────────
   index: {
     method: 'GET',
-    path: '/Index',
+    path: '/',
     contract: 'IService1',
     auth: true,
     bodyStyle: 'Bare',

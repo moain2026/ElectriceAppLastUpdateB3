@@ -24,8 +24,23 @@ analysis/01_WCF_ENDPOINTS.md author) is responsible for splicing it in.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
+
+# ── Route resolution (mirrors tools/generate_artifacts.py::route_path) ───────
+# A WCF [WebInvoke]/[WebGet] without an explicit UriTemplate defaults to the
+# operation name. If UriTemplate is set to a bare absolute route (e.g. "/"),
+# the operation binds to that route instead. IService1.Index is the only
+# such case in this API.
+_BARE_ROUTE = re.compile(r"^/[A-Za-z0-9_\-/.]*$")
+
+
+def _route_for(op: dict) -> str:
+    tmpl = (op.get("uriTemplate") or "").strip()
+    if tmpl and tmpl.startswith("/") and _BARE_ROUTE.match(tmpl):
+        return tmpl
+    return f"/{op['name']}"
 
 REPO      = Path(__file__).resolve().parent.parent
 ENDPOINTS = REPO / "reverse_engineering" / "metadata" / "endpoints.json"
@@ -118,8 +133,10 @@ def emit_op(op: dict, *, index: int) -> str:
     # Top-line bullets
     out.append(f"- **Contract:** `MProgServiceElect.IServiceElect` (modern)")
     out.append(f"- **HTTP method:** `{op['httpMethod']}`")
-    route = f"`/{name}`"
-    if op["uriTemplate"]:
+    route_str = _route_for(op)
+    route = f"`{route_str}`"
+    # Only annotate UriTemplate when it differs from the canonical route
+    if op["uriTemplate"] and op["uriTemplate"] != route_str:
         route += f" *(WCF UriTemplate: `{op['uriTemplate']}`)*"
     out.append(f"- **Route:** {route}")
     out.append(f"- **Auth required:** {'**Yes** — `Authorization: Bearer <jwt>`' if auth else '**No** — public bootstrap endpoint'}")
@@ -193,8 +210,9 @@ def emit_legacy_op(op: dict, *, index: int) -> str:
     out.append("")
     out.append(f"- **Contract:** `MProgService.IService1` (legacy — use the IServiceElect counterpart instead)")
     out.append(f"- **HTTP method:** `{op['httpMethod']}`")
-    route = f"`/{name}`"
-    if op["uriTemplate"]:
+    route_str = _route_for(op)
+    route = f"`{route_str}`"
+    if op["uriTemplate"] and op["uriTemplate"] != route_str:
         route += f" *(UriTemplate: `{op['uriTemplate']}`)*"
     out.append(f"- **Route:** {route}")
     out.append(f"- **Body style:** `{op['bodyStyle']}`  ·  Returns `{op['returnType']}`")

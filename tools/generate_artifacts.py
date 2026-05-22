@@ -32,6 +32,32 @@ from pathlib import Path
 
 import yaml  # PyYAML
 
+
+# ── Path resolution helper ───────────────────────────────────────────────────
+# A WCF [WebInvoke]/[WebGet] without an explicit UriTemplate defaults to the
+# operation name. If UriTemplate is set to a *bare absolute route* (starts
+# with '/', no '{}' placeholders and no query string) the operation is bound
+# to that route instead — IService1.Index is the only such case in this API:
+# it carries [WebGet(UriTemplate="/")] and binds to GET / (not GET /Index).
+#
+# We deliberately do NOT try to honour templated routes (e.g. /foo/{id}) at
+# the path level — every WCF op in this codebase passes parameters as query
+# strings, so the operation-name route is the correct default. The helper
+# only catches the root-style override.
+_BARE_ROUTE = re.compile(r"^/[A-Za-z0-9_\-/.]*$")  # no '{', '?', '&', '='
+
+
+def route_path(op: dict) -> str:
+    """Return the canonical absolute path for an operation.
+
+    - If [UriTemplate] is a bare absolute route → use it verbatim (e.g. '/').
+    - Otherwise → fall back to the WCF default '/{OperationName}'.
+    """
+    tmpl = (op.get("uriTemplate") or "").strip()
+    if tmpl and tmpl.startswith("/") and _BARE_ROUTE.match(tmpl):
+        return tmpl
+    return f"/{op['name']}"
+
 REPO     = Path(__file__).resolve().parent.parent
 ENDPOINTS = REPO / "reverse_engineering" / "metadata" / "endpoints.json"
 OPENAPI   = REPO / "api_contracts" / "openapi.yaml"
@@ -160,7 +186,7 @@ def build_openapi(bundle: dict) -> dict:
     paths: dict = {}
 
     def add_operation(op: dict, *, contract: str, deprecated: bool):
-        path = f"/{op['name']}"
+        path = route_path(op)
         method = op["httpMethod"].lower()
         method_obj = {
             "operationId": f"{contract}_{op['name']}",
@@ -390,10 +416,15 @@ def build_postman(bundle: dict) -> dict:
                     v = "{{password}}"
                 body_obj[p["name"]] = v
 
+        rp = route_path(op)
+        # rp is always absolute ('/foo' or '/'). Strip the leading slash for
+        # Postman's path segments; '/' becomes [] which Postman renders as
+        # the bare base URL — exactly the WCF root binding for Index.
+        path_segments = [seg for seg in rp.split("/") if seg]
         url = {
-            "raw":  "{{baseUrl}}/" + op["name"] + (("?" + "&".join(f"{q['key']}={q['value']}" for q in query)) if query else ""),
+            "raw":  "{{baseUrl}}" + rp + (("?" + "&".join(f"{q['key']}={q['value']}" for q in query)) if query else ""),
             "host": ["{{baseUrl}}"],
-            "path": [op["name"]],
+            "path": path_segments,
             "query": query,
         }
 
@@ -532,7 +563,7 @@ def build_ts(bundle: dict) -> str:
         returns_list = op["returnType"].startswith("List<")
         d = {
             "method":          op["httpMethod"],
-            "path":            f"/{op['name']}",
+            "path":            route_path(op),
             "contract":        contract,
             "auth":            auth,
             "bodyStyle":       op["bodyStyle"],

@@ -1558,13 +1558,11 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/Index",
+              "raw": "{{baseUrl}}/",
               "host": [
                 "{{baseUrl}}"
               ],
-              "path": [
-                "Index"
-              ],
+              "path": [],
               "query": []
             }
           },

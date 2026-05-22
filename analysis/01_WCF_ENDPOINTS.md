@@ -10,14 +10,16 @@ This file is the **single source of truth** for every callable URL on
 60 method names) by `tools/parse_webinvoke.py` reading the metadata JSON.
 
 Two `[ServiceContract]` interfaces are exposed:
-- `MProgService.IService1`         — 27 ops (legacy contract)
-- `MProgServiceElect.IServiceElect`— 33 ops (modern contract; the one APK v26+ uses)
+- `MProgService.IService1`         — **27 endpoints** (legacy contract): **26 `[OperationContract]`** + **1 bare `[WebGet]` root route** (`Index` → `GET /`)
+- `MProgServiceElect.IServiceElect`— **33 operations** (modern contract; the one APK v26+ uses) — every one carries both `[OperationContract]` and a `[Web*Attribute]`
+
+> **Operation vs endpoint** — An *operation* is a method that carries `[OperationContract]` (the formal WCF contract surface). An *endpoint* is any callable HTTP route on the host. Every operation is an endpoint, but a method can also be an endpoint via `[WebGet]`/`[WebInvoke]` alone — in this codebase the **only such case** is `IService1.Index`, a public health/landing handler bound to `GET /` that returns `Stream`. For HTTP client work (Phase 4 onward) what matters is the 60 endpoints; for SOAP/WSDL surface analysis the 59 operations (33 + 26) is the relevant figure.
 
 # Auto-generated WebInvoke / WebGet map
 
 _Source:_ `reverse_engineering/metadata/MProgService.json` (decoded by `tools/parse_webinvoke.py`)
 
-### `MProgService.IService1` — 27 operations
+### `MProgService.IService1` — 27 endpoints (26 operations + 1 root `[WebGet]`)
 
 | #  | Operation | HTTP | UriTemplate | RequestFmt | ResponseFmt | BodyStyle | Returns | Params |
 |---:|-----------|:----:|-------------|:----------:|:-----------:|:---------:|---------|--------|
@@ -1470,7 +1472,7 @@ exact IL from `monodis --code` once we narrow down which methods.
 
 ## Per-endpoint detail — `IService1` (legacy contract, reference only)
 
-> These 27 operations are **deprecated**. Kept here as a
+> These 27 endpoints (26 `[OperationContract]` + the bare `[WebGet]` `Index` root) are **deprecated**. Kept here as a
 > regression cross-reference for engineers auditing what
 > changed between APK v25 and v26. **Do NOT wire these into
 > `app1` — use the modern contract.**
@@ -1479,7 +1481,7 @@ exact IL from `monodis --code` once we narrow down which methods.
 
 - **Contract:** `MProgService.IService1` (legacy — use the IServiceElect counterpart instead)
 - **HTTP method:** `GET`
-- **Route:** `/Index` *(UriTemplate: `/`)*
+- **Route:** `/`
 - **Body style:** `Bare`  ·  Returns `Stream`
 - **Source:** `MProgService.json → MProgService.IService1.Index`  ·  **Confidence:** 95%
 
