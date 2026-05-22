@@ -473,7 +473,7 @@ export const ENDPOINTS = {
     method: 'GET',
     path: '/',
     contract: 'IService1',
-    auth: true,
+    auth: false,
     bodyStyle: 'Bare',
     queryParams: [],
     bodyParams: [],

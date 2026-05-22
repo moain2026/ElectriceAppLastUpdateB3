@@ -46,9 +46,20 @@ REPO      = Path(__file__).resolve().parent.parent
 ENDPOINTS = REPO / "reverse_engineering" / "metadata" / "endpoints.json"
 
 
-# Heuristic auth requirement (matches generate_artifacts.py)
+# Heuristic auth requirement (must stay in sync with
+# tools/generate_artifacts.py :: PUBLIC_OPS).
+#
+#   Modern (IServiceElect):  Login, Authenticate, test
+#   Legacy (IService1):      GetCallerIdentity, Index
+#
+PUBLIC_OPS: frozenset[str] = frozenset({
+    "Login", "Authenticate", "test",
+    "GetCallerIdentity", "Index",
+})
+
+
 def requires_auth(name: str) -> bool:
-    return name not in ("Login", "Authenticate", "test", "GetCallerIdentity")
+    return name not in PUBLIC_OPS
 
 
 # Confidence per claim category

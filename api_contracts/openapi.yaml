@@ -2219,8 +2219,7 @@ paths:
       x-wcf-body-style: Bare
       x-wcf-request-format: Json
       x-wcf-response-format: Json
-      security:
-      - bearerAuth: []
+      security: []
       responses:
         '200':
           description: Success
@@ -2250,8 +2249,8 @@ paths:
                 type: string
   /legacy/Authenticate:
     post:
-      operationId: IService1_legacy/Authenticate
-      summary: 'IService1 :: legacy/Authenticate'
+      operationId: IService1_Authenticate
+      summary: 'IService1 :: Authenticate'
       tags:
       - IService1
       deprecated: true
@@ -2259,8 +2258,7 @@ paths:
       x-wcf-body-style: Bare
       x-wcf-request-format: Json
       x-wcf-response-format: Json
-      security:
-      - bearerAuth: []
+      security: []
       requestBody:
         required: true
         content:
@@ -2281,8 +2279,8 @@ paths:
                 type: string
   /legacy/GetListAccounts:
     get:
-      operationId: IService1_legacy/GetListAccounts
-      summary: 'IService1 :: legacy/GetListAccounts'
+      operationId: IService1_GetListAccounts
+      summary: 'IService1 :: GetListAccounts'
       tags:
       - IService1
       deprecated: true
@@ -2347,8 +2345,8 @@ paths:
                   $ref: '#/components/schemas/Currency'
   /legacy/GetListUsers:
     get:
-      operationId: IService1_legacy/GetListUsers
-      summary: 'IService1 :: legacy/GetListUsers'
+      operationId: IService1_GetListUsers
+      summary: 'IService1 :: GetListUsers'
       tags:
       - IService1
       deprecated: true
@@ -2436,8 +2434,8 @@ paths:
                   $ref: '#/components/schemas/RepBalanceDetails'
   /legacy/GetRepBalanceDetailsByDate:
     get:
-      operationId: IService1_legacy/GetRepBalanceDetailsByDate
-      summary: 'IService1 :: legacy/GetRepBalanceDetailsByDate'
+      operationId: IService1_GetRepBalanceDetailsByDate
+      summary: 'IService1 :: GetRepBalanceDetailsByDate'
       tags:
       - IService1
       deprecated: true
@@ -2484,8 +2482,8 @@ paths:
                   $ref: '#/components/schemas/RepBalanceDetails'
   /legacy/GetRepBalanceHeader:
     get:
-      operationId: IService1_legacy/GetRepBalanceHeader
-      summary: 'IService1 :: legacy/GetRepBalanceHeader'
+      operationId: IService1_GetRepBalanceHeader
+      summary: 'IService1 :: GetRepBalanceHeader'
       tags:
       - IService1
       deprecated: true
@@ -2532,8 +2530,8 @@ paths:
                   $ref: '#/components/schemas/RepBalanceHeader'
   /legacy/GetRepBondsHeader:
     get:
-      operationId: IService1_legacy/GetRepBondsHeader
-      summary: 'IService1 :: legacy/GetRepBondsHeader'
+      operationId: IService1_GetRepBondsHeader
+      summary: 'IService1 :: GetRepBondsHeader'
       tags:
       - IService1
       deprecated: true
@@ -2580,8 +2578,8 @@ paths:
                   $ref: '#/components/schemas/RepBondsHeader'
   /legacy/GetBondRecieptRcordNext:
     get:
-      operationId: IService1_legacy/GetBondRecieptRcordNext
-      summary: 'IService1 :: legacy/GetBondRecieptRcordNext'
+      operationId: IService1_GetBondRecieptRcordNext
+      summary: 'IService1 :: GetBondRecieptRcordNext'
       tags:
       - IService1
       deprecated: true
@@ -2611,8 +2609,8 @@ paths:
                 type: string
   /legacy/GetListBonds:
     get:
-      operationId: IService1_legacy/GetListBonds
-      summary: 'IService1 :: legacy/GetListBonds'
+      operationId: IService1_GetListBonds
+      summary: 'IService1 :: GetListBonds'
       tags:
       - IService1
       deprecated: true
@@ -2664,8 +2662,8 @@ paths:
                   $ref: '#/components/schemas/ItemBonds'
   /legacy/SaveBond:
     post:
-      operationId: IService1_legacy/SaveBond
-      summary: 'IService1 :: legacy/SaveBond'
+      operationId: IService1_SaveBond
+      summary: 'IService1 :: SaveBond'
       tags:
       - IService1
       deprecated: true
@@ -2735,8 +2733,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/UpdateBond:
     put:
-      operationId: IService1_legacy/UpdateBond
-      summary: 'IService1 :: legacy/UpdateBond'
+      operationId: IService1_UpdateBond
+      summary: 'IService1 :: UpdateBond'
       tags:
       - IService1
       deprecated: true
@@ -2815,8 +2813,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/DeleteBond:
     delete:
-      operationId: IService1_legacy/DeleteBond
-      summary: 'IService1 :: legacy/DeleteBond'
+      operationId: IService1_DeleteBond
+      summary: 'IService1 :: DeleteBond'
       tags:
       - IService1
       deprecated: true
@@ -2847,8 +2845,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/GetBondPaymentRecordNext:
     get:
-      operationId: IService1_legacy/GetBondPaymentRecordNext
-      summary: 'IService1 :: legacy/GetBondPaymentRecordNext'
+      operationId: IService1_GetBondPaymentRecordNext
+      summary: 'IService1 :: GetBondPaymentRecordNext'
       tags:
       - IService1
       deprecated: true
@@ -2878,8 +2876,8 @@ paths:
                 type: string
   /legacy/GetListBondsPayment:
     get:
-      operationId: IService1_legacy/GetListBondsPayment
-      summary: 'IService1 :: legacy/GetListBondsPayment'
+      operationId: IService1_GetListBondsPayment
+      summary: 'IService1 :: GetListBondsPayment'
       tags:
       - IService1
       deprecated: true
@@ -2931,8 +2929,8 @@ paths:
                   $ref: '#/components/schemas/ItemBonds'
   /legacy/SaveBondPayment:
     post:
-      operationId: IService1_legacy/SaveBondPayment
-      summary: 'IService1 :: legacy/SaveBondPayment'
+      operationId: IService1_SaveBondPayment
+      summary: 'IService1 :: SaveBondPayment'
       tags:
       - IService1
       deprecated: true
@@ -3002,8 +3000,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/UpdateBondPayment:
     put:
-      operationId: IService1_legacy/UpdateBondPayment
-      summary: 'IService1 :: legacy/UpdateBondPayment'
+      operationId: IService1_UpdateBondPayment
+      summary: 'IService1 :: UpdateBondPayment'
       tags:
       - IService1
       deprecated: true
@@ -3082,8 +3080,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/DeleteBondPayment:
     delete:
-      operationId: IService1_legacy/DeleteBondPayment
-      summary: 'IService1 :: legacy/DeleteBondPayment'
+      operationId: IService1_DeleteBondPayment
+      summary: 'IService1 :: DeleteBondPayment'
       tags:
       - IService1
       deprecated: true
@@ -3114,8 +3112,8 @@ paths:
                 $ref: '#/components/schemas/ResultPost'
   /legacy/Login:
     post:
-      operationId: IService1_legacy/Login
-      summary: 'IService1 :: legacy/Login'
+      operationId: IService1_Login
+      summary: 'IService1 :: Login'
       tags:
       - IService1
       deprecated: true
@@ -3123,8 +3121,7 @@ paths:
       x-wcf-body-style: Wrapped
       x-wcf-request-format: Json
       x-wcf-response-format: Json
-      security:
-      - bearerAuth: []
+      security: []
       requestBody:
         required: true
         content:
@@ -3182,8 +3179,8 @@ paths:
                 $ref: '#/components/schemas/Users'
   /legacy/GetAccountBalanceInfo:
     get:
-      operationId: IService1_legacy/GetAccountBalanceInfo
-      summary: 'IService1 :: legacy/GetAccountBalanceInfo'
+      operationId: IService1_GetAccountBalanceInfo
+      summary: 'IService1 :: GetAccountBalanceInfo'
       tags:
       - IService1
       deprecated: true
@@ -3220,8 +3217,8 @@ paths:
                   $ref: '#/components/schemas/AccountBalanceInfo'
   /legacy/GetAccountBalance:
     get:
-      operationId: IService1_legacy/GetAccountBalance
-      summary: 'IService1 :: legacy/GetAccountBalance'
+      operationId: IService1_GetAccountBalance
+      summary: 'IService1 :: GetAccountBalance'
       tags:
       - IService1
       deprecated: true
@@ -3251,8 +3248,8 @@ paths:
                 type: string
   /legacy/GetCompanyInfo:
     get:
-      operationId: IService1_legacy/GetCompanyInfo
-      summary: 'IService1 :: legacy/GetCompanyInfo'
+      operationId: IService1_GetCompanyInfo
+      summary: 'IService1 :: GetCompanyInfo'
       tags:
       - IService1
       deprecated: true
@@ -3277,8 +3274,8 @@ paths:
                 $ref: '#/components/schemas/CompanyInfo'
   /legacy/GetCompanyData:
     get:
-      operationId: IService1_legacy/GetCompanyData
-      summary: 'IService1 :: legacy/GetCompanyData'
+      operationId: IService1_GetCompanyData
+      summary: 'IService1 :: GetCompanyData'
       tags:
       - IService1
       deprecated: true

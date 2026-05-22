@@ -15,6 +15,19 @@ Two `[ServiceContract]` interfaces are exposed:
 
 > **Operation vs endpoint** — An *operation* is a method that carries `[OperationContract]` (the formal WCF contract surface). An *endpoint* is any callable HTTP route on the host. Every operation is an endpoint, but a method can also be an endpoint via `[WebGet]`/`[WebInvoke]` alone — in this codebase the **only such case** is `IService1.Index`, a public health/landing handler bound to `GET /` that returns `Stream`. For HTTP client work (Phase 4 onward) what matters is the 60 endpoints; for SOAP/WSDL surface analysis the 59 operations (33 + 26) is the relevant figure.
 
+> **Public endpoints rationale** — **7 of the 60 endpoints** (3 modern + 4 legacy) are exposed **without** `Authorization: Bearer <jwt>`, on two principled grounds:
+>
+> 1. **Bootstrap operations** — `Login` and `Authenticate` on **both** contracts. These operations are how the client *obtains* a JWT in the first place; demanding a JWT to call them would be a chicken-and-egg paradox. So the four entries `IServiceElect.Login`, `IServiceElect.Authenticate`, `IService1.Login`, `IService1.Authenticate` must all be public — even the deprecated ones, because a hypothetical legacy client mid-migration still needs them callable.
+> 2. **Diagnostic / infrastructure endpoints** — `IServiceElect.test` (trivial liveness ping, no FaultContract, no params), `IService1.GetCallerIdentity` (returns the WCF caller principal — auth-less by WCF design, it's the only way a client can ask «who am I» *before* authenticating), and `IService1.Index` (the `[WebGet(UriTemplate="/")]` root handler that serves a `Stream` — a landing page, cannot be gated behind a token).
+>
+> | Contract       | Public endpoints                              | Count |
+> |----------------|-----------------------------------------------|:-----:|
+> | `IServiceElect` (modern) | `Authenticate`, `Login`, `test`     | **3** |
+> | `IService1` (legacy)     | `GetCallerIdentity`, `Index`, `Login`, `Authenticate` | **4** |
+> | **Total**                |                                     | **7** |
+>
+> **Phase-4 implication** — the Axios client only needs to inject the `Authorization` header on the remaining **53 endpoints** (60 − 7). The `auth: boolean` field in `for_main_repo/endpoints.ts` already encodes this distinction; do **not** add a token interceptor that fires unconditionally on every request.
+
 # Auto-generated WebInvoke / WebGet map
 
 _Source:_ `reverse_engineering/metadata/MProgService.json` (decoded by `tools/parse_webinvoke.py`)
@@ -1472,7 +1485,7 @@ exact IL from `monodis --code` once we narrow down which methods.
 
 ## Per-endpoint detail — `IService1` (legacy contract, reference only)
 
-> These 27 endpoints (26 `[OperationContract]` + the bare `[WebGet]` `Index` root) are **deprecated**. Kept here as a
+> These 27 operations are **deprecated**. Kept here as a
 > regression cross-reference for engineers auditing what
 > changed between APK v25 and v26. **Do NOT wire these into
 > `app1` — use the modern contract.**

@@ -47,6 +47,36 @@ import yaml  # PyYAML
 _BARE_ROUTE = re.compile(r"^/[A-Za-z0-9_\-/.]*$")  # no '{', '?', '&', '='
 
 
+# ── Public (no-auth) operations ────────────────────────────────────────────────────
+# Operations that do NOT require Authorization: Bearer <jwt>. Centralised so
+# all three emitters (OpenAPI security, Postman headers, TS auth flag) stay
+# in sync. Reviewed against IServiceElect + IService1 surface:
+#
+#   Modern (IServiceElect):
+#     - Login         : credentials → token  (bootstrap, cannot require auth)
+#     - Authenticate  : credentials → token  (legacy bootstrap, still wired)
+#     - test          : trivial liveness ping, no FaultContract, no params
+#
+#   Legacy (IService1):
+#     - GetCallerIdentity : returns the WCF caller principal name; auth-less
+#       by WCF design (it's the only way a client can ask 'who am I before
+#       attempting auth').
+#     - Index : [WebGet(UriTemplate="/")] root handler returning Stream;
+#       no [OperationContract], no parameters. Hosted as the service's
+#       landing page — cannot be gated behind a token.
+#
+# Total public surface = 5 endpoints (3 modern + 2 legacy).
+PUBLIC_OPS: frozenset[str] = frozenset({
+    "Login", "Authenticate", "test",   # modern (IServiceElect)
+    "GetCallerIdentity", "Index",      # legacy (IService1)
+})
+
+
+def is_public(op: dict) -> bool:
+    """True when the operation is exposed without Authorization: Bearer."""
+    return op["name"] in PUBLIC_OPS
+
+
 def route_path(op: dict) -> str:
     """Return the canonical absolute path for an operation.
 
@@ -185,8 +215,13 @@ def build_openapi(bundle: dict) -> dict:
 
     paths: dict = {}
 
-    def add_operation(op: dict, *, contract: str, deprecated: bool):
-        path = route_path(op)
+    def add_operation(op: dict, *, contract: str, deprecated: bool, path_override: str | None = None):
+        # path_override is set for legacy ops whose canonical route collides
+        # with a modern op (e.g. IService1.Login → /legacy/Login). The op
+        # dict itself is NEVER mutated — so op['name'] stays 'Login' and
+        # is_public(op), the operationId and the summary all see the
+        # original WCF name (avoids 'IService1_legacy/Login' artefacts).
+        path = path_override if path_override is not None else route_path(op)
         method = op["httpMethod"].lower()
         method_obj = {
             "operationId": f"{contract}_{op['name']}",
@@ -203,11 +238,11 @@ def build_openapi(bundle: dict) -> dict:
         # Strip None values from extensions
         method_obj = {k: v for k, v in method_obj.items() if v is not None and v != []}
 
-        # Security — Login & Authenticate don't require a token; everything else does.
-        if op["name"] not in ("Login", "Authenticate", "test", "GetCallerIdentity"):
-            method_obj["security"] = [{"bearerAuth": []}]
-        else:
+        # Security — bootstrap / public endpoints carry an empty override.
+        if is_public(op):
             method_obj["security"] = []  # explicitly public
+        else:
+            method_obj["security"] = [{"bearerAuth": []}]
 
         # Parameters
         parameters = []
@@ -265,16 +300,20 @@ def build_openapi(bundle: dict) -> dict:
 
     for op in bundle["contracts"]["modern"]["operations"]:
         add_operation(op, contract="IServiceElect", deprecated=False)
+    modern_names = {o["name"] for o in bundle["contracts"]["modern"]["operations"]}
     for op in bundle["contracts"]["legacy"]["operations"]:
-        # Use a /legacy prefix to avoid clobbering modern path/method pairs
-        # when both contracts expose the same operation under the same name.
-        modern_names = {o["name"] for o in bundle["contracts"]["modern"]["operations"]}
+        # Legacy ops whose canonical route would collide with a modern op
+        # are parked under /legacy/{name} so each OpenAPI path stays unique.
+        # Critically: we pass the parked path via path_override and leave
+        # the op dict untouched, so subsequent checks (is_public, operationId,
+        # summary, x-wcf-uri-template) keep seeing the real WCF name.
         if op["name"] in modern_names:
-            # Park under /legacy/{name}
-            saved = op["name"]
-            op2 = dict(op)
-            op2["name"] = f"legacy/{saved}"
-            add_operation(op2, contract="IService1", deprecated=True)
+            add_operation(
+                op,
+                contract="IService1",
+                deprecated=True,
+                path_override=f"/legacy/{op['name']}",
+            )
         else:
             add_operation(op, contract="IService1", deprecated=True)
 
@@ -439,7 +478,7 @@ def build_postman(bundle: dict) -> dict:
         headers = [
             {"key": "Content-Type", "value": "application/json", "type": "text"},
         ]
-        if op["name"] not in ("Login", "Authenticate", "test", "GetCallerIdentity"):
+        if not is_public(op):
             headers.append({"key": "Authorization", "value": "Bearer {{token}}", "type": "text"})
 
         req = {
@@ -557,7 +596,7 @@ def build_ts(bundle: dict) -> str:
     lines.append("")
 
     def emit_one(op: dict, *, contract: str, deprecated: bool, key: str) -> str:
-        auth = op["name"] not in ("Login", "Authenticate", "test", "GetCallerIdentity")
+        auth = not is_public(op)
         q = [p["name"] for p in op["parameters"] if p["in"] == "query"]
         b = [p["name"] for p in op["parameters"] if p["in"] == "body"]
         returns_list = op["returnType"].startswith("List<")
