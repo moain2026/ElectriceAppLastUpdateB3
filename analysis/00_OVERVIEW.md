@@ -1,8 +1,8 @@
 # 00 — Executive Overview
 
-> **Status:** 🟡 stub — will be expanded continuously and finalized in Phase 8.
+> **Status:** 🟡 updated after Phase 2. Will be finalised in Phase 8.
 > **Audience:** the AbbasiTahseel React-Native rewrite team (`app1`).
-> **Reading time (when complete):** ~10 minutes.
+> **Reading time (current state):** ~7 minutes.
 
 ---
 
@@ -17,45 +17,94 @@ service** authenticated by **JWT**.
 |-------|------|------|
 | Mobile client (current)    | Android (Java, LoopJ/Volley?)        | `binaries/ElectricCollector26.apk` |
 | Mobile client (target)     | React Native (rewrite)               | _separate repo `app1`_ |
-| Service host               | Windows Service self-hosting WCF     | `binaries/OracleServiceMobile.exe` |
-| Business logic             | .NET Framework class library         | `binaries/MProgService.dll` |
-| Licensing                  | .NET class library                   | `binaries/License.dll` |
+| Service host               | Windows-Service + WinForms hybrid    | `binaries/OracleServiceMobile.exe` |
+| Business logic             | .NET Framework 4.5.1 class library   | `binaries/MProgService.dll` |
+| Licensing (legacy / disused?) | VB.NET 2014, .NET 4 Client Profile  | `binaries/License.dll` |
 | Auth                       | JWT (jose-jwt)                       | `binaries/jose-jwt.dll` (OSS) |
-| Data persistence           | Oracle DB via ODP.NET                | `binaries/Oracle.DataAccess.dll` (vendor) |
+| Data persistence           | Oracle DB via ODP.NET 1.102.3.0      | `binaries/Oracle.DataAccess.dll` (vendor) |
 
 ---
 
-## Confirmed facts (Phase 1)
+## Confirmed facts (after Phase 2)
 
-- The whole back-end is **one process** (`OracleServiceMobile.exe`) self-hosting WCF.
-- The WCF contract is `IService1` exposing **27 operations**.
-- **Runtime: .NET Framework 4.x** (confirmed via manifest of MProgService.dll).
-- **Oracle client: ODP.NET 1.102.3.0** = Oracle 11g/12c binary (confirmed via
-  `.assembly extern Oracle.DataAccess` in IL manifest).
-- The .NET assemblies were processed by **ConfuserEx** (or similar). **Empirical proof:**
-  `monodis` crashes (SIGSEGV / `g_assert` abort) on all three proprietary
-  binaries after dumping only the assembly manifest. See
-  [`09_OBFUSCATION_NOTES.md`](./09_OBFUSCATION_NOTES.md). Symbol names of
-  internal helpers are expected to be mangled; the public WCF surface is *not*
-  mangled (27 method names are visible to callers).
-- Multi-tenancy uses a `Dictionary<int, string> ConnetionStrings` (note the
-  original typo — `Connetion`).
-- 27 DTOs identified (`Accounts`, `ItemBonds`, `ItemReading`, …).
-- 7 permission flags on `Users`: `NOA, ED, DE, S_K, S_S, REP, SYS`.
+### Build / runtime
+- **Target runtime:** .NET Framework **4.5.1** (TargetFrameworkAttribute on both MProgService and OracleServiceMobile).
+- **Built:** **2024** (AssemblyCopyrightAttribute).
+- **Vendor:** **YDsoft-773035387** (AssemblyCompanyAttribute).
+- **Assembly GUIDs:**
+  - `MProgService`: `91bfb504-3851-4ccd-a30e-29ba41ac7ba6`
+  - `OracleServiceMobile`: `1429d5b4-d928-48f2-bd53-f38f3b3b15ae`
+- **Oracle client:** **ODP.NET 1.102.3.0** (Oracle 11g/12c-era binary). Implies the back-end DB is **Oracle 11g R2 or 12c** (forward-compat to 19c).
+- **License.dll:** an older artefact (2014, VB.NET, .NET 4 Client Profile) — see Phase-2 finding below.
 
-## Open questions (Phase 1)
+### Service surface — TWO contracts, not one
+- `MProgService.IService1`         → 27 operations (legacy contract)
+- `MProgServiceElect.IServiceElect` → **33 operations** (modern contract; the one the APK uses)
+- Both share the same host process; full table in [`01_WCF_ENDPOINTS.md`](./01_WCF_ENDPOINTS.md).
+- 21 operations are common between the two contracts.
 
-See `PROGRESS.md → Open questions`.
+### Data layer
+- **27 DTOs** under `MProgService.models` — every one confirmed via metadata (no inference needed). Property names exactly match what the legacy brief listed; some had **missed fields** the brief didn't know about (e.g. `Users.error_msg`, `Users.date_server`).
+- The DAL is `DataBaseHelper`/`DatabaseManager` inside `MProgService.dll`. Method bodies are **obfuscated** — SQL strings not recoverable from this binary.
 
-## Phase-by-phase outcomes (will be filled in)
+### Auth
+- **JWT pipeline** is in `MProgService` namespace:
+  - `IService1` / `IServiceElect` → declare `[ServiceContract]`.
+  - `TokenValidationBehaviorExtension` registers the WCF behaviour.
+  - `TokenValidationServiceBehavior` adds…
+  - `TokenValidationInspector` (an `IDispatchMessageInspector`) that runs **per request**.
+  - Validation delegates to `DatabaseTokenValidator` (impl of `ITokenValidator`).
+  - Token construction at login goes `Login → AuthTokenService → DatabaseTokenBuilder` → JWT signed via `jose-jwt`.
+  - **`Authenticate` body is obfuscated** — exact algorithm & key recovered in Phase 4 via APK reverse, not from this binary.
 
-| Phase | Key deliverable | Status |
-|-------|-----------------|:------:|
-| 1 | Lab structure + tooling | 🟢 done |
-| 2 | C# decompile of 3 priority assemblies | ⚪ |
-| 3 | 27 endpoints, OpenAPI, Postman | ⚪ |
-| 4 | JWT scheme + interceptor template | ⚪ |
-| 5 | 27 models + Oracle DDL + ERD + TS types | ⚪ |
-| 6 | Permissions matrix | ⚪ |
-| 7 | APK v26 deep dive | ⚪ |
-| 8 | `for_main_repo/` packaged + executive summary | ⚪ |
+### Multi-tenant
+- The DTO/method evidence is overwhelming: **every operation takes `appId: string`** as a parameter. **`appId` is the tenant id.**
+- The legacy brief's mention of `Dictionary<int, string> ConnetionStrings` is the **server-side** mapping from `appId` → connection string; we expect to find it in `OracleServiceMobile.exe.config` or in a registry-backed config helper (`IdealRegistry` class is suggestive).
+- See [`07_MULTI_TENANT.md`](./07_MULTI_TENANT.md).
+
+### Permissions
+- 7 flag properties on `Users`: **`NOA, ED, DE, S_K, S_S, REP, SYS`** — all `Int32`.
+- Where each is checked = bodies in `Service1.cs` / `ServiceElect.cs` — partially obfuscated. Phase 6 dissects this by combining metadata + client-side hints from the APK.
+
+### Licensing (Phase-2 finding)
+- `License.dll` is **clear / unobfuscated** VB.NET from 2014. It contains 3 static methods:
+  - `GetHDDSerialN(DriveLetter)` — reads disk volume serial via WMI.
+  - `PrimaryKey(HDDSerial)` — deterministic char-by-char transform.
+  - `GetFinalKey(PrimaryKey)` — second deterministic transform.
+- **No keys / secrets** are hardcoded; everything derives from the HDD serial.
+- **However**, `OracleServiceMobile.exe`'s `Defence` class (14 methods) is the *current* anti-tamper / activation layer — its bodies **are** obfuscated. Names visible: `MashineSerialNumber`, `AddKey`, `clear_key`, `d_r` (date-read?), `data_demo`, `bool_to_oct`, `oct_to_bool`, `val_to_bool`, `bool_to_val`, `cut_str`, `text_out`, `ErrorReport2`.
+- **Decision:** in line with project rule #3, we **document the algorithm names** and do **not** attempt to reverse the obfuscated bodies. For the rewrite, the licence check is a deployment concern — not a client concern.
+
+### Obfuscation (Phase-2 finding)
+- **ConfuserEx confirmed** — `ConfusedByAttribute` type is *defined* (but never *applied*) in both MProgService.dll and OracleServiceMobile.exe.
+- **Scope:** selective body tampering on 4 methods in `MProgService.dll`, 3 methods in `OracleServiceMobile.exe`, plus all bodies in `Defence`. The rest of the binaries decompile cleanly.
+- **Mitigation:** our custom `MetaExtract` tool reads metadata only and bypasses body tampering entirely. 100% of the public surface is therefore recoverable.
+- Full detail in [`09_OBFUSCATION_NOTES.md`](./09_OBFUSCATION_NOTES.md).
+
+---
+
+## Open questions (live)
+
+| # | Question | Where it will be answered |
+|---|----------|---------------------------|
+| 1 | JWT signing algorithm + key source | Phase 4 (cross-check with APK login flow) |
+| 2 | Exact SQL queries (table names, joins) | Phase 5 + APK client SQLite mirror + DBA |
+| 3 | `appId → connectionString` mapping mechanism | Phase 7 (APK) + post-mortem of `.exe.config` |
+| 4 | Base URL of the WCF host (`Service1.svc` mounting path) | Phase 7 (APK) |
+| 5 | Is `IService1` still routed or only `IServiceElect`? | Phase 7 (which one does the APK call?) |
+| 6 | Meaning of `NOA` (number-of-accounts vs no-account boolean) | Phase 6 — search for usages |
+
+---
+
+## Phase-by-phase outcomes
+
+| Phase | Key deliverable | Status | Confidence |
+|-------|-----------------|:------:|:----------:|
+| 1 | Lab structure + tooling                                                  | 🟢 done    | 95% |
+| 2 | C# decompile + metadata extraction for 3 priority assemblies             | 🟢 done    | 95% |
+| 3 | 27/33 endpoints, OpenAPI, Postman                                        | ⚪ next    | — |
+| 4 | JWT scheme + interceptor template                                        | ⚪         | — |
+| 5 | 27 models + Oracle DDL + ERD + TS types                                  | ⚪         | — |
+| 6 | Permissions matrix                                                       | ⚪         | — |
+| 7 | APK v26 deep dive                                                        | ⚪         | — |
+| 8 | `for_main_repo/` packaged + executive summary                            | ⚪         | — |
