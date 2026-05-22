@@ -12,9 +12,9 @@
 | 00 | [`00_OVERVIEW.md`](./analysis/00_OVERVIEW.md)                 | all | 🟢 Phase-2 facts landed |
 | 01 | [`01_WCF_ENDPOINTS.md`](./analysis/01_WCF_ENDPOINTS.md)        | 3   | 🟢 full 60-endpoint table + per-endpoint detail blocks (Phase 3) |
 | 02 | [`02_JWT_AUTHENTICATION.md`](./analysis/02_JWT_AUTHENTICATION.md) | 4 | 🟢 full WCF auth pipeline reconstructed · jose-jwt v5.0.0.0 · claims `iat`/`typ`/`UserId` confirmed · 4 security findings (Phase 4) |
-| 03 | [`03_DATA_MODELS.md`](./analysis/03_DATA_MODELS.md)            | 5   | ⚪ pending |
+| 03 | [`03_DATA_MODELS.md`](./analysis/03_DATA_MODELS.md)            | 5   | 🟢 27/27 DTOs catalogued · TS optionality from `[DataMember]` · 92 % conf (Phase 5) |
 | 04 | [`04_PERMISSIONS_SYSTEM.md`](./analysis/04_PERMISSIONS_SYSTEM.md) | 6 | ⚪ pending |
-| 05 | [`05_ORACLE_INTEGRATION.md`](./analysis/05_ORACLE_INTEGRATION.md) | 5 | ⚪ pending |
+| 05 | [`05_ORACLE_INTEGRATION.md`](./analysis/05_ORACLE_INTEGRATION.md) | 5 | 🟢 ODP.NET 1.102.3.0 · 12 inferred tables · FK graph · ~75 SQL templates · 91 % conf (Phase 5) |
 | 06 | [`06_LICENSE_SYSTEM.md`](./analysis/06_LICENSE_SYSTEM.md)      | 2-3 | 🟢 License.dll fully reversed · Defence names listed |
 | 07 | [`07_MULTI_TENANT.md`](./analysis/07_MULTI_TENANT.md)          | 3   | 🟡 appId confirmed · resolution path inferred |
 | 08 | [`08_ERROR_HANDLING.md`](./analysis/08_ERROR_HANDLING.md)      | 3   | ⚪ pending |
@@ -32,6 +32,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `il_dumps/MProgService.il`       | `binaries/MProgService.dll`      | monodis    | 2 |
 | `il_dumps/OracleServiceMobile.il`| `binaries/OracleServiceMobile.exe` | monodis  | 2 |
 | `il_dumps/License.il`            | `binaries/License.dll`            | monodis   | 2 |
+| `metadata/dtos.json`             | 27-DTO catalogue (is_datacontract, property_count, datamember_count, properties[], oracle_table_hint) — Phase-5 codegen source-of-truth. | `generate_phase5.py` | 5 |
 | `decompiled_csharp/MProgService/`        | `binaries/MProgService.dll`       | ilspycmd | 2 |
 | `decompiled_csharp/OracleServiceMobile/` | `binaries/OracleServiceMobile.exe`| ilspycmd | 2 |
 | `decompiled_csharp/License/`             | `binaries/License.dll`            | ilspycmd | 2 |
@@ -44,11 +45,11 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 
 ## 🗄️ Schemas (`schemas/`)
 
-| File | Description | Phase |
-|------|-------------|:-----:|
-| `inferred_oracle_schema.sql`  | Reverse-inferred Oracle DDL from C# DTOs | 5 |
-| `erd.mermaid`                 | Entity-relationship diagram              | 5 |
-| `tables_relationships.md`     | Narrative description of FKs/joins       | 5 |
+| File | Description | Phase | Status |
+|------|-------------|:-----:|:------:|
+| `inferred_oracle_schema.sql`  | 12 inferred Oracle `CREATE TABLE`s + indexes + FK suggestions, derived from `#US`-recovered SQL + DTO projections. | 5 | 🟢 |
+| `erd.mermaid`                 | Entity-relationship diagram (Mermaid `erDiagram`).             | 5 | 🟢 |
+| `tables_relationships.md`     | DTO ↔ table ↔ endpoint mapping matrix w/ confidence + source signal. | 5 | 🟢 |
 
 ---
 
@@ -58,7 +59,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 |------|-------------|:-----:|:------:|
 | `openapi.yaml`           | OpenAPI 3.0.3 spec for all 60 WCF endpoints (33 modern + 27 deprecated). **Validates clean** via `openapi-spec-validator`. | 3 | 🟢 |
 | `postman_collection.json`| Postman v2.1 collection — 11 folders × 60 requests, `{{baseUrl}}/{{appId}}/{{token}}/{{secureId}}` variables, JWT auto-inject pre-request on Login/Authenticate. | 3 | 🟢 |
-| `typescript_types.ts`    | TypeScript types from C# DTOs              | 5 | ⚪ |
+| `typescript_types.ts`    | TypeScript types from C# DTOs (see `for_main_repo/dtos.ts`) | 5 | 🟢 emitted as `for_main_repo/dtos.ts` |
 
 ---
 
@@ -70,9 +71,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `endpoints.ts`           | Const map of all 60 endpoints + `EndpointDescriptor` interface. Compiles clean under TS 5 `--strict`. | 3 | 🟢 |
 | `jwt_interceptor.ts`     | Axios interceptor template — Bearer header attach, single-retry 401 reauth, typed `call()` wrapper, compiles clean under `tsc --strict` | 4 | 🟢 |
 | `permissions_matrix.md`  | Human reference for permission flags | 6 | ⚪ |
-| `bond_dto.ts`            | Bond model | 5 | ⚪ |
-| `reading_dto.ts`         | Reading model | 5 | ⚪ |
-| `user_dto.ts`            | User model | 5 | ⚪ |
+| `dtos.ts`                | All 27 TS interfaces (Users, Accounts, ItemBonds, ItemReading, AuthData, Credentials, …). Optionality follows `[DataMember]` (mandatory) vs Newtonsoft default (optional). `WcfDateTime = string` alias for ISO-8601 wire format. Compiles clean under TS 5 `--strict`. | 5 | 🟢 |
 
 ---
 
@@ -92,6 +91,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `generate_endpoint_details.py` | Emits per-endpoint detail blocks (modern + legacy) for `01_WCF_ENDPOINTS.md` (added Phase 3). |
 | `splice_endpoint_details.py`   | Idempotently splices the output of `generate_endpoint_details.py` between sentinels in `01_WCF_ENDPOINTS.md` (added Phase 3). |
 | `userstrings_extract/`         | Custom .NET 8 tool — walks the ECMA-335 `#US` (UserString) heap directly to recover every `ldstr`-able literal even when method bodies are damaged by ConfuserEx (added Phase 4). |
+| `generate_phase5.py`           | Single-source Phase-5 codegen: reads `metadata/MProgService.json` + `metadata/endpoints.json` + `userstrings/MProgService.userstrings.json` → emits `metadata/dtos.json`, `for_main_repo/dtos.ts`, `schemas/inferred_oracle_schema.sql`, `schemas/tables_relationships.md`, `schemas/erd.mermaid` (added Phase 5). |
 
 ---
 

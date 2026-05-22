@@ -1,0 +1,63 @@
+%% Entity-Relationship diagram (inferred) — Phase 5
+%% Source: SQL JOIN patterns in #US heap (Phase 4) + DTO catalogue (Phase 2)
+%% Confidence: 80% (FKs are inferred from JOIN patterns, not constraint metadata)
+erDiagram
+    USER_R     ||--o{ USER_MNATK : "granted access via"
+    Mkb2       ||--o{ USER_MNATK : "referenced by"
+    USER_R     ||--o{ SNDK_A     : "box owner (NOA → no_box)"
+    USER_R     ||--o{ SNDS_A     : "box owner (NOA → no_box)"
+    data_acc   ||--o{ SNDK_A     : "customer account (NOA)"
+    data_acc   ||--o{ SNDS_A     : "customer account (NOA)"
+    data_acc   ||--o{ DATA_D     : "ledger of (NOA)"
+    amlh       ||--o{ SNDK_A     : "currency (no → NOAML)"
+    amlh       ||--o{ SNDS_A     : "currency (no → NOAML)"
+    Mkb2       ||--o{ data_acc   : "product (NOM → no_mstlm)"
+    GRP        ||--o{ data_acc   : "group (NOG)"
+
+    USER_R {
+      NUMBER NOU PK
+      VARCHAR2 NAME_U "login"
+      VARCHAR2 PASS "plain — see security finding §6.1"
+      NUMBER NOA "box id"
+      NUMBER NOG "group id"
+      NUMBER ED
+      NUMBER DE
+      NUMBER S_K
+      NUMBER S_S
+      NUMBER REP
+      NUMBER SYS
+      VARCHAR2 access_token
+    }
+    data_acc {
+      NUMBER NOA PK
+      NUMBER no_tblh
+      NUMBER no_mstlm
+      NUMBER no_adad
+      NUMBER NOG
+      VARCHAR2 tel
+      VARCHAR2 NAMEA
+    }
+    amlh {
+      NUMBER no PK
+      VARCHAR2 namem
+      NUMBER FLS "is_local?"
+      NUMBER sars "rate"
+    }
+    DATA_D {
+      VARCHAR2 NOMS PK
+      NUMBER NOA
+      NUMBER NOAML
+      NUMBER MDIN
+      NUMBER DAN
+      DATE DATES
+      VARCHAR2 MEMOS
+    }
+    SNDK_A {
+      VARCHAR2 NOS PK
+      NUMBER no_box
+      NUMBER NOA
+      NUMBER NOAML
+      NUMBER amount
+      NUMBER stat
+      DATE DATES
+    }
