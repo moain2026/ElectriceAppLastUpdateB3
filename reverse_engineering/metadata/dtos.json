@@ -1,0 +1,1088 @@
+{
+  "source": "reverse_engineering/metadata/MProgService.json",
+  "phase": 5,
+  "count": 27,
+  "dtos": {
+    "AccountBalanceInfo": {
+      "is_datacontract": true,
+      "property_count": 3,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": false
+        },
+        {
+          "name": "currencyname",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "balancelocal",
+          "net_type": "Double",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "Accounts": {
+      "is_datacontract": true,
+      "property_count": 14,
+      "datamember_count": 14,
+      "properties": [
+        {
+          "name": "type",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "notblh",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nomstlm",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "noadad",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nog",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "tel",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "statH",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "namet",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "namep",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "data_acc"
+    },
+    "AccountsLedger": {
+      "is_datacontract": true,
+      "property_count": 9,
+      "datamember_count": 9,
+      "properties": [
+        {
+          "name": "Type",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "Notes",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "Dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "Balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "MDate",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Pnum",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Nref",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "DATA_D"
+    },
+    "ChangePasswordRespons": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 2,
+      "properties": [
+        {
+          "name": "Success",
+          "net_type": "Boolean",
+          "is_datamember": true
+        },
+        {
+          "name": "Message",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "RepBoxMovesDetals": {
+      "is_datacontract": false,
+      "property_count": 5,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "typems",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "nmstnd",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "notes",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "amount",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "SNDK_A"
+    },
+    "RepBoxMoves": {
+      "is_datacontract": false,
+      "property_count": 6,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "balance",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "mden",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "dain",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "fbalance",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "SNDK_A"
+    },
+    "ServiceFault": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 2,
+      "properties": [
+        {
+          "name": "ErrorCode",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Message",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "UserPlaces": {
+      "is_datacontract": false,
+      "property_count": 5,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "no_mstlm",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "RED",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "SDAD",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "USER_MNATK"
+    },
+    "RepReading": {
+      "is_datacontract": false,
+      "property_count": 3,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "ast",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "LPlaces": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "no",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "pGroup": {
+      "is_datacontract": false,
+      "property_count": 3,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "nomk2",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "GRP"
+    },
+    "plocation": {
+      "is_datacontract": false,
+      "property_count": 6,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "no_mstlm",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "red",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "sdad",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "GetListGroup",
+          "net_type": "System.Collections.Generic.List`1<MProgService.models.pGroup>",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "Mkb2"
+    },
+    "Grops": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "no",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "GRP"
+    },
+    "ListData": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "no",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "AuthData": {
+      "is_datacontract": true,
+      "property_count": 2,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "username",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "password",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "CompanyInfo": {
+      "is_datacontract": true,
+      "property_count": 4,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "compname",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "compaddress",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "compactive",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "comptelephone",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": "titl"
+    },
+    "Credentials": {
+      "is_datacontract": false,
+      "property_count": 3,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "User",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "Password",
+          "net_type": "String",
+          "is_datamember": false
+        },
+        {
+          "name": "appId",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "Currency": {
+      "is_datacontract": true,
+      "property_count": 4,
+      "datamember_count": 4,
+      "properties": [
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "fls",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "sars",
+          "net_type": "Double",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "amlh"
+    },
+    "ItemReading": {
+      "is_datacontract": true,
+      "property_count": 17,
+      "datamember_count": 17,
+      "properties": [
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "namet",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "notblh",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "ind",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nomstlm",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "noadad",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nog",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "ks",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "kh",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "cas",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "asts",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "sk",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "mt",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "kmsn",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "matm33",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "rtrdn",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "DATA_M"
+    },
+    "ItemBonds": {
+      "is_datacontract": true,
+      "property_count": 19,
+      "datamember_count": 19,
+      "properties": [
+        {
+          "name": "type",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "name_s",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nmstnd",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "notes",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "notes2",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num_s",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mdate",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "price_trans",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "notes_box",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "cas",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "currencyid",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "currencyname",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "currency",
+          "net_type": "MProgService.models.Currency",
+          "is_datamember": true
+        },
+        {
+          "name": "account",
+          "net_type": "MProgService.models.Accounts",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "DATA_D"
+    },
+    "RepBalanceDetails": {
+      "is_datacontract": true,
+      "property_count": 10,
+      "datamember_count": 10,
+      "properties": [
+        {
+          "name": "type",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nmstnd",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "notes",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mdate",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "pnum",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nref",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "RepBalanceHeader": {
+      "is_datacontract": true,
+      "property_count": 12,
+      "datamember_count": 12,
+      "properties": [
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "type",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "notes",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "smden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "sdain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mdate",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "pnum",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "nref",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "RepBondsHeader": {
+      "is_datacontract": true,
+      "property_count": 12,
+      "datamember_count": 12,
+      "properties": [
+        {
+          "name": "name",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "type",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "notes",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "num",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "smden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "sdain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mden",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "dain",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "balance",
+          "net_type": "Double",
+          "is_datamember": true
+        },
+        {
+          "name": "mdate",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "currencyid",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "currencyname",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "DataComp": {
+      "is_datacontract": true,
+      "property_count": 4,
+      "datamember_count": 4,
+      "properties": [
+        {
+          "name": "compname",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "compaddress",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "comptelephone",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "compactive",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "ResultPost": {
+      "is_datacontract": true,
+      "property_count": 4,
+      "datamember_count": 4,
+      "properties": [
+        {
+          "name": "Result",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "StatusCode",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Error_msg",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "Balance",
+          "net_type": "Double",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "Token": {
+      "is_datacontract": false,
+      "property_count": 3,
+      "datamember_count": 0,
+      "properties": [
+        {
+          "name": "CreateDate",
+          "net_type": "System.DateTime",
+          "is_datamember": false
+        },
+        {
+          "name": "UserId",
+          "net_type": "Int32",
+          "is_datamember": false
+        },
+        {
+          "name": "token",
+          "net_type": "String",
+          "is_datamember": false
+        }
+      ],
+      "oracle_table_hint": null
+    },
+    "Users": {
+      "is_datacontract": true,
+      "property_count": 15,
+      "datamember_count": 15,
+      "properties": [
+        {
+          "name": "NOU",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "NAME_U",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "NOA",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "ED",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "DE",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "S_K",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "S_S",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "REP",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "SYS",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "PASS",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "access_token",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "version",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "error_no",
+          "net_type": "Int32",
+          "is_datamember": true
+        },
+        {
+          "name": "error_msg",
+          "net_type": "String",
+          "is_datamember": true
+        },
+        {
+          "name": "date_server",
+          "net_type": "String",
+          "is_datamember": true
+        }
+      ],
+      "oracle_table_hint": "USER_R"
+    }
+  }
+}
