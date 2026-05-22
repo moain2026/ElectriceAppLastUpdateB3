@@ -8,8 +8,8 @@
 - [x] **Phase 2: Decompile All DLLs**           — branch `phase-2-decompile`, PR #2 ✅ merged (commit `1e07df2`)
 - [x] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, [PR #3](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/3) ✅ merged (commit `562096d`)
 - [x] **Phase 4: JWT Authentication System**    — branch `phase-4-auth-jwt`, [PR #4](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/4) ✅ merged (commit `5e2a4ea`)
-- [x] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, PR #5 (in review)
-- [ ] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, PR #6
+- [x] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, [PR #5](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/5) ✅ merged (commit `c21ff99`)
+- [x] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, PR #6 (in review)
 - [ ] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, PR #7
 - [ ] **Phase 8: Final Deliverables**           — branch `phase-8-deliverables`, PR #8
 
@@ -17,10 +17,10 @@
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 5 — Data Models + Oracle Schema** 🟢 ready for PR |
-| % complete    | 100 % of Phase-5 scope; PR #5 next |
+| Active phase  | **Phase 6 — Permissions System Forensics** 🟢 ready for PR |
+| % complete    | 100 % of Phase-6 scope; PR #6 next |
 | Last update   | 2026-05-22 |
-| Next step     | Open PR #5 → self-review → squash-merge → branch `phase-6-permissions` |
+| Next step     | Open PR #6 → squash-merge → branch `phase-7-apk` |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -145,8 +145,26 @@
 - [x] Update `PROGRESS.md` (this section)
 - [x] Re-validate `api_contracts/openapi.yaml` + `tsc --strict` on all 3 TS files — no regressions
 - [x] Atomic commits (3 commits: tool, generated artifacts, docs) + push `phase-5-models`
-- [ ] Open PR #5
-- [ ] PR #5 merged
+- [x] Open PR #5
+- [x] PR #5 merged (commit `c21ff99`)
+
+## Phase 6 deliverables checklist
+
+- [x] Sync local `main` after PR #5 merge (commit `c21ff99`)
+- [x] Create branch `phase-6-permissions` from updated `main`
+- [x] Confirm 7 permission flags on `Users` DTO via `MProgService.json` (NOA, ED, DE, S_K, S_S, REP, SYS — all `Int32`, all `[DataMember]`)
+- [x] Confirm flag names as bare `ldstr` literals in `#US` (used as `DataTable["FLAG"]` indexers)
+- [x] Discover **two-tier** permission model: Tier-A user-level (USER_R columns) + Tier-B per-place ACL (USER_MNATK junction with RED/SDAD)
+- [x] Catalogue 6 verbatim `USER_MNATK` subquery occurrences in `#US`
+- [x] Map 7 flags to endpoint surface (37 endpoint ↔ flag mappings)
+- [x] Identify `NOA` overload antipattern (capability flag + till account id)
+- [x] Author **`analysis/04_PERMISSIONS_SYSTEM.md`** — 17.5 K, 86 % aggregate confidence, with check-pattern inference + per-claim ratings
+- [x] Author **`for_main_repo/permissions_matrix.md`** — RN-ready, TS `can(me, perm)` helper, Tier-A endpoint map, Tier-B helper
+- [x] Update `ANALYSIS_INDEX.md` — 04 → 🟢, `permissions_matrix.md` → 🟢
+- [x] Update `PROGRESS.md` (this section)
+- [ ] Atomic commits + push `phase-6-permissions`
+- [ ] Open PR #6
+- [ ] PR #6 merged
 
 ## Discoveries summary (cumulative)
 
@@ -165,7 +183,9 @@
 | Oracle tables inferred (Phase 5)                                 | **12** (USER_R, USER_MNATK, data_acc, GRP, Mkb2, amlh, titl, DATA_D, DATA_M, data_H, SNDK_A, SNDS_A, red, sendsms, DATA_S, t_qyod) + view `V_ACCOUNT_D` — in `schemas/inferred_oracle_schema.sql` | 88% |
 | Inferred FK relationships (Phase 5)                              | **13** from JOIN-on patterns in `#US` | 90% |
 | SQL templates recovered from `#US` (Phase 5)                     | **~75** (16 catalogued read + 6 write in `05_ORACLE_INTEGRATION.md` §4) | 90% |
-| Permissions decoded (semantics)                                  | 0 / 7   | — |
+| Permissions decoded (semantics) — Tier-A flags                   | **7 / 7** (NOA, ED, DE, S_K, S_S, REP, SYS) | 86 % |
+| Tier-B per-place ACL discovered                                  | `USER_MNATK` (NOU, no_mstlm, RED, SDAD) · 6 verbatim subquery occurrences in `#US` | 95 % |
+| Tier-A ↔ endpoint mappings                                       | 37 endpoints mapped to required flag(s) | 80 % |
 | JWT pipeline classes identified                                  | 5 / 5 (AuthTokenService, DatabaseTokenBuilder, DatabaseTokenValidator, TokenValidationInspector, TokenValidationBehaviorExtension) | 95% |
 | JWT signing algorithm                                            | HS-family (85%), most likely HS256 (60%) — `jose-jwt` enum constant in tampered IL; resolution path documented in `02_JWT_AUTHENTICATION.md` §5 | 60–85% |
 | JWT claim set                                                    | `iat`, `typ`, `UserId` (no `exp` — server-side TTL via `DatabaseTokenValidator.IsExpired`) | 95% |
@@ -195,6 +215,8 @@
 9. ~~What is the response shape of `Authenticate`/`Login`?~~ → **resolved in Phase 4: the response body is the raw JWT string** (not wrapped in JSON). `Login` returns `Users` and `Authenticate` returns `String` per metadata; the `String` IS the JWT. See `02_JWT_AUTHENTICATION.md §3.4`.
 10. ~~**NEW**: `InsertMessage` takes 8 body parameters but declares no `FaultContract`~~ → **partially resolved Phase 5**: `DataBaseHelper.InsertMessage` returns `Int32` and the `#US` heap shows `"insert into sendsms(customern,phoneno,customername,ms1,nos,issent)values("` — it inserts into the `sendsms` queue table. The `Int32` return is `OracleCommand.ExecuteNonQuery()`'s row-count (1 on success, 0 on failure). No tracking id returned. See `05_ORACLE_INTEGRATION.md §4.3` + W6.
 13. **NEW (Phase 5)**: ConnetionStrings dictionary maps `Int32` (tenant id) → `String` (TNS), and the integer key is the same `noc` parameter the Phase-3 legacy contract surfaces. The two multi-tenant story-lines (`appId` on the modern contract vs `noc` on the legacy one) converge on the same dictionary.
+14. ~~Is `NOA` really 'number of allowed accounts' or 'no-account' boolean?~~ → **resolved Phase 6**: `NOA` is an `Int32` capability flag on `USER_R` (where `NOA > 0` means "can list accounts") **and** doubles as the cashier's own till account-id (used in `SNDK_A.no_box = USER_R.NOA`). The `app1` rebuild must split these two semantics into `tillAccountId` and `canListAccounts`.
+15. **NEW (Phase 6)**: Tier-B SQL injection — the `USER_MNATK` subqueries that enforce per-place access are string-concatenated against the caller's NOU. Same SEC-AUTH-001 generalisation. See `04_PERMISSIONS_SYSTEM.md §5`.
 11. **NEW (Phase 4)**: ⚠️ The shipped binaries contain **hard-coded Oracle credentials** (in `#US` heap, redacted in repo). The engineering team must rotate these before any production rollout. See `02_JWT_AUTHENTICATION.md §6.1`.
 12. **NEW (Phase 4)**: ⚠️ `/Login` and `/ChangePassword` use raw SQL string concatenation → SQL injection. Server-side patch required. See `02_JWT_AUTHENTICATION.md §6.2`.
 

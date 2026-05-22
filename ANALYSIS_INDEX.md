@@ -13,7 +13,7 @@
 | 01 | [`01_WCF_ENDPOINTS.md`](./analysis/01_WCF_ENDPOINTS.md)        | 3   | 🟢 full 60-endpoint table + per-endpoint detail blocks (Phase 3) |
 | 02 | [`02_JWT_AUTHENTICATION.md`](./analysis/02_JWT_AUTHENTICATION.md) | 4 | 🟢 full WCF auth pipeline reconstructed · jose-jwt v5.0.0.0 · claims `iat`/`typ`/`UserId` confirmed · 4 security findings (Phase 4) |
 | 03 | [`03_DATA_MODELS.md`](./analysis/03_DATA_MODELS.md)            | 5   | 🟢 27/27 DTOs catalogued · TS optionality from `[DataMember]` · 92 % conf (Phase 5) |
-| 04 | [`04_PERMISSIONS_SYSTEM.md`](./analysis/04_PERMISSIONS_SYSTEM.md) | 6 | ⚪ pending |
+| 04 | [`04_PERMISSIONS_SYSTEM.md`](./analysis/04_PERMISSIONS_SYSTEM.md) | 6 | 🟢 7 Tier-A flags + Tier-B `USER_MNATK` ACL · endpoint map · 86 % conf (Phase 6) |
 | 05 | [`05_ORACLE_INTEGRATION.md`](./analysis/05_ORACLE_INTEGRATION.md) | 5 | 🟢 ODP.NET 1.102.3.0 · 12 inferred tables · FK graph · ~75 SQL templates · 91 % conf (Phase 5) |
 | 06 | [`06_LICENSE_SYSTEM.md`](./analysis/06_LICENSE_SYSTEM.md)      | 2-3 | 🟢 License.dll fully reversed · Defence names listed |
 | 07 | [`07_MULTI_TENANT.md`](./analysis/07_MULTI_TENANT.md)          | 3   | 🟡 appId confirmed · resolution path inferred |
@@ -70,7 +70,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `README.md`              | How to copy artefacts into `app1` | 8 | ⚪ |
 | `endpoints.ts`           | Const map of all 60 endpoints + `EndpointDescriptor` interface. Compiles clean under TS 5 `--strict`. | 3 | 🟢 |
 | `jwt_interceptor.ts`     | Axios interceptor template — Bearer header attach, single-retry 401 reauth, typed `call()` wrapper, compiles clean under `tsc --strict` | 4 | 🟢 |
-| `permissions_matrix.md`  | Human reference for permission flags | 6 | ⚪ |
+| `permissions_matrix.md`  | RN-ready Tier-A flag table + endpoint map + Tier-B helper + TS `can(me, perm)` helper | 6 | 🟢 |
 | `dtos.ts`                | All 27 TS interfaces (Users, Accounts, ItemBonds, ItemReading, AuthData, Credentials, …). Optionality follows `[DataMember]` (mandatory) vs Newtonsoft default (optional). `WcfDateTime = string` alias for ISO-8601 wire format. Compiles clean under TS 5 `--strict`. | 5 | 🟢 |
 
 ---
