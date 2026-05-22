@@ -40,6 +40,14 @@ SECRETS_LOCAL.md
 # Tool binaries (re-fetched by 01_setup_tools.sh)
 tools/bin/
 
+# .NET build artefacts for our custom MetaExtract tool (regenerable via `dotnet build`)
+tools/metadata_extractor/bin/
+tools/metadata_extractor/obj/
+
+# Re-allow the small ilspycmd diagnostic logs (they document tampered methods)
+!reverse_engineering/decompiled_csharp/**/_ilspycmd.stdout.log
+!reverse_engineering/decompiled_csharp/**/_ilspycmd.stderr.log
+
 # monodis side effects / core dumps
 core
 core.*
