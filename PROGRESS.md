@@ -4,7 +4,7 @@
 
 ## Phases
 
-- [x] **Phase 1: Setup & Repository Structure** — branch `phase-1-setup`, PR #1
+- [x] **Phase 1: Setup & Repository Structure** — branch `phase-1-setup`, [PR #1](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/1) (awaiting review)
 - [ ] **Phase 2: Decompile All DLLs**           — branch `phase-2-decompile`, PR #2
 - [ ] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, PR #3
 - [ ] **Phase 4: JWT Authentication System**    — branch `phase-4-jwt`, PR #4
@@ -17,10 +17,10 @@
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 1 — Setup** |
-| % complete    | ~85% (waiting on tool install + first PR merge) |
+| Active phase  | **Phase 1 — Setup** ✅ pushed |
+| % complete    | 100% of Phase-1 scope; awaiting PR #1 merge |
 | Last update   | 2026-05-22 |
-| Next step     | Install tools, verify they work, open PR #1 |
+| Next step     | Once PR #1 merges → branch `phase-2-decompile`, run `ilspycmd` |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -36,9 +36,9 @@
 - [x] `ANALYSIS_INDEX.md`
 - [x] `tools/01_setup_tools.sh`
 - [x] `.gitignore`
-- [ ] Tools verified working (monodis, ilspycmd, jadx)
-- [ ] PR #1 opened
-- [ ] PR #1 merged
+- [x] Tools verified (monodis ✓, ilspycmd 8.2 ✓, jadx 1.5.1 ✓, apktool 2.9.3 ✓)
+- [x] PR #1 opened — https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/1
+- [ ] PR #1 merged (awaiting reviewer)
 
 ## Discoveries summary (cumulative)
 
