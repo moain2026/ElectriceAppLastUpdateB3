@@ -1,6 +1,6 @@
 # 00 — Executive Overview
 
-> **Status:** 🟡 updated after Phase 4. Will be finalised in Phase 8.
+> **Status:** 🟡 updated after Phase 5. Will be finalised in Phase 8.
 > **Audience:** the AbbasiTahseel React-Native rewrite team (`app1`).
 > **Reading time (current state):** ~7 minutes.
 
@@ -51,7 +51,15 @@ service** authenticated by **JWT**.
 
 ### Data layer
 - **27 DTOs** under `MProgService.models` — every one confirmed via metadata (no inference needed). Property names exactly match what the legacy brief listed; some had **missed fields** the brief didn't know about (e.g. `Users.error_msg`, `Users.date_server`).
-- The DAL is `DataBaseHelper`/`DatabaseManager` inside `MProgService.dll`. Method bodies are **obfuscated** — SQL strings not recoverable from this binary.
+- The DAL is `DataBaseHelper`/`DatabaseManager` inside `MProgService.dll`. Method bodies are **obfuscated** in IL — but Phase 4's `#US`-heap mining recovered **~75 SQL templates** verbatim, and Phase 5 turned them into an inferred Oracle DDL.
+
+### Data layer — Phase 5 findings (new)
+- **27 / 27 DTOs catalogued** in `analysis/03_DATA_MODELS.md` (15 row-shaped, 12 envelope/aggregate, 92 % aggregate confidence) and emitted as `for_main_repo/dtos.ts` (TS 5 `--strict` compiles clean).
+- **12 Oracle tables inferred** end-to-end with PK candidates and JOIN-derived FK suggestions: `USER_R`, `USER_MNATK`, `data_acc`, `GRP`, `Mkb2`, `amlh`, `titl`, `DATA_D`, `DATA_M`, `data_H`, `SNDK_A`, `SNDS_A`, `red`, `sendsms`, `DATA_S`, `t_qyod` (+ view `V_ACCOUNT_D`). DDL in `schemas/inferred_oracle_schema.sql`, ER diagram in `schemas/erd.mermaid`.
+- **ODP.NET 1.102.3.0** confirmed via `DataBaseHelper.con : Oracle.DataAccess.Client.OracleConnection`; multi-tenant routing via `DataBaseHelper.ConnetionStrings : Dictionary<Int32, String>` (the integer key is the `noc` / tenant id — same as `appId` story for the modern contract).
+- **Two DALs coexist**: the *modern* `DatabaseManager` (parameterised `Dictionary<string,object>` binds) is *present in the binary* but the dominant production path is the *legacy* `DataBaseHelper` with string-concatenated SQL — this is the root cause of SEC-AUTH-001 (Login SQL injection) and the reason ~75 SQL fragments end in bare `=` / `IN(` / `<'`.
+- **No application-tier pagination** (zero `ROWNUM` / `OFFSET FETCH`) — whole result sets returned. Action item for `app1` gateway: add pagination wrap.
+- Full details in [`05_ORACLE_INTEGRATION.md`](./05_ORACLE_INTEGRATION.md) (91 % aggregate confidence).
 
 ### Auth
 - **JWT pipeline** is in `MProgService` namespace:
@@ -111,7 +119,7 @@ service** authenticated by **JWT**.
 | # | Question | Where it will be answered |
 |---|----------|---------------------------|
 | 1 | ~~JWT signing algorithm + key source~~ | **Partial in Phase 4**: HS-family (85%), HS256 (60%); definitive answer needs a live-token capture. Key source: `DatabaseTokenBuilder.BuildSecureToken(TokenSize)` — symmetric secret regenerated server-side. |
-| 2 | Exact SQL queries (table names, joins) | **Auth path resolved Phase 4** from `#US`; remainder Phase 5 + APK + DBA |
+| 2 | ~~Exact SQL queries (table names, joins)~~ | **Resolved Phase 5**: ~75 SQL templates recovered from `#US` heap, mapped to 12 tables + FK graph. See `05_ORACLE_INTEGRATION.md`. Live-DB validation still pending. |
 | 3 | `appId → connectionString` mapping mechanism | Phase 7 (APK) + post-mortem of `.exe.config` |
 | 4 | Base URL of the WCF host (`Service1.svc` mounting path) | Phase 7 (APK) |
 | 5 | Is `IService1` still routed or only `IServiceElect`? | Phase 7 (which one does the APK call?) |
@@ -129,7 +137,7 @@ service** authenticated by **JWT**.
 | 2 | C# decompile + metadata extraction for 3 priority assemblies             | 🟢 done    | 95% |
 | 3 | 60/60 endpoints documented; OpenAPI 3.0 (valid); Postman v2.1; endpoints.ts | 🟢 done    | 95% |
 | 4 | JWT scheme reconstructed + Axios interceptor template                    | 🟢 done    | 87.5% |
-| 5 | 27 models + Oracle DDL + ERD + TS types                                  | ⚪         | — |
+| 5 | 27 models + Oracle DDL + ERD + TS types                                  | 🟢 done    | 91.5% |
 | 6 | Permissions matrix                                                       | ⚪         | — |
 | 7 | APK v26 deep dive                                                        | ⚪         | — |
 | 8 | `for_main_repo/` packaged + executive summary                            | ⚪         | — |

@@ -7,8 +7,8 @@
 - [x] **Phase 1: Setup & Repository Structure** — branch `phase-1-setup`, [PR #1](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/1) ✅ merged (commit `4239839`)
 - [x] **Phase 2: Decompile All DLLs**           — branch `phase-2-decompile`, PR #2 ✅ merged (commit `1e07df2`)
 - [x] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, [PR #3](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/3) ✅ merged (commit `562096d`)
-- [x] **Phase 4: JWT Authentication System**    — branch `phase-4-auth-jwt`, PR #4 (in review)
-- [ ] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, PR #5
+- [x] **Phase 4: JWT Authentication System**    — branch `phase-4-auth-jwt`, [PR #4](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/4) ✅ merged (commit `5e2a4ea`)
+- [x] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, PR #5 (in review)
 - [ ] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, PR #6
 - [ ] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, PR #7
 - [ ] **Phase 8: Final Deliverables**           — branch `phase-8-deliverables`, PR #8
@@ -17,10 +17,10 @@
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 4 — JWT Authentication System** ✅ pushed |
-| % complete    | 100% of Phase-4 scope; awaiting PR #4 review |
+| Active phase  | **Phase 5 — Data Models + Oracle Schema** 🟢 ready for PR |
+| % complete    | 100 % of Phase-5 scope; PR #5 next |
 | Last update   | 2026-05-22 |
-| Next step     | Once PR #4 merges → branch `phase-5-models`, DTO precision pass + Oracle-DDL inference + dtos.ts |
+| Next step     | Open PR #5 → self-review → squash-merge → branch `phase-6-permissions` |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -122,6 +122,31 @@
 - [x] Update `PROGRESS.md` (this section)
 - [x] Atomic commits (3 commits: tool, dumps, docs) + push `phase-4-auth-jwt`
 - [x] Open PR #4
+- [x] PR #4 merged (commit `5e2a4ea`)
+
+## Phase 5 deliverables checklist
+
+- [x] Sync local `main` after PR #4 merge (commit `5e2a4ea`)
+- [x] Create branch `phase-5-models` from updated `main`
+- [x] Survey **27 DTOs** under `MProgService.models` from `reverse_engineering/metadata/MProgService.json` — 19 carry `[DataContract]`, 124 / 173 properties carry `[DataMember]`
+- [x] Author **`tools/generate_phase5.py`** — single-source codegen that reads metadata + endpoints + userstrings and emits 5 artifacts
+- [x] Emit `reverse_engineering/metadata/dtos.json` — 27-DTO structured catalogue (is_datacontract, property_count, datamember_count, properties[], oracle_table_hint)
+- [x] Emit `for_main_repo/dtos.ts` — 27 TS interfaces, optionality from `[DataMember]`, `WcfDateTime = string` alias; compiles clean under TS 5 `--strict`
+- [x] Emit `schemas/inferred_oracle_schema.sql` — 12 inferred `CREATE TABLE`s + suggested indexes + suggested FK ALTERs (with `/* SUGGESTED */` markers)
+- [x] Emit `schemas/tables_relationships.md` — DTO ↔ table ↔ endpoint mapping w/ confidence + source signal
+- [x] Emit `schemas/erd.mermaid` — entity-relationship diagram
+- [x] Mine **~75 SQL templates** from `MProgService.userstrings.json` — cluster into auth, read, write paths
+- [x] Identify **3 coexisting DALs** in `MProgService.dll`: `DataBaseHelper` (legacy, string-concat, dominant), `DatabaseManager` (modern, parameterised, partial adoption), `transferDataTable` (marshalling DTO)
+- [x] Confirm `Oracle.DataAccess.Client.OracleConnection` + multi-tenant `Dictionary<Int32,String> ConnetionStrings` from `DataBaseHelper.Fields`
+- [x] Author **`analysis/03_DATA_MODELS.md`** — 250+ lines, 92 % aggregate confidence; auth-path + row-shaped + envelope DTOs; TS optionality rule; serialization-contract nuance
+- [x] Author **`analysis/05_ORACLE_INTEGRATION.md`** — ODP.NET binding, multi-tenant routing, 16 read-path SQL templates verbatim, 6 write-path templates, inferred FK graph, pagination idioms, PL/SQL findings, 91 % aggregate confidence
+- [x] Update `analysis/00_OVERVIEW.md` — Phase-5 findings section, Phase 5 row 🟢 91.5 %, open-question #2 marked resolved
+- [x] Update `ANALYSIS_INDEX.md` — flip 03 and 05 to 🟢, add `metadata/dtos.json` row, schemas 🟢 status column, `dtos.ts` row, `generate_phase5.py` tool row
+- [x] Update `PROGRESS.md` (this section)
+- [x] Re-validate `api_contracts/openapi.yaml` + `tsc --strict` on all 3 TS files — no regressions
+- [x] Atomic commits (3 commits: tool, generated artifacts, docs) + push `phase-5-models`
+- [ ] Open PR #5
+- [ ] PR #5 merged
 
 ## Discoveries summary (cumulative)
 
@@ -136,8 +161,11 @@
 | Public operations (no JWT) — total across both contracts          | **7** (modern: `Authenticate`, `Login`, `test`, `GetCallerIdentity`, `Index`; legacy aliases: `Login`, `Authenticate`) | 100% |
 | `FaultContract<ServiceFault>` coverage (modern)                  | 32 / 33 | 100% |
 | Data models discovered (TypeDef names + fields)                  | **27 / 27** | 95% |
+| Data models catalogued + TS interfaces emitted (Phase 5)         | **27 / 27** (15 row-shaped + 12 envelope/aggregate) · `for_main_repo/dtos.ts` compiles clean under TS 5 `--strict` | 92% |
+| Oracle tables inferred (Phase 5)                                 | **12** (USER_R, USER_MNATK, data_acc, GRP, Mkb2, amlh, titl, DATA_D, DATA_M, data_H, SNDK_A, SNDS_A, red, sendsms, DATA_S, t_qyod) + view `V_ACCOUNT_D` — in `schemas/inferred_oracle_schema.sql` | 88% |
+| Inferred FK relationships (Phase 5)                              | **13** from JOIN-on patterns in `#US` | 90% |
+| SQL templates recovered from `#US` (Phase 5)                     | **~75** (16 catalogued read + 6 write in `05_ORACLE_INTEGRATION.md` §4) | 90% |
 | Permissions decoded (semantics)                                  | 0 / 7   | — |
-| SQL queries extracted (bodies obfuscated)                        | 0       | — |
 | JWT pipeline classes identified                                  | 5 / 5 (AuthTokenService, DatabaseTokenBuilder, DatabaseTokenValidator, TokenValidationInspector, TokenValidationBehaviorExtension) | 95% |
 | JWT signing algorithm                                            | HS-family (85%), most likely HS256 (60%) — `jose-jwt` enum constant in tampered IL; resolution path documented in `02_JWT_AUTHENTICATION.md` §5 | 60–85% |
 | JWT claim set                                                    | `iat`, `typ`, `UserId` (no `exp` — server-side TTL via `DatabaseTokenValidator.IsExpired`) | 95% |
@@ -160,12 +188,13 @@
 2. Is `NOA` really "number of allowed accounts" or "no-account" boolean? → Phase 6
 3. ~~Are routes defined per-method via `WebGet/WebInvoke`, or via `<endpoint>` config?~~ → **resolved: per-method** (see `01_WCF_ENDPOINTS.md`)
 4. What is the license enforcement strategy — call-counter? expiry date? → Phase 6/7 (mostly Phase 7 from APK)
-5. What is the exact SQL emitted by `DataBaseHelper`? → Phase 5/7. **Partial answer in Phase 4**: the AUTH-path SQL is recovered verbatim from `#US` (`select * from USER_R where NAME_U='`, `' and PASS='`, `Update USER_R set PASS=`). Phase 5 will catalogue the remainder.
+5. ~~What is the exact SQL emitted by `DataBaseHelper`?~~ → **resolved Phase 5**: ~75 SQL templates recovered verbatim from `#US` heap; 16 read + 6 write paths catalogued in `analysis/05_ORACLE_INTEGRATION.md §4`; the remainder lives in `reverse_engineering/userstrings/MProgService.userstrings.json` (filterable by SQL keywords).
 6. What is the base URL of the WCF host? → Phase 7 (`strings.xml` in APK)
 7. How is `appId` sourced on the client side? → Phase 7
 8. What does `secureId` (added on `IServiceElect.Login`) carry? → Phase 5/7
 9. ~~What is the response shape of `Authenticate`/`Login`?~~ → **resolved in Phase 4: the response body is the raw JWT string** (not wrapped in JSON). `Login` returns `Users` and `Authenticate` returns `String` per metadata; the `String` IS the JWT. See `02_JWT_AUTHENTICATION.md §3.4`.
-10. **NEW**: `InsertMessage` takes 8 body parameters but declares no `FaultContract` — odd. Phase 5 will inspect the body to confirm whether it's a fire-and-forget or returns a tracking id.
+10. ~~**NEW**: `InsertMessage` takes 8 body parameters but declares no `FaultContract`~~ → **partially resolved Phase 5**: `DataBaseHelper.InsertMessage` returns `Int32` and the `#US` heap shows `"insert into sendsms(customern,phoneno,customername,ms1,nos,issent)values("` — it inserts into the `sendsms` queue table. The `Int32` return is `OracleCommand.ExecuteNonQuery()`'s row-count (1 on success, 0 on failure). No tracking id returned. See `05_ORACLE_INTEGRATION.md §4.3` + W6.
+13. **NEW (Phase 5)**: ConnetionStrings dictionary maps `Int32` (tenant id) → `String` (TNS), and the integer key is the same `noc` parameter the Phase-3 legacy contract surfaces. The two multi-tenant story-lines (`appId` on the modern contract vs `noc` on the legacy one) converge on the same dictionary.
 11. **NEW (Phase 4)**: ⚠️ The shipped binaries contain **hard-coded Oracle credentials** (in `#US` heap, redacted in repo). The engineering team must rotate these before any production rollout. See `02_JWT_AUTHENTICATION.md §6.1`.
 12. **NEW (Phase 4)**: ⚠️ `/Login` and `/ChangePassword` use raw SQL string concatenation → SQL injection. Server-side patch required. See `02_JWT_AUTHENTICATION.md §6.2`.
 
