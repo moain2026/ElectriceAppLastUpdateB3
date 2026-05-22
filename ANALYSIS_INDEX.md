@@ -10,7 +10,7 @@
 | # | Document | Phase | Status |
 |---|----------|:-----:|:------:|
 | 00 | [`00_OVERVIEW.md`](./analysis/00_OVERVIEW.md)                 | all | 🟢 Phase-2 facts landed |
-| 01 | [`01_WCF_ENDPOINTS.md`](./analysis/01_WCF_ENDPOINTS.md)        | 3   | 🟢 full 60-endpoint table (Phase 2 surface) · deep dive Phase 3 |
+| 01 | [`01_WCF_ENDPOINTS.md`](./analysis/01_WCF_ENDPOINTS.md)        | 3   | 🟢 full 60-endpoint table + per-endpoint detail blocks (Phase 3) |
 | 02 | [`02_JWT_AUTHENTICATION.md`](./analysis/02_JWT_AUTHENTICATION.md) | 4 | ⚪ pending |
 | 03 | [`03_DATA_MODELS.md`](./analysis/03_DATA_MODELS.md)            | 5   | ⚪ pending |
 | 04 | [`04_PERMISSIONS_SYSTEM.md`](./analysis/04_PERMISSIONS_SYSTEM.md) | 6 | ⚪ pending |
@@ -51,25 +51,25 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 
 ## 📡 API contracts (`api_contracts/`)
 
-| File | Description | Phase |
-|------|-------------|:-----:|
-| `openapi.yaml`           | OpenAPI 3.0 spec for the 27 WCF endpoints | 3 |
-| `postman_collection.json`| Postman v2.1 collection                    | 3 |
-| `typescript_types.ts`    | TypeScript types from C# DTOs              | 5 |
+| File | Description | Phase | Status |
+|------|-------------|:-----:|:------:|
+| `openapi.yaml`           | OpenAPI 3.0.3 spec for all 60 WCF endpoints (33 modern + 27 deprecated). **Validates clean** via `openapi-spec-validator`. | 3 | 🟢 |
+| `postman_collection.json`| Postman v2.1 collection — 11 folders × 60 requests, `{{baseUrl}}/{{appId}}/{{token}}/{{secureId}}` variables, JWT auto-inject pre-request on Login/Authenticate. | 3 | 🟢 |
+| `typescript_types.ts`    | TypeScript types from C# DTOs              | 5 | ⚪ |
 
 ---
 
 ## 🎁 For main repo (`for_main_repo/`)
 
-| File | Purpose | Phase |
-|------|---------|:-----:|
-| `README.md`              | How to copy artefacts into `app1` | 8 |
-| `endpoints.ts`           | Const map of all endpoints + types | 3 |
-| `jwt_interceptor.ts`     | Axios interceptor template | 4 |
-| `permissions_matrix.md`  | Human reference for permission flags | 6 |
-| `bond_dto.ts`            | Bond model | 5 |
-| `reading_dto.ts`         | Reading model | 5 |
-| `user_dto.ts`            | User model | 5 |
+| File | Purpose | Phase | Status |
+|------|---------|:-----:|:------:|
+| `README.md`              | How to copy artefacts into `app1` | 8 | ⚪ |
+| `endpoints.ts`           | Const map of all 60 endpoints + `EndpointDescriptor` interface. Compiles clean under TS 5 `--strict`. | 3 | 🟢 |
+| `jwt_interceptor.ts`     | Axios interceptor template | 4 | ⚪ |
+| `permissions_matrix.md`  | Human reference for permission flags | 6 | ⚪ |
+| `bond_dto.ts`            | Bond model | 5 | ⚪ |
+| `reading_dto.ts`         | Reading model | 5 | ⚪ |
+| `user_dto.ts`            | User model | 5 | ⚪ |
 
 ---
 
@@ -84,6 +84,10 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `05_generate_typescript.py`| Convert C# DTOs to TypeScript interfaces. |
 | `metadata_extractor/`      | Custom .NET 8 tool — reads ECMA-335 metadata tables to bypass ConfuserEx body tampering (added Phase 2). |
 | `parse_webinvoke.py`       | ECMA-335 custom-attribute blob decoder for `[WebInvoke]`/`[WebGet]` (added Phase 2). |
+| `generate_phase3.py`       | Parses MProgService.json + decodes blobs into a structured `reverse_engineering/metadata/endpoints.json` (added Phase 3). |
+| `generate_artifacts.py`    | Single source emits `api_contracts/openapi.yaml` + `api_contracts/postman_collection.json` + `for_main_repo/endpoints.ts` from `endpoints.json` (added Phase 3). |
+| `generate_endpoint_details.py` | Emits per-endpoint detail blocks (modern + legacy) for `01_WCF_ENDPOINTS.md` (added Phase 3). |
+| `splice_endpoint_details.py`   | Idempotently splices the output of `generate_endpoint_details.py` between sentinels in `01_WCF_ENDPOINTS.md` (added Phase 3). |
 
 ---
 
