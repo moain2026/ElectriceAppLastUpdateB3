@@ -19,7 +19,7 @@
 | 07 | [`07_MULTI_TENANT.md`](./analysis/07_MULTI_TENANT.md)          | 3   | 🟡 appId confirmed · resolution path inferred |
 | 08 | [`08_ERROR_HANDLING.md`](./analysis/08_ERROR_HANDLING.md)      | 3   | ⚪ pending |
 | 09 | [`09_OBFUSCATION_NOTES.md`](./analysis/09_OBFUSCATION_NOTES.md) | 2  | 🟢 ConfuserEx confirmed · per-binary damage table |
-| 10 | [`10_APK_V26_ANALYSIS.md`](./analysis/10_APK_V26_ANALYSIS.md)  | 7   | ⚪ pending |
+| 10 | [`10_APK_V26_ANALYSIS.md`](./analysis/10_APK_V26_ANALYSIS.md)  | 7   | 🟢 manifest decoded · baseUrl pinned · loopj HTTP · 185 yd classes · 88 % conf (Phase 7) |
 
 Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 
@@ -37,6 +37,8 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `decompiled_csharp/OracleServiceMobile/` | `binaries/OracleServiceMobile.exe`| ilspycmd | 2 |
 | `decompiled_csharp/License/`             | `binaries/License.dll`            | ilspycmd | 2 |
 | `apk_decompiled/`                | `binaries/ElectricCollector26.apk`| JADX      | 7 |
+| `apk_decompiled/endpoint_strings.txt` | `binaries/ElectricCollector26.apk` `classes*.dex` | `strings` + grep | 7 |
+| `apk_decompiled/yd_classes.txt`     | `binaries/ElectricCollector26.apk` `classes*.dex` | `strings` + grep | 7 |
 | `userstrings/MProgService.userstrings.json`     | `binaries/MProgService.dll`        | `UserStringDump` (.NET 8) — `#US` heap walker | 4 |
 | `userstrings/OracleServiceMobile.userstrings.json` | `binaries/OracleServiceMobile.exe` | `UserStringDump`                              | 4 |
 | `userstrings/License.userstrings.json`          | `binaries/License.dll`             | `UserStringDump`                              | 4 |

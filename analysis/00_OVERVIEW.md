@@ -89,6 +89,16 @@ service** authenticated by **JWT**.
 - 7 flag properties on `Users`: **`NOA, ED, DE, S_K, S_S, REP, SYS`** — all `Int32`.
 - Where each is checked = bodies in `Service1.cs` / `ServiceElect.cs` — partially obfuscated. Phase 6 dissects this by combining metadata + client-side hints from the APK.
 
+### APK v26 — Phase 7 findings (new)
+- **Package**: `com.yd.electricecollector` ("كهرباء تحصيل"), `versionName=1.0`, min/target SDK 24/34, main activity `SplashScreenActivity`, 13 permissions including `READ_PHONE_STATE` (for IMEI-as-secureId fallback) and `SEND_SMS` (for `ActivitySMS`).
+- **HTTP stack**: `loopj.android.http.AsyncHttpClient` + `cz.msebera.android.httpclient` (Apache fork) + `BearerAuthSchemeFactory` for the JWT header. The `app1` rewrite swaps loopj for `axios` (Phase-4 `jwt_interceptor.ts` is the 1:1 replacement).
+- **Production `baseUrl` pinned**: `http://192.168.0.100:3000/` (dev/default, cleartext HTTP). The on-prem LAN deployment topology means HTTPS pinning isn't currently in scope.
+- **Endpoint usage**: 69 endpoint name literals matched in `classes*.dex` — client targets the modern `IServiceElect` contract (33 ops), not the legacy `IService1`.
+- **Entity-class mirror**: 27 / 27 server DTOs have client-side mirrors under `com.yd.electricecollector.entities.*`. Notable: `HakAccess` is the **client-side cache of the Tier-A permission row** decoded from `Users` — the Java equivalent of the TS `can(me, perm)` helper in `for_main_repo/permissions_matrix.md`.
+- **`secureId` resolved**: device-derived via IMEI → ANDROID_ID → UUID fallback chain, persisted in `Preferences._secureId`. Privacy red flag: `app1` should drop the IMEI tier and use `UUID.randomUUID()` only.
+- 🔴 **P0 security finding** (SEC-NET-001): production traffic is **cleartext HTTP**. JWT tokens, passwords, and Oracle business data flow unencrypted on the LAN. `app1` rewrite must move the gateway to HTTPS.
+- Deliverables: `analysis/10_APK_V26_ANALYSIS.md` (88 % conf), `reverse_engineering/apk_decompiled/endpoint_strings.txt`, `reverse_engineering/apk_decompiled/yd_classes.txt`.
+
 ### Permissions — Phase 6 findings (new)
 - **Two-tier model** discovered: **Tier-A** = 7 `Int32` capability flags on `USER_R` rows; **Tier-B** = per-place ACL via `USER_MNATK` junction table with `RED` (read) and `SDAD` (write) flags keyed by `(NOU, no_mstlm)`.
 - Both tiers are AND-composed: `Effective(action) = Tier-A(flag) AND Tier-B(place)`. `SYS=1` short-circuits Tier-B (75 % conf).
@@ -128,9 +138,9 @@ service** authenticated by **JWT**.
 |---|----------|---------------------------|
 | 1 | ~~JWT signing algorithm + key source~~ | **Partial in Phase 4**: HS-family (85%), HS256 (60%); definitive answer needs a live-token capture. Key source: `DatabaseTokenBuilder.BuildSecureToken(TokenSize)` — symmetric secret regenerated server-side. |
 | 2 | ~~Exact SQL queries (table names, joins)~~ | **Resolved Phase 5**: ~75 SQL templates recovered from `#US` heap, mapped to 12 tables + FK graph. See `05_ORACLE_INTEGRATION.md`. Live-DB validation still pending. |
-| 3 | `appId → connectionString` mapping mechanism | Phase 7 (APK) + post-mortem of `.exe.config` |
-| 4 | Base URL of the WCF host (`Service1.svc` mounting path) | Phase 7 (APK) |
-| 5 | Is `IService1` still routed or only `IServiceElect`? | Phase 7 (which one does the APK call?) |
+| 3 | ~~`appId → connectionString` mapping mechanism~~ | **Resolved Phase 7**: `_appId` is a SharedPreferences key in the Android client (`Preferences._appId`), persisted across launches. The integer maps server-side to `ConnetionStrings : Dictionary<Int32,String>` (Phase 5). |
+| 4 | ~~Base URL of the WCF host (`Service1.svc` mounting path)~~ | **Resolved Phase 7**: `http://192.168.0.100:3000/` is the hard-coded dev/default; user can override via `Preferences._baseUrl` (configurable in `EnterPasswordActivity`). |
+| 5 | ~~Is `IService1` still routed or only `IServiceElect`?~~ | **Resolved Phase 7**: the v26 client targets **`IServiceElect`** (33 modern ops); no `IService1`-only methods are referenced. |
 | 6 | ~~Meaning of `NOA` (number-of-accounts vs no-account boolean)~~ | **Resolved Phase 6**: `NOA` is overloaded — capability flag (`NOA > 0` ⇒ accounts visible) *and* till-account-id. App1 must split. |
 | 7 | 🔴 Hard-coded DB credentials in distributed binaries | **Surfaced in Phase 4 §6.1** — escalate to engineering team |
 | 8 | 🔴 SQL injection on `/Login`, `/ChangePassword` | **Surfaced in Phase 4 §6.2** — escalate to engineering team |
@@ -147,5 +157,5 @@ service** authenticated by **JWT**.
 | 4 | JWT scheme reconstructed + Axios interceptor template                    | 🟢 done    | 87.5% |
 | 5 | 27 models + Oracle DDL + ERD + TS types                                  | 🟢 done    | 91.5% |
 | 6 | Permissions matrix (Tier-A flags + Tier-B per-place ACL)                | 🟢 done    | 86%   |
-| 7 | APK v26 deep dive                                                        | ⚪         | — |
+| 7 | APK v26 deep dive (manifest + HTTP stack + baseUrl + endpoint map)      | 🟢 done    | 88%   |
 | 8 | `for_main_repo/` packaged + executive summary                            | ⚪         | — |

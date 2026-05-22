@@ -9,18 +9,18 @@
 - [x] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, [PR #3](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/3) ✅ merged (commit `562096d`)
 - [x] **Phase 4: JWT Authentication System**    — branch `phase-4-auth-jwt`, [PR #4](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/4) ✅ merged (commit `5e2a4ea`)
 - [x] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, [PR #5](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/5) ✅ merged (commit `c21ff99`)
-- [x] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, PR #6 (in review)
-- [ ] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, PR #7
+- [x] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, [PR #6](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/6) ✅ merged (commit `ef834f9`)
+- [x] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, PR #7 (in review)
 - [ ] **Phase 8: Final Deliverables**           — branch `phase-8-deliverables`, PR #8
 
 ## Current status
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 6 — Permissions System Forensics** 🟢 ready for PR |
-| % complete    | 100 % of Phase-6 scope; PR #6 next |
+| Active phase  | **Phase 7 — APK v26 Analysis** 🟢 ready for PR |
+| % complete    | 100 % of Phase-7 scope; PR #7 next |
 | Last update   | 2026-05-22 |
-| Next step     | Open PR #6 → squash-merge → branch `phase-7-apk` |
+| Next step     | Open PR #7 → squash-merge → branch `phase-8-deliverables` |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -162,9 +162,30 @@
 - [x] Author **`for_main_repo/permissions_matrix.md`** — RN-ready, TS `can(me, perm)` helper, Tier-A endpoint map, Tier-B helper
 - [x] Update `ANALYSIS_INDEX.md` — 04 → 🟢, `permissions_matrix.md` → 🟢
 - [x] Update `PROGRESS.md` (this section)
-- [ ] Atomic commits + push `phase-6-permissions`
-- [ ] Open PR #6
-- [ ] PR #6 merged
+- [x] Atomic commits + push `phase-6-permissions`
+- [x] Open PR #6
+- [x] PR #6 merged (commit `ef834f9`)
+
+## Phase 7 deliverables checklist
+
+- [x] Sync local `main` after PR #6 merge (commit `ef834f9`)
+- [x] Create branch `phase-7-apk` from updated `main`
+- [x] Extract `classes*.dex` (16 DEX files) via `unzip` and `strings -n 6`
+- [x] Decode `AndroidManifest.xml` via `pyaxmlparser` — confirm package `com.yd.electricecollector`, label `كهرباء تحصيل`, min/target SDK 24/34, 13 permissions
+- [x] Identify HTTP stack: `loopj.android.http.AsyncHttpClient` + `cz.msebera` (Apache fork) + `BearerAuthSchemeFactory`
+- [x] Pin production `baseUrl`: `http://192.168.0.100:3000/` (dev/default, cleartext HTTP → P0 SEC-NET-001)
+- [x] Map 69 endpoint name literals to server endpoints (confirms `IServiceElect` is the client's contract, not `IService1`)
+- [x] Map 185 `com.yd.electricecollector.*` classes — 27 entity mirrors + 40+ activities + 20+ adapters
+- [x] Resolve open questions Q3 (baseUrl), Q5 (which contract), Q7 (appId source), Q8 (secureId source)
+- [x] Document `HakAccess` as client-side Tier-A cache (Phase-6 cross-ref)
+- [x] Author **`analysis/10_APK_V26_ANALYSIS.md`** — 26.7 K, 88 % aggregate confidence, 11 sections, per-claim ratings
+- [x] Persist `reverse_engineering/apk_decompiled/endpoint_strings.txt` (69 literals) + `yd_classes.txt` (185 classes)
+- [x] Update `analysis/00_OVERVIEW.md` — Phase 7 row green; open Qs Q3/Q5/Q7/Q8 resolved
+- [x] Update `ANALYSIS_INDEX.md` — 10 → 🟢; APK artefact rows added
+- [x] Update `PROGRESS.md` (this section)
+- [ ] Atomic commits + push `phase-7-apk`
+- [ ] Open PR #7
+- [ ] PR #7 merged
 
 ## Discoveries summary (cumulative)
 
@@ -192,7 +213,7 @@
 | JWT header format                                                | `Authorization: Bearer <token>` (prefix with trailing space — confirmed at `#US +0x596e`) | 100% |
 | 🔴 Hard-coded Oracle credentials in shipped binaries             | 4 copies (1 in MProgService.dll, 3 in OracleServiceMobile.exe) — **redacted in repo**, flagged as P0 finding | 100% |
 | 🔴 SQL injection on `/Login` + `/ChangePassword`                 | Raw string concat at `#US +0x4c7a` / `+0x4cc2` / `+0x4cf8` — flagged as P0 finding | 100% |
-| APK strings extracted                                            | 0       | — |
+| APK strings extracted                                            | **69 endpoint literals + 185 `com.yd.electricecollector.*` classes** · manifest decoded · baseUrl `http://192.168.0.100:3000/` pinned | 88 % |
 | Binaries fingerprinted                                           | 7 / 7   | 100% |
 | External assembly refs identified                                | 4 (mscorlib, Oracle.DataAccess 1.102.3.0, System.Data, System.ServiceModel) + Newtonsoft.Json, jose-jwt | 95% |
 | Target runtime confirmed                                         | **.NET Framework 4.5.1** | 100% |
@@ -217,6 +238,8 @@
 13. **NEW (Phase 5)**: ConnetionStrings dictionary maps `Int32` (tenant id) → `String` (TNS), and the integer key is the same `noc` parameter the Phase-3 legacy contract surfaces. The two multi-tenant story-lines (`appId` on the modern contract vs `noc` on the legacy one) converge on the same dictionary.
 14. ~~Is `NOA` really 'number of allowed accounts' or 'no-account' boolean?~~ → **resolved Phase 6**: `NOA` is an `Int32` capability flag on `USER_R` (where `NOA > 0` means "can list accounts") **and** doubles as the cashier's own till account-id (used in `SNDK_A.no_box = USER_R.NOA`). The `app1` rebuild must split these two semantics into `tillAccountId` and `canListAccounts`.
 15. **NEW (Phase 6)**: Tier-B SQL injection — the `USER_MNATK` subqueries that enforce per-place access are string-concatenated against the caller's NOU. Same SEC-AUTH-001 generalisation. See `04_PERMISSIONS_SYSTEM.md §5`.
+16. ~~Q3 / Q5 / Q7 / Q8 (baseUrl, which contract, appId source, secureId source)~~ → **resolved Phase 7**: see `10_APK_V26_ANALYSIS.md §9`. Production baseUrl `http://192.168.0.100:3000/` (cleartext), client targets `IServiceElect`, `_appId` + `_secureId` are SharedPreferences keys.
+17. **NEW (Phase 7)**: SEC-NET-001 — production traffic is **cleartext HTTP** on a LAN. JWT, raw passwords, and Oracle-bound business data flow unencrypted. `app1` rewrite MUST move gateway to HTTPS.
 11. **NEW (Phase 4)**: ⚠️ The shipped binaries contain **hard-coded Oracle credentials** (in `#US` heap, redacted in repo). The engineering team must rotate these before any production rollout. See `02_JWT_AUTHENTICATION.md §6.1`.
 12. **NEW (Phase 4)**: ⚠️ `/Login` and `/ChangePassword` use raw SQL string concatenation → SQL injection. Server-side patch required. See `02_JWT_AUTHENTICATION.md §6.2`.
 
