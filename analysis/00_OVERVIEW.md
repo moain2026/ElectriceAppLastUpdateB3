@@ -1,6 +1,6 @@
 # 00 — Executive Overview
 
-> **Status:** 🟡 updated after Phase 2. Will be finalised in Phase 8.
+> **Status:** 🟡 updated after Phase 3. Will be finalised in Phase 8.
 > **Audience:** the AbbasiTahseel React-Native rewrite team (`app1`).
 > **Reading time (current state):** ~7 minutes.
 
@@ -81,6 +81,14 @@ service** authenticated by **JWT**.
 - **Mitigation:** our custom `MetaExtract` tool reads metadata only and bypasses body tampering entirely. 100% of the public surface is therefore recoverable.
 - Full detail in [`09_OBFUSCATION_NOTES.md`](./09_OBFUSCATION_NOTES.md).
 
+### API contracts (Phase-3 finding)
+- **60 endpoints** documented end-to-end (33 modern + 27 legacy) with HTTP verb, URI template, body style, request/response format, fault contracts, parameter location (query vs body) and return type — all recovered from binary metadata, **no manual transcription**.
+- **HTTP verb distribution** (modern contract): **GET** 22 (66%), **POST** 7 (21%), **PUT** 2 (6%), **DELETE** 2 (6%).
+- **Auth boundary:** 30 of 33 operations require `Authorization: Bearer <jwt>`; the 3 public ops are `Authenticate`, `Login`, `test`.
+- **FaultContract:** every non-bootstrap op declares `MProgService.models.ServiceFault` — the response envelope for business errors (Phase 3 deliverable: `ServiceFault` schema landed in `api_contracts/openapi.yaml`).
+- **Deliverables:** `api_contracts/openapi.yaml` (OpenAPI 3.0.3, validates clean), `api_contracts/postman_collection.json` (Postman v2.1 with JWT auto-inject on Login/Authenticate), `for_main_repo/endpoints.ts` (TS 5 `--strict` compiles clean).
+- Full per-endpoint detail in [`01_WCF_ENDPOINTS.md`](./01_WCF_ENDPOINTS.md).
+
 ---
 
 ## Open questions (live)
@@ -102,8 +110,8 @@ service** authenticated by **JWT**.
 |-------|-----------------|:------:|:----------:|
 | 1 | Lab structure + tooling                                                  | 🟢 done    | 95% |
 | 2 | C# decompile + metadata extraction for 3 priority assemblies             | 🟢 done    | 95% |
-| 3 | 27/33 endpoints, OpenAPI, Postman                                        | ⚪ next    | — |
-| 4 | JWT scheme + interceptor template                                        | ⚪         | — |
+| 3 | 60/60 endpoints documented; OpenAPI 3.0 (valid); Postman v2.1; endpoints.ts | 🟢 done    | 95% |
+| 4 | JWT scheme + interceptor template                                        | ⚪ next    | — |
 | 5 | 27 models + Oracle DDL + ERD + TS types                                  | ⚪         | — |
 | 6 | Permissions matrix                                                       | ⚪         | — |
 | 7 | APK v26 deep dive                                                        | ⚪         | — |

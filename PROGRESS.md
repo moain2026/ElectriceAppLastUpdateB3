@@ -5,8 +5,8 @@
 ## Phases
 
 - [x] **Phase 1: Setup & Repository Structure** — branch `phase-1-setup`, [PR #1](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/1) ✅ merged (commit `4239839`)
-- [x] **Phase 2: Decompile All DLLs**           — branch `phase-2-decompile`, PR #2 (in review)
-- [ ] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, PR #3
+- [x] **Phase 2: Decompile All DLLs**           — branch `phase-2-decompile`, PR #2 ✅ merged (commit `1e07df2`)
+- [x] **Phase 3: WCF Endpoints Deep Analysis**  — branch `phase-3-endpoints`, PR #3 (in review)
 - [ ] **Phase 4: JWT Authentication System**    — branch `phase-4-jwt`, PR #4
 - [ ] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, PR #5
 - [ ] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, PR #6
@@ -17,10 +17,10 @@
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 2 — Decompile** ✅ pushed |
-| % complete    | 100% of Phase-2 scope; awaiting PR #2 review |
+| Active phase  | **Phase 3 — WCF Endpoints Deep Analysis** ✅ pushed |
+| % complete    | 100% of Phase-3 scope; awaiting PR #3 review |
 | Last update   | 2026-05-22 |
-| Next step     | Once PR #2 merges → branch `phase-3-endpoints`, generate OpenAPI + Postman |
+| Next step     | Once PR #3 merges → branch `phase-4-jwt`, JWT pipeline forensics + Axios interceptor |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -74,11 +74,44 @@
 - [x] Atomic commits + push `phase-2-decompile`
 - [x] Open PR #2
 
+## Phase 3 deliverables checklist
+
+- [x] Switch to branch `phase-3-endpoints` from updated `main`
+- [x] Author `tools/generate_phase3.py` — parses `MProgService.json` + decodes
+      `[WebInvoke]`/`[WebGet]` blobs into a single structured
+      `reverse_engineering/metadata/endpoints.json` (80 KB, 60 ops, 27 DTOs)
+- [x] Author `tools/generate_artifacts.py` — single source emits OpenAPI +
+      Postman + endpoints.ts (DRY: change mapping once, regenerate all 3)
+- [x] Author `tools/generate_endpoint_details.py` — appends per-endpoint
+      detail blocks into `analysis/01_WCF_ENDPOINTS.md` (sentinel-bracketed)
+- [x] Emit `api_contracts/openapi.yaml` — **OpenAPI 3.0.3, validates clean**
+      (via `openapi-spec-validator`)
+- [x] Emit `api_contracts/postman_collection.json` — **Postman v2.1,
+      validates clean** against the upstream JSON Schema; 11 folders × 60
+      requests; JWT auto-inject pre-request on `Login`/`Authenticate`
+- [x] Emit `for_main_repo/endpoints.ts` — **compiles clean under TS 5
+      `--strict`**; const-asserted, typed by `EndpointDescriptor`
+- [x] Expand `analysis/01_WCF_ENDPOINTS.md` — 60 per-endpoint blocks with
+      contract/route/auth/params/returns/confidence/source citation
+- [x] Update `analysis/00_OVERVIEW.md` — Phase-3 API contracts section,
+      verbs distribution, auth boundary, fault-contract count
+- [x] Update `ANALYSIS_INDEX.md` (status icons + new tool rows)
+- [x] Update `PROGRESS.md` (this section)
+- [x] Atomic commits + push `phase-3-endpoints`
+- [x] Open PR #3
+
 ## Discoveries summary (cumulative)
 
 | Category | Count | Confidence |
 |---|---:|:---:|
 | WCF endpoints documented (surface: name + verb + URI + formats)  | **60 / 60** (27 legacy + 33 modern) | 95% |
+| WCF endpoints with full per-endpoint detail blocks               | **60 / 60** | 95% |
+| OpenAPI 3.0 spec emitted + validated                             | ✅ `api_contracts/openapi.yaml` | 95% |
+| Postman v2.1 collection emitted + validated                      | ✅ `api_contracts/postman_collection.json` (11 folders × 60 req) | 95% |
+| `for_main_repo/endpoints.ts` emitted + strict-TS-checks          | ✅ TS 5 strict-mode clean | 95% |
+| HTTP verbs in modern contract                                    | GET 22 · POST 7 · PUT 2 · DELETE 2 | 100% |
+| Public modern operations (no JWT)                                | 3 (`Authenticate`, `Login`, `test`) | 100% |
+| `FaultContract<ServiceFault>` coverage (modern)                  | 32 / 33 | 100% |
 | Data models discovered (TypeDef names + fields)                  | **27 / 27** | 95% |
 | Permissions decoded (semantics)                                  | 0 / 7   | — |
 | SQL queries extracted (bodies obfuscated)                        | 0       | — |
@@ -100,9 +133,11 @@
 2. Is `NOA` really "number of allowed accounts" or "no-account" boolean? → Phase 6
 3. ~~Are routes defined per-method via `WebGet/WebInvoke`, or via `<endpoint>` config?~~ → **resolved: per-method** (see `01_WCF_ENDPOINTS.md`)
 4. What is the license enforcement strategy — call-counter? expiry date? → Phase 4/7 (mostly Phase 7 from APK)
-5. **NEW**: What is the exact SQL emitted by `DataBaseHelper`? → Phase 5/7 (obfuscated bodies; will be inferred from APK + Oracle DBA)
-6. **NEW**: What is the base URL of the WCF host? → Phase 7 (`strings.xml` in APK)
-7. **NEW**: How is `appId` sourced on the client side? → Phase 7
-8. **NEW**: What does `secureId` (added on `IServiceElect.Login`) carry? → Phase 4/7
+5. What is the exact SQL emitted by `DataBaseHelper`? → Phase 5/7 (obfuscated bodies; will be inferred from APK + Oracle DBA)
+6. What is the base URL of the WCF host? → Phase 7 (`strings.xml` in APK)
+7. How is `appId` sourced on the client side? → Phase 7
+8. What does `secureId` (added on `IServiceElect.Login`) carry? → Phase 4/7
+9. **NEW**: What is the response shape of `Authenticate`/`Login`? OpenAPI currently lists `Users` (Login) and `String` (Authenticate); Phase 4 will lock down whether the token is the entire `String` return or carried inside `Users.token`.
+10. **NEW**: `InsertMessage` takes 8 body parameters but declares no `FaultContract` — odd. Phase 4 will inspect the body to confirm whether it's a fire-and-forget or returns a tracking id.
 
 (Each question gets answered or escalated as phases progress.)
