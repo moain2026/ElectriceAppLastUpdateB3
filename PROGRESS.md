@@ -50,6 +50,10 @@
 | SQL queries extracted      | 0       | — |
 | JWT details                | partial | 30% |
 | APK strings extracted      | 0       | — |
+| Binaries fingerprinted     | 7 / 7   | 100% |
+| External assembly refs identified | 4 (mscorlib, Oracle.DataAccess 1.102.3.0, System.Data, System.ServiceModel) | 95% |
+| Target runtime confirmed   | .NET Framework 4.x | 95% |
+| Obfuscation confirmed      | yes (monodis crashes on all 3 proprietary DLLs) | 95% |
 
 ## Open questions (live)
 
