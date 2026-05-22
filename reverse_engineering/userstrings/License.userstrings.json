@@ -1,0 +1,42 @@
+{
+  "source": "License.dll",
+  "heap": "#US",
+  "note": "Every JWT-relevant or SQL/config literal referenced anywhere in the assembly's IL appears in this heap, even if the IL stream itself is obfuscated.",
+  "count": 5,
+  "strings": [
+    {
+      "offset": 3,
+      "token": "0x70000003",
+      "length": 1,
+      "value": "C"
+    },
+    {
+      "offset": 7,
+      "token": "0x70000007",
+      "length": 28,
+      "value": "Win32_LogicalDisk.DeviceID=\""
+    },
+    {
+      "offset": 65,
+      "token": "0x70000041",
+      "length": 2,
+      "value": ":\""
+    },
+    {
+      "offset": 71,
+      "token": "0x70000047",
+      "length": 18,
+      "value": "VolumeSerialNumber"
+    },
+    {
+      "offset": 109,
+      "token": "0x7000006D",
+      "length": 17,
+      "value": "License.Resources"
+    }
+  ],
+  "redactions": {
+    "count": 0,
+    "policy": "Sensitive literals (Oracle TNS connection strings containing DB host, port, service name, user id, and password) are stored with structural skeleton only (values replaced with <REDACTED>). The unredacted material is in the original binary under binaries/ for any future on-site forensic need."
+  }
+}
