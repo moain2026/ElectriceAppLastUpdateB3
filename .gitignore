@@ -1,0 +1,46 @@
+# --- Decompile artefacts (potentially huge / regenerable) -------------------
+# We keep the *curated* docs in analysis/; raw decompile output is opt-in.
+# If you want raw output committed, remove the specific path here.
+reverse_engineering/apk_decompiled/resources/
+reverse_engineering/apk_decompiled/sources/**/*.smali
+reverse_engineering/**/*.tmp
+
+# Large dumps we never want to push to GitHub
+*.log
+*.bak
+*.swp
+
+# Anything bigger than ~5 MB should be excluded individually — list below:
+reverse_engineering/decompiled_csharp/Newtonsoft.Json/
+reverse_engineering/decompiled_csharp/Oracle.DataAccess/
+reverse_engineering/il_dumps/Newtonsoft.Json.il
+reverse_engineering/il_dumps/Oracle.DataAccess.il
+
+# --- OS / editor noise ------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# --- Python tool envs -------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Node (if we ever need it for tooling, not the analysis itself) ---------
+node_modules/
+
+# --- Local-only secrets file (kept out of git) ------------------------------
+SECRETS_LOCAL.md
+.env
+.env.*
+
+# Tool binaries (re-fetched by 01_setup_tools.sh)
+tools/bin/
+
+# monodis side effects / core dumps
+core
+core.*
+*.resources
