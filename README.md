@@ -4,9 +4,25 @@
 > .NET WCF + Oracle system. All findings here feed the **AbbasiTahseel** React
 > Native rewrite (`app1` main repo).
 >
+> **Status:** 🟢 **COMPLETE** — all 8 phases finished, 7 PRs merged to `main`.
+>
 > **Role:** This repository is a *reference / documentation* repo. It contains
 > **no production code** — only binaries, decompiled artifacts, and engineering
 > documentation.
+
+## 📦 Quick-start for the `app1` engineer
+
+If you are the engineer building the RN rewrite, you only need **one folder**:
+
+→ **[`for_main_repo/README.md`](./for_main_repo/README.md)** — comprehensive copy guide.
+
+The 4 drop-in files are:
+1. [`for_main_repo/endpoints.ts`](./for_main_repo/endpoints.ts) — 60 endpoints, const-asserted
+2. [`for_main_repo/dtos.ts`](./for_main_repo/dtos.ts) — 27 DTOs as TS interfaces
+3. [`for_main_repo/jwt_interceptor.ts`](./for_main_repo/jwt_interceptor.ts) — Axios interceptor template
+4. [`for_main_repo/permissions_matrix.md`](./for_main_repo/permissions_matrix.md) — Tier-A + Tier-B gating
+
+All TS files compile clean under TS 5 `--strict`.
 
 ---
 

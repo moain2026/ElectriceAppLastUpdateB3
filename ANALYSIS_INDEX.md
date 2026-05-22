@@ -69,7 +69,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 
 | File | Purpose | Phase | Status |
 |------|---------|:-----:|:------:|
-| `README.md`              | How to copy artefacts into `app1` | 8 | ⚪ |
+| `README.md`              | Comprehensive `app1` copy guide + end-to-end wiring example + production-readiness checklist + cross-links to all 7 analysis docs | 8 | 🟢 |
 | `endpoints.ts`           | Const map of all 60 endpoints + `EndpointDescriptor` interface. Compiles clean under TS 5 `--strict`. | 3 | 🟢 |
 | `jwt_interceptor.ts`     | Axios interceptor template — Bearer header attach, single-retry 401 reauth, typed `call()` wrapper, compiles clean under `tsc --strict` | 4 | 🟢 |
 | `permissions_matrix.md`  | RN-ready Tier-A flag table + endpoint map + Tier-B helper + TS `can(me, perm)` helper | 6 | 🟢 |

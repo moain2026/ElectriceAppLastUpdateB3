@@ -1,6 +1,6 @@
 # 00 — Executive Overview
 
-> **Status:** 🟡 updated after Phase 5. Will be finalised in Phase 8.
+> **Status:** 🟢 **FINAL** — all 8 phases complete.
 > **Audience:** the AbbasiTahseel React-Native rewrite team (`app1`).
 > **Reading time (current state):** ~7 minutes.
 
@@ -158,4 +158,4 @@ service** authenticated by **JWT**.
 | 5 | 27 models + Oracle DDL + ERD + TS types                                  | 🟢 done    | 91.5% |
 | 6 | Permissions matrix (Tier-A flags + Tier-B per-place ACL)                | 🟢 done    | 86%   |
 | 7 | APK v26 deep dive (manifest + HTTP stack + baseUrl + endpoint map)      | 🟢 done    | 88%   |
-| 8 | `for_main_repo/` packaged + executive summary                            | ⚪         | — |
+| 8 | `for_main_repo/` packaged + executive summary                            | 🟢 done    | 90%   |

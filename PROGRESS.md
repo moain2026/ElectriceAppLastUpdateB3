@@ -10,17 +10,17 @@
 - [x] **Phase 4: JWT Authentication System**    — branch `phase-4-auth-jwt`, [PR #4](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/4) ✅ merged (commit `5e2a4ea`)
 - [x] **Phase 5: Data Models + Oracle Schema**  — branch `phase-5-models`, [PR #5](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/5) ✅ merged (commit `c21ff99`)
 - [x] **Phase 6: Permissions System Forensics** — branch `phase-6-permissions`, [PR #6](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/6) ✅ merged (commit `ef834f9`)
-- [x] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, PR #7 (in review)
-- [ ] **Phase 8: Final Deliverables**           — branch `phase-8-deliverables`, PR #8
+- [x] **Phase 7: APK v26 Analysis**             — branch `phase-7-apk`, [PR #7](https://github.com/moain2026/ElectriceAppLastUpdateB3/pull/7) ✅ merged (commit `5dedd21`)
+- [x] **Phase 8: Final Deliverables**           — branch `phase-8-deliverables`, PR #8 (in review)
 
 ## Current status
 
 | Field | Value |
 |---|---|
-| Active phase  | **Phase 7 — APK v26 Analysis** 🟢 ready for PR |
-| % complete    | 100 % of Phase-7 scope; PR #7 next |
+| Active phase  | **Phase 8 — Final Deliverables** 🟢 ready for PR |
+| % complete    | **100 %** — all 8 phases authored |
 | Last update   | 2026-05-22 |
-| Next step     | Open PR #7 → squash-merge → branch `phase-8-deliverables` |
+| Next step     | Open PR #8 → squash-merge → project complete |
 | Blockers      | None |
 
 ## Phase 1 deliverables checklist
@@ -183,9 +183,23 @@
 - [x] Update `analysis/00_OVERVIEW.md` — Phase 7 row green; open Qs Q3/Q5/Q7/Q8 resolved
 - [x] Update `ANALYSIS_INDEX.md` — 10 → 🟢; APK artefact rows added
 - [x] Update `PROGRESS.md` (this section)
-- [ ] Atomic commits + push `phase-7-apk`
-- [ ] Open PR #7
-- [ ] PR #7 merged
+- [x] Atomic commits + push `phase-7-apk`
+- [x] Open PR #7
+- [x] PR #7 merged (commit `5dedd21`)
+
+## Phase 8 deliverables checklist
+
+- [x] Sync local `main` after PR #7 merge (commit `5dedd21`)
+- [x] Create branch `phase-8-deliverables` from updated `main`
+- [x] Refine `for_main_repo/README.md` — comprehensive RN copy guide, end-to-end wiring example, production-readiness checklist, references to all 7 phases
+- [x] Document the 4 final deliverables (endpoints.ts, dtos.ts, jwt_interceptor.ts, permissions_matrix.md) with copy paths
+- [x] Cross-link every artefact to its authoritative analysis doc + Phase + confidence
+- [x] Final security findings rollup (5 P0/P1 SEC-AUTH + 1 P0 SEC-NET)
+- [x] Final PROGRESS.md → 100 % complete (this section)
+- [x] Update `analysis/00_OVERVIEW.md` — final status
+- [ ] Atomic commits + push `phase-8-deliverables`
+- [ ] Open PR #8
+- [ ] PR #8 merged
 
 ## Discoveries summary (cumulative)
 
