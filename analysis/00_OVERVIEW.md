@@ -89,6 +89,14 @@ service** authenticated by **JWT**.
 - 7 flag properties on `Users`: **`NOA, ED, DE, S_K, S_S, REP, SYS`** — all `Int32`.
 - Where each is checked = bodies in `Service1.cs` / `ServiceElect.cs` — partially obfuscated. Phase 6 dissects this by combining metadata + client-side hints from the APK.
 
+### Permissions — Phase 6 findings (new)
+- **Two-tier model** discovered: **Tier-A** = 7 `Int32` capability flags on `USER_R` rows; **Tier-B** = per-place ACL via `USER_MNATK` junction table with `RED` (read) and `SDAD` (write) flags keyed by `(NOU, no_mstlm)`.
+- Both tiers are AND-composed: `Effective(action) = Tier-A(flag) AND Tier-B(place)`. `SYS=1` short-circuits Tier-B (75 % conf).
+- Flag→endpoint matrix produced (37 endpoint↔flag mappings) in `analysis/04_PERMISSIONS_SYSTEM.md §3.2`.
+- 🔴 **`NOA` overload antipattern**: same column name = capability flag *and* till-account-id (`SNDK_A.no_box = USER_R.NOA`). `app1` must split semantics.
+- 🔴 **Tier-B SQL injection** inherits from SEC-AUTH-001: the `USER_MNATK` subqueries concatenate caller's `NOU` as a string.
+- Deliverables: `analysis/04_PERMISSIONS_SYSTEM.md` (86 % conf), `for_main_repo/permissions_matrix.md` (RN-ready, TS `can(me, perm)` helper).
+
 ### Licensing (Phase-2 finding)
 - `License.dll` is **clear / unobfuscated** VB.NET from 2014. It contains 3 static methods:
   - `GetHDDSerialN(DriveLetter)` — reads disk volume serial via WMI.
@@ -123,7 +131,7 @@ service** authenticated by **JWT**.
 | 3 | `appId → connectionString` mapping mechanism | Phase 7 (APK) + post-mortem of `.exe.config` |
 | 4 | Base URL of the WCF host (`Service1.svc` mounting path) | Phase 7 (APK) |
 | 5 | Is `IService1` still routed or only `IServiceElect`? | Phase 7 (which one does the APK call?) |
-| 6 | Meaning of `NOA` (number-of-accounts vs no-account boolean) | Phase 6 — search for usages |
+| 6 | ~~Meaning of `NOA` (number-of-accounts vs no-account boolean)~~ | **Resolved Phase 6**: `NOA` is overloaded — capability flag (`NOA > 0` ⇒ accounts visible) *and* till-account-id. App1 must split. |
 | 7 | 🔴 Hard-coded DB credentials in distributed binaries | **Surfaced in Phase 4 §6.1** — escalate to engineering team |
 | 8 | 🔴 SQL injection on `/Login`, `/ChangePassword` | **Surfaced in Phase 4 §6.2** — escalate to engineering team |
 
@@ -138,6 +146,6 @@ service** authenticated by **JWT**.
 | 3 | 60/60 endpoints documented; OpenAPI 3.0 (valid); Postman v2.1; endpoints.ts | 🟢 done    | 95% |
 | 4 | JWT scheme reconstructed + Axios interceptor template                    | 🟢 done    | 87.5% |
 | 5 | 27 models + Oracle DDL + ERD + TS types                                  | 🟢 done    | 91.5% |
-| 6 | Permissions matrix                                                       | ⚪         | — |
+| 6 | Permissions matrix (Tier-A flags + Tier-B per-place ACL)                | 🟢 done    | 86%   |
 | 7 | APK v26 deep dive                                                        | ⚪         | — |
 | 8 | `for_main_repo/` packaged + executive summary                            | ⚪         | — |
