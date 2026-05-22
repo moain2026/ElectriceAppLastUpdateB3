@@ -1,0 +1,2354 @@
+{
+  "source": "MProgService.dll",
+  "heap": "#US",
+  "note": "Every JWT-relevant or SQL/config literal referenced anywhere in the assembly's IL appears in this heap, even if the IL stream itself is obfuscated.",
+  "count": 390,
+  "strings": [
+    {
+      "offset": 1,
+      "token": "0x70000001",
+      "length": 32,
+      "value": "{{ name = {0}, password = {1} }}"
+    },
+    {
+      "offset": 67,
+      "token": "0x70000043",
+      "length": 13,
+      "value": "Authorization"
+    },
+    {
+      "offset": 97,
+      "token": "0x70000061",
+      "length": 4,
+      "value": "WWW-"
+    },
+    {
+      "offset": 107,
+      "token": "0x7000006B",
+      "length": 36,
+      "value": "GetListAccounts called with acctid: "
+    },
+    {
+      "offset": 181,
+      "token": "0x700000B5",
+      "length": 5,
+      "value": "NAMEA"
+    },
+    {
+      "offset": 193,
+      "token": "0x700000C1",
+      "length": 3,
+      "value": "NOA"
+    },
+    {
+      "offset": 201,
+      "token": "0x700000C9",
+      "length": 7,
+      "value": "no_tblh"
+    },
+    {
+      "offset": 217,
+      "token": "0x700000D9",
+      "length": 8,
+      "value": "no_mstlm"
+    },
+    {
+      "offset": 235,
+      "token": "0x700000EB",
+      "length": 7,
+      "value": "no_adad"
+    },
+    {
+      "offset": 251,
+      "token": "0x700000FB",
+      "length": 3,
+      "value": "NOG"
+    },
+    {
+      "offset": 259,
+      "token": "0x70000103",
+      "length": 3,
+      "value": "tel"
+    },
+    {
+      "offset": 267,
+      "token": "0x7000010B",
+      "length": 5,
+      "value": "nameg"
+    },
+    {
+      "offset": 279,
+      "token": "0x70000117",
+      "length": 5,
+      "value": "namem"
+    },
+    {
+      "offset": 291,
+      "token": "0x70000123",
+      "length": 7,
+      "value": "BALANCE"
+    },
+    {
+      "offset": 307,
+      "token": "0x70000133",
+      "length": 16,
+      "value": "User not found: "
+    },
+    {
+      "offset": 341,
+      "token": "0x70000155",
+      "length": 17,
+      "value": "account_NOT_FOUND"
+    },
+    {
+      "offset": 377,
+      "token": "0x70000179",
+      "length": 14,
+      "value": "User not found"
+    },
+    {
+      "offset": 407,
+      "token": "0x70000197",
+      "length": 17,
+      "value": "account not found"
+    },
+    {
+      "offset": 443,
+      "token": "0x700001BB",
+      "length": 44,
+      "value": "GetListBondsElect called with GetListBonds: "
+    },
+    {
+      "offset": 533,
+      "token": "0x70000215",
+      "length": 5,
+      "value": "dates"
+    },
+    {
+      "offset": 545,
+      "token": "0x70000221",
+      "length": 4,
+      "value": "type"
+    },
+    {
+      "offset": 555,
+      "token": "0x7000022B",
+      "length": 6,
+      "value": "name_s"
+    },
+    {
+      "offset": 569,
+      "token": "0x70000239",
+      "length": 6,
+      "value": "amount"
+    },
+    {
+      "offset": 583,
+      "token": "0x70000247",
+      "length": 6,
+      "value": "no_box"
+    },
+    {
+      "offset": 597,
+      "token": "0x70000255",
+      "length": 3,
+      "value": "NOS"
+    },
+    {
+      "offset": 605,
+      "token": "0x7000025D",
+      "length": 4,
+      "value": "stat"
+    },
+    {
+      "offset": 615,
+      "token": "0x70000267",
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "offset": 619,
+      "token": "0x7000026B",
+      "length": 4,
+      "value": "يمني"
+    },
+    {
+      "offset": 629,
+      "token": "0x70000275",
+      "length": 3,
+      "value": "BIN"
+    },
+    {
+      "offset": 637,
+      "token": "0x7000027D",
+      "length": 8,
+      "value": "MEMO_BOX"
+    },
+    {
+      "offset": 655,
+      "token": "0x7000028F",
+      "length": 4,
+      "value": "MEMO"
+    },
+    {
+      "offset": 665,
+      "token": "0x70000299",
+      "length": 3,
+      "value": "nog"
+    },
+    {
+      "offset": 673,
+      "token": "0x700002A1",
+      "length": 10,
+      "value": "yyyy/MM/dd"
+    },
+    {
+      "offset": 695,
+      "token": "0x700002B7",
+      "length": 41,
+      "value": "GetListBonds found {0} bonds for nou: {1}"
+    },
+    {
+      "offset": 779,
+      "token": "0x7000030B",
+      "length": 31,
+      "value": "Error in GetListBonds for nou: "
+    },
+    {
+      "offset": 843,
+      "token": "0x7000034B",
+      "length": 14,
+      "value": "DATABASE_ERROR"
+    },
+    {
+      "offset": 873,
+      "token": "0x70000369",
+      "length": 19,
+      "value": "Error GetListBonds "
+    },
+    {
+      "offset": 913,
+      "token": "0x70000391",
+      "length": 23,
+      "value": "Database error occurred"
+    },
+    {
+      "offset": 961,
+      "token": "0x700003C1",
+      "length": 29,
+      "value": "GetListUsers called with id: "
+    },
+    {
+      "offset": 1021,
+      "token": "0x700003FD",
+      "length": 6,
+      "value": "NAME_U"
+    },
+    {
+      "offset": 1035,
+      "token": "0x7000040B",
+      "length": 3,
+      "value": "SYS"
+    },
+    {
+      "offset": 1043,
+      "token": "0x70000413",
+      "length": 3,
+      "value": "NOU"
+    },
+    {
+      "offset": 1051,
+      "token": "0x7000041B",
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "offset": 1055,
+      "token": "0x7000041F",
+      "length": 3,
+      "value": "REP"
+    },
+    {
+      "offset": 1063,
+      "token": "0x70000427",
+      "length": 34,
+      "value": "GetRepBalanceDetailsByDate called "
+    },
+    {
+      "offset": 1133,
+      "token": "0x7000046D",
+      "length": 7,
+      "value": "balance"
+    },
+    {
+      "offset": 1149,
+      "token": "0x7000047D",
+      "length": 5,
+      "value": "mdate"
+    },
+    {
+      "offset": 1161,
+      "token": "0x70000489",
+      "length": 9,
+      "value": "رصيد سابق"
+    },
+    {
+      "offset": 1181,
+      "token": "0x7000049D",
+      "length": 6,
+      "value": "TYPEMS"
+    },
+    {
+      "offset": 1195,
+      "token": "0x700004AB",
+      "length": 5,
+      "value": "MEMOS"
+    },
+    {
+      "offset": 1207,
+      "token": "0x700004B7",
+      "length": 4,
+      "value": "mden"
+    },
+    {
+      "offset": 1217,
+      "token": "0x700004C1",
+      "length": 4,
+      "value": "dain"
+    },
+    {
+      "offset": 1227,
+      "token": "0x700004CB",
+      "length": 4,
+      "value": "NOMS"
+    },
+    {
+      "offset": 1237,
+      "token": "0x700004D5",
+      "length": 27,
+      "value": "GetRepBalanceHeader called "
+    },
+    {
+      "offset": 1293,
+      "token": "0x7000050D",
+      "length": 1,
+      "value": "/"
+    },
+    {
+      "offset": 1297,
+      "token": "0x70000511",
+      "length": 14,
+      "value": "الفرع غيرموجود"
+    },
+    {
+      "offset": 1327,
+      "token": "0x7000052F",
+      "length": 5,
+      "value": "1.2.0"
+    },
+    {
+      "offset": 1339,
+      "token": "0x7000053B",
+      "length": 38,
+      "value": "CheckUserName called  with username : "
+    },
+    {
+      "offset": 1417,
+      "token": "0x70000589",
+      "length": 21,
+      "value": "اسم المستخدم غيرموجود"
+    },
+    {
+      "offset": 1461,
+      "token": "0x700005B5",
+      "length": 5,
+      "value": "APPLD"
+    },
+    {
+      "offset": 1473,
+      "token": "0x700005C1",
+      "length": 38,
+      "value": "CheckUserName called  with APPLD :null"
+    },
+    {
+      "offset": 1551,
+      "token": "0x7000060F",
+      "length": 13,
+      "value": "جهاز غير مرخص"
+    },
+    {
+      "offset": 1579,
+      "token": "0x7000062B",
+      "length": 35,
+      "value": "CheckUserName called  with APPLD : "
+    },
+    {
+      "offset": 1651,
+      "token": "0x70000673",
+      "length": 4,
+      "value": "PASS"
+    },
+    {
+      "offset": 1661,
+      "token": "0x7000067D",
+      "length": 55,
+      "value": "CheckUserName called  with password رمز الدخول غير صحيح"
+    },
+    {
+      "offset": 1773,
+      "token": "0x700006ED",
+      "length": 19,
+      "value": "رمز الدخول غير صحيح"
+    },
+    {
+      "offset": 1813,
+      "token": "0x70000715",
+      "length": 3,
+      "value": "S_K"
+    },
+    {
+      "offset": 1821,
+      "token": "0x7000071D",
+      "length": 3,
+      "value": "S_S"
+    },
+    {
+      "offset": 1829,
+      "token": "0x70000725",
+      "length": 29,
+      "value": "User retrieved successfully: "
+    },
+    {
+      "offset": 1889,
+      "token": "0x70000761",
+      "length": 31,
+      "value": "Error in GetUser for username: "
+    },
+    {
+      "offset": 1953,
+      "token": "0x700007A1",
+      "length": 21,
+      "value": "Error retrieving user"
+    },
+    {
+      "offset": 1997,
+      "token": "0x700007CD",
+      "length": 4,
+      "value": "sars"
+    },
+    {
+      "offset": 2007,
+      "token": "0x700007D7",
+      "length": 2,
+      "value": "no"
+    },
+    {
+      "offset": 2013,
+      "token": "0x700007DD",
+      "length": 3,
+      "value": "FLS"
+    },
+    {
+      "offset": 2021,
+      "token": "0x700007E5",
+      "length": 12,
+      "value": "balancelocal"
+    },
+    {
+      "offset": 2047,
+      "token": "0x700007FF",
+      "length": 5,
+      "value": "NOAML"
+    },
+    {
+      "offset": 2059,
+      "token": "0x7000080B",
+      "length": 12,
+      "value": "currencyname"
+    },
+    {
+      "offset": 2085,
+      "token": "0x70000825",
+      "length": 5,
+      "value": "SARSF"
+    },
+    {
+      "offset": 2097,
+      "token": "0x70000831",
+      "length": 2,
+      "value": "n4"
+    },
+    {
+      "offset": 2103,
+      "token": "0x70000837",
+      "length": 3,
+      "value": "n44"
+    },
+    {
+      "offset": 2111,
+      "token": "0x7000083F",
+      "length": 4,
+      "value": "n444"
+    },
+    {
+      "offset": 2121,
+      "token": "0x70000849",
+      "length": 10,
+      "value": "currencyid"
+    },
+    {
+      "offset": 2143,
+      "token": "0x7000085F",
+      "length": 65,
+      "value": "<!DOCTYPE html><body><h1>hiiiiiiiiiiiiiii</h1></ body ></ html > "
+    },
+    {
+      "offset": 2276,
+      "token": "0x700008E4",
+      "length": 73,
+      "value": "F:\\wcfServer\\OraWcfServiceSelfHost\\ConsoleClient\\bin\\Debug\\WcfClient.html"
+    },
+    {
+      "offset": 2425,
+      "token": "0x70000979",
+      "length": 6,
+      "value": "c:\\{0}"
+    },
+    {
+      "offset": 2439,
+      "token": "0x70000987",
+      "length": 14,
+      "value": "File not found"
+    },
+    {
+      "offset": 2469,
+      "token": "0x700009A5",
+      "length": 9,
+      "value": "text/html"
+    },
+    {
+      "offset": 2489,
+      "token": "0x700009B9",
+      "length": 2,
+      "value": "=="
+    },
+    {
+      "offset": 2495,
+      "token": "0x700009BF",
+      "length": 1,
+      "value": "="
+    },
+    {
+      "offset": 2499,
+      "token": "0x700009C3",
+      "length": 17,
+      "value": "Illegal base64url"
+    },
+    {
+      "offset": 2535,
+      "token": "0x700009E7",
+      "length": 2,
+      "value": "yd"
+    },
+    {
+      "offset": 2541,
+      "token": "0x700009ED",
+      "length": 4,
+      "value": "user"
+    },
+    {
+      "offset": 2551,
+      "token": "0x700009F7",
+      "length": 4,
+      "value": "pass"
+    },
+    {
+      "offset": 2561,
+      "token": "0x70000A01",
+      "length": 5,
+      "value": "appid"
+    },
+    {
+      "offset": 2573,
+      "token": "0x70000A0D",
+      "length": 3,
+      "value": "iat"
+    },
+    {
+      "offset": 2581,
+      "token": "0x70000A15",
+      "length": 5,
+      "value": "namea"
+    },
+    {
+      "offset": 2593,
+      "token": "0x70000A21",
+      "length": 5,
+      "value": "namet"
+    },
+    {
+      "offset": 2605,
+      "token": "0x70000A2D",
+      "length": 3,
+      "value": "ind"
+    },
+    {
+      "offset": 2613,
+      "token": "0x70000A35",
+      "length": 2,
+      "value": "hn"
+    },
+    {
+      "offset": 2619,
+      "token": "0x70000A3B",
+      "length": 2,
+      "value": "kh"
+    },
+    {
+      "offset": 2625,
+      "token": "0x70000A41",
+      "length": 2,
+      "value": "ks"
+    },
+    {
+      "offset": 2631,
+      "token": "0x70000A47",
+      "length": 4,
+      "value": "asts"
+    },
+    {
+      "offset": 2641,
+      "token": "0x70000A51",
+      "length": 2,
+      "value": "sk"
+    },
+    {
+      "offset": 2647,
+      "token": "0x70000A57",
+      "length": 2,
+      "value": "mt"
+    },
+    {
+      "offset": 2653,
+      "token": "0x70000A5D",
+      "length": 4,
+      "value": "kmsn"
+    },
+    {
+      "offset": 2663,
+      "token": "0x70000A67",
+      "length": 6,
+      "value": "matm33"
+    },
+    {
+      "offset": 2677,
+      "token": "0x70000A75",
+      "length": 5,
+      "value": "rtrdn"
+    },
+    {
+      "offset": 2689,
+      "token": "0x70000A81",
+      "length": 5,
+      "value": "NAMEG"
+    },
+    {
+      "offset": 2701,
+      "token": "0x70000A8D",
+      "length": 5,
+      "value": "nomk2"
+    },
+    {
+      "offset": 2713,
+      "token": "0x70000A99",
+      "length": 3,
+      "value": "NOM"
+    },
+    {
+      "offset": 2721,
+      "token": "0x70000AA1",
+      "length": 5,
+      "value": "NAMEM"
+    },
+    {
+      "offset": 2733,
+      "token": "0x70000AAD",
+      "length": 22,
+      "value": "Connection Sucssesfull"
+    },
+    {
+      "offset": 2779,
+      "token": "0x70000ADB",
+      "length": 4,
+      "value": "no_t"
+    },
+    {
+      "offset": 2789,
+      "token": "0x70000AE5",
+      "length": 3,
+      "value": "ast"
+    },
+    {
+      "offset": 2797,
+      "token": "0x70000AED",
+      "length": 4,
+      "value": "MDIN"
+    },
+    {
+      "offset": 2807,
+      "token": "0x70000AF7",
+      "length": 3,
+      "value": "DAN"
+    },
+    {
+      "offset": 2815,
+      "token": "0x70000AFF",
+      "length": 3,
+      "value": "noa"
+    },
+    {
+      "offset": 2823,
+      "token": "0x70000B07",
+      "length": 6,
+      "value": "typems"
+    },
+    {
+      "offset": 2837,
+      "token": "0x70000B15",
+      "length": 5,
+      "value": "memos"
+    },
+    {
+      "offset": 2849,
+      "token": "0x70000B21",
+      "length": 3,
+      "value": "RED"
+    },
+    {
+      "offset": 2857,
+      "token": "0x70000B29",
+      "length": 4,
+      "value": "SDAD"
+    },
+    {
+      "offset": 2867,
+      "token": "0x70000B33",
+      "length": 23,
+      "value": "يجب ادخال جميع البيانات"
+    },
+    {
+      "offset": 2915,
+      "token": "0x70000B63",
+      "length": 29,
+      "value": "كلمة المرور القديمة غير صحيحة"
+    },
+    {
+      "offset": 2975,
+      "token": "0x70000B9F",
+      "length": 26,
+      "value": "تم تغيير كلمة المرور بنجاح"
+    },
+    {
+      "offset": 3029,
+      "token": "0x70000BD5",
+      "length": 4,
+      "value": "Logs"
+    },
+    {
+      "offset": 3039,
+      "token": "0x70000BDF",
+      "length": 16,
+      "value": "Logging failed: "
+    },
+    {
+      "offset": 3073,
+      "token": "0x70000C01",
+      "length": 18,
+      "value": "Original message: "
+    },
+    {
+      "offset": 3111,
+      "token": "0x70000C27",
+      "length": 23,
+      "value": "yyyy-MM-dd HH:mm:ss.fff"
+    },
+    {
+      "offset": 3159,
+      "token": "0x70000C57",
+      "length": 2,
+      "value": " ["
+    },
+    {
+      "offset": 3165,
+      "token": "0x70000C5D",
+      "length": 2,
+      "value": "] "
+    },
+    {
+      "offset": 3171,
+      "token": "0x70000C63",
+      "length": 3,
+      "value": " - "
+    },
+    {
+      "offset": 3179,
+      "token": "0x70000C6B",
+      "length": 12,
+      "value": "\nEXCEPTION: "
+    },
+    {
+      "offset": 3205,
+      "token": "0x70000C85",
+      "length": 2,
+      "value": ": "
+    },
+    {
+      "offset": 3211,
+      "token": "0x70000C8B",
+      "length": 14,
+      "value": "\nSTACK TRACE: "
+    },
+    {
+      "offset": 3241,
+      "token": "0x70000CA9",
+      "length": 21,
+      "value": "\nINNER EXCEPTION: {0}"
+    },
+    {
+      "offset": 3285,
+      "token": "0x70000CD5",
+      "length": 10,
+      "value": "yyyy-MM-dd"
+    },
+    {
+      "offset": 3307,
+      "token": "0x70000CEB",
+      "length": 4,
+      "value": "app_"
+    },
+    {
+      "offset": 3317,
+      "token": "0x70000CF5",
+      "length": 4,
+      "value": ".log"
+    },
+    {
+      "offset": 3327,
+      "token": "0x70000CFF",
+      "length": 10,
+      "value": "{0}.{1}{2}"
+    },
+    {
+      "offset": 3349,
+      "token": "0x70000D15",
+      "length": 2,
+      "value": ".1"
+    },
+    {
+      "offset": 3355,
+      "token": "0x70000D1B",
+      "length": 1,
+      "value": " "
+    },
+    {
+      "offset": 3359,
+      "token": "0x70000D1F",
+      "length": 28,
+      "value": " where TYPEA!=2 and TYPEA!=3"
+    },
+    {
+      "offset": 3417,
+      "token": "0x70000D59",
+      "length": 13,
+      "value": " where TYPEA="
+    },
+    {
+      "offset": 3445,
+      "token": "0x70000D75",
+      "length": 26,
+      "value": "select * from V_ACCOUNT_D "
+    },
+    {
+      "offset": 3499,
+      "token": "0x70000DAB",
+      "length": 15,
+      "value": " order by NAMEA"
+    },
+    {
+      "offset": 3531,
+      "token": "0x70000DCB",
+      "length": 13,
+      "value": " where a.NOG="
+    },
+    {
+      "offset": 3559,
+      "token": "0x70000DE7",
+      "length": 11,
+      "value": " and a.NOG="
+    },
+    {
+      "offset": 3583,
+      "token": "0x70000DFF",
+      "length": 18,
+      "value": " where a.no_mstlm="
+    },
+    {
+      "offset": 3621,
+      "token": "0x70000E25",
+      "length": 16,
+      "value": " and a.no_mstlm="
+    },
+    {
+      "offset": 3655,
+      "token": "0x70000E47",
+      "length": 17,
+      "value": " where a.no_tblh="
+    },
+    {
+      "offset": 3691,
+      "token": "0x70000E6B",
+      "length": 15,
+      "value": " and a.no_tblh="
+    },
+    {
+      "offset": 3723,
+      "token": "0x70000E8B",
+      "length": 13,
+      "value": " where a.noa="
+    },
+    {
+      "offset": 3751,
+      "token": "0x70000EA7",
+      "length": 11,
+      "value": " and a.noa="
+    },
+    {
+      "offset": 3775,
+      "token": "0x70000EBF",
+      "length": 83,
+      "value": " where a.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(sdad,0)>0 and NOU="
+    },
+    {
+      "offset": 3944,
+      "token": "0x70000F68",
+      "length": 1,
+      "value": ")"
+    },
+    {
+      "offset": 3948,
+      "token": "0x70000F6C",
+      "length": 81,
+      "value": " and a.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(sdad,0)>0 and NOU="
+    },
+    {
+      "offset": 4113,
+      "token": "0x70001011",
+      "length": 283,
+      "value": "SELECT a.noa, a.no_tblh, a.no_mstlm, a.no_adad, a.nog, a.tel, a.namea,namem,nameg,\r\n          SUM(NVL(d.mdin, 0) - NVL(d.dan, 0)) as balance from ((data_acc a LEFT JOIN data_d d ON d.noa = a.noa) inner join mkb2 on mkb2.NOM=a.no_mstlm) inner join grp on grp.nog=a.no_tblh  \r\n        "
+    },
+    {
+      "offset": 4682,
+      "token": "0x7000124A",
+      "length": 101,
+      "value": "  GROUP BY a.noa, a.namea, a.no_tblh, a.no_mstlm, a.no_adad, a.nog, a.tel,namem,nameg  order by NAMEA"
+    },
+    {
+      "offset": 4887,
+      "token": "0x70001317",
+      "length": 2,
+      "value": "DE"
+    },
+    {
+      "offset": 4893,
+      "token": "0x7000131D",
+      "length": 2,
+      "value": "ED"
+    },
+    {
+      "offset": 4899,
+      "token": "0x70001323",
+      "length": 29,
+      "value": "select n4,n44,n444 from titl "
+    },
+    {
+      "offset": 4959,
+      "token": "0x7000135F",
+      "length": 37,
+      "value": "select * from USER_R  order by NAME_U"
+    },
+    {
+      "offset": 5035,
+      "token": "0x700013AB",
+      "length": 14,
+      "value": " where no_box="
+    },
+    {
+      "offset": 5065,
+      "token": "0x700013C9",
+      "length": 7,
+      "value": "SNDS_A "
+    },
+    {
+      "offset": 5081,
+      "token": "0x700013D9",
+      "length": 7,
+      "value": "SNDK_A "
+    },
+    {
+      "offset": 5097,
+      "token": "0x700013E9",
+      "length": 13,
+      "value": " where nomk2="
+    },
+    {
+      "offset": 5125,
+      "token": "0x70001405",
+      "length": 18,
+      "value": "select * from GRP "
+    },
+    {
+      "offset": 5163,
+      "token": "0x7000142B",
+      "length": 16,
+      "value": "  order by NAMEG"
+    },
+    {
+      "offset": 5197,
+      "token": "0x7000144D",
+      "length": 20,
+      "value": " where nvl(red,0)>0 "
+    },
+    {
+      "offset": 5239,
+      "token": "0x70001477",
+      "length": 21,
+      "value": " where nvl(SDAD,0)>0 "
+    },
+    {
+      "offset": 5283,
+      "token": "0x700014A3",
+      "length": 11,
+      "value": " where NOU="
+    },
+    {
+      "offset": 5307,
+      "token": "0x700014BB",
+      "length": 9,
+      "value": " and NOU="
+    },
+    {
+      "offset": 5327,
+      "token": "0x700014CF",
+      "length": 64,
+      "value": "select * from Mkb2 where NOM in(select no_mstlm from USER_MNATK "
+    },
+    {
+      "offset": 5458,
+      "token": "0x70001552",
+      "length": 18,
+      "value": ")   order by NAMEM"
+    },
+    {
+      "offset": 5496,
+      "token": "0x70001578",
+      "length": 113,
+      "value": "select NOU,no_mstlm,nvl(RED,0),nvl(SDAD,0),NAMEM from USER_MNATK inner join Mkb2 on Mkb2.NOM=USER_MNATK.no_mstlm "
+    },
+    {
+      "offset": 5725,
+      "token": "0x7000165D",
+      "length": 16,
+      "value": "  order by NAMEM"
+    },
+    {
+      "offset": 5759,
+      "token": "0x7000167F",
+      "length": 9,
+      "value": "REP_AST_T"
+    },
+    {
+      "offset": 5779,
+      "token": "0x70001693",
+      "length": 10,
+      "value": " REP_AST_M"
+    },
+    {
+      "offset": 5801,
+      "token": "0x700016A9",
+      "length": 41,
+      "value": "SELECT no_t,namet,nvl(ast,0) as ast from "
+    },
+    {
+      "offset": 5885,
+      "token": "0x700016FD",
+      "length": 21,
+      "value": " where red.kh is null"
+    },
+    {
+      "offset": 5929,
+      "token": "0x70001729",
+      "length": 20,
+      "value": " where red.no_mstlm="
+    },
+    {
+      "offset": 5971,
+      "token": "0x70001753",
+      "length": 18,
+      "value": " and red.no_mstlm="
+    },
+    {
+      "offset": 6009,
+      "token": "0x70001779",
+      "length": 19,
+      "value": " where red.no_tblh="
+    },
+    {
+      "offset": 6049,
+      "token": "0x700017A1",
+      "length": 17,
+      "value": " and red.no_tblh="
+    },
+    {
+      "offset": 6085,
+      "token": "0x700017C5",
+      "length": 15,
+      "value": " where red.nog="
+    },
+    {
+      "offset": 6117,
+      "token": "0x700017E5",
+      "length": 13,
+      "value": " and red.nog="
+    },
+    {
+      "offset": 6145,
+      "token": "0x70001801",
+      "length": 84,
+      "value": " where red.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(red,0)>0 and NOU="
+    },
+    {
+      "offset": 6316,
+      "token": "0x700018AC",
+      "length": 82,
+      "value": " and red.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(red,0)>0 and NOU="
+    },
+    {
+      "offset": 6483,
+      "token": "0x70001953",
+      "length": 259,
+      "value": "SELECT red.no_adad,red.no_mstlm,red.NAMET, red.no_tblh, red.NAMEA, red.NOA, red.ks, red.kh,red.NOG, red.IND,nvl(red.hn,0) as hn,nvl(sk,0) as sk,nvl(ASTS,0) as ASTS,nvl(MT,0) as MT,nvl(KMSN,0) as KMSN,nvl(matm33,0) as matm33,nvl(RTRDN,0) as RTRDN     FROM red "
+    },
+    {
+      "offset": 7004,
+      "token": "0x70001B5C",
+      "length": 17,
+      "value": " order by red.ind"
+    },
+    {
+      "offset": 7040,
+      "token": "0x70001B80",
+      "length": 14,
+      "value": " where DATES='"
+    },
+    {
+      "offset": 7070,
+      "token": "0x70001B9E",
+      "length": 11,
+      "value": "dd-MMM-yyyy"
+    },
+    {
+      "offset": 7094,
+      "token": "0x70001BB6",
+      "length": 1,
+      "value": "'"
+    },
+    {
+      "offset": 7098,
+      "token": "0x70001BBA",
+      "length": 17,
+      "value": " where ds.DATES<'"
+    },
+    {
+      "offset": 7134,
+      "token": "0x70001BDE",
+      "length": 117,
+      "value": "SELECT NOA,NAMEA,NVL(MDIN,0) as MDIN,NVL(DAN,0) as DAN,(select SUM(NVL(ds.mdin, 0) - NVL(ds.dan, 0))  from data_s ds "
+    },
+    {
+      "offset": 7371,
+      "token": "0x70001CCB",
+      "length": 47,
+      "value": " and ds.noa=DATA_s.noa) as balance from DATA_S "
+    },
+    {
+      "offset": 7467,
+      "token": "0x70001D2B",
+      "length": 9,
+      "value": " and NOA="
+    },
+    {
+      "offset": 7487,
+      "token": "0x70001D3F",
+      "length": 68,
+      "value": "SELECT NAMEA,typems,NOMS,memos,NVL(amount,0) as amount  from data_H "
+    },
+    {
+      "offset": 7626,
+      "token": "0x70001DCA",
+      "length": 70,
+      "value": "SELECT NAMEA,typems,NOMS,memos,NVL(amount,0) as amount  from DATA_M   "
+    },
+    {
+      "offset": 7769,
+      "token": "0x70001E59",
+      "length": 20,
+      "value": "update   red set KH="
+    },
+    {
+      "offset": 7811,
+      "token": "0x70001E83",
+      "length": 12,
+      "value": "  where noa="
+    },
+    {
+      "offset": 7837,
+      "token": "0x70001E9D",
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "offset": 7847,
+      "token": "0x70001EA7",
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "offset": 7859,
+      "token": "0x70001EB3",
+      "length": 11,
+      "value": " where noa="
+    },
+    {
+      "offset": 7883,
+      "token": "0x70001ECB",
+      "length": 22,
+      "value": " where SNDK_A.DATES>='"
+    },
+    {
+      "offset": 7929,
+      "token": "0x70001EF9",
+      "length": 22,
+      "value": " where SNDS_A.DATES>='"
+    },
+    {
+      "offset": 7975,
+      "token": "0x70001F27",
+      "length": 20,
+      "value": " and SNDK_A.DATES<='"
+    },
+    {
+      "offset": 8017,
+      "token": "0x70001F51",
+      "length": 20,
+      "value": " and SNDS_A.DATES<='"
+    },
+    {
+      "offset": 8059,
+      "token": "0x70001F7B",
+      "length": 20,
+      "value": " where SNDK_A.NOAML="
+    },
+    {
+      "offset": 8101,
+      "token": "0x70001FA5",
+      "length": 18,
+      "value": " and SNDK_A.NOAML="
+    },
+    {
+      "offset": 8139,
+      "token": "0x70001FCB",
+      "length": 20,
+      "value": " where SNDS_A.NOAML="
+    },
+    {
+      "offset": 8181,
+      "token": "0x70001FF5",
+      "length": 18,
+      "value": " and SNDS_A.NOAML="
+    },
+    {
+      "offset": 8219,
+      "token": "0x7000201B",
+      "length": 18,
+      "value": " where USER_R.NOU="
+    },
+    {
+      "offset": 8257,
+      "token": "0x70002041",
+      "length": 16,
+      "value": " and USER_R.NOU="
+    },
+    {
+      "offset": 8291,
+      "token": "0x70002063",
+      "length": 240,
+      "value": "SELECT SNDK_A.no_box,sum(NVL( SNDK_A.amount,0)*SNDK_A.SARSF) as amount,count(*) as count,1 as type, SNDK_A.DATES, USER_R.NAME_U AS name_s,'محلي' as currencyname,1 as currencyid FROM(SNDK_A INNER JOIN USER_R  ON SNDK_A.no_box = USER_R.NOA)  "
+    },
+    {
+      "offset": 8774,
+      "token": "0x70002246",
+      "length": 300,
+      "value": " group by SNDK_A.no_box,SNDK_A.DATES, USER_R.NAME_U   UNION SELECT SNDS_A.no_box,sum(NVL( SNDS_A.amount,0)*SNDS_A.SARSF) as amount,count(*) as count,2 as type, SNDS_A.DATES, USER_R.NAME_U AS name_s,'محلي' as currencyname,1 as currencyid FROM(SNDS_A INNER JOIN USER_R  ON SNDS_A.no_box = USER_R.NOA)  "
+    },
+    {
+      "offset": 9377,
+      "token": "0x700024A1",
+      "length": 67,
+      "value": " group by SNDS_A.no_box,SNDS_A.DATES, USER_R.NAME_U  order by DATES"
+    },
+    {
+      "offset": 9514,
+      "token": "0x7000252A",
+      "length": 282,
+      "value": "SELECT SNDK_A.no_box,SNDK_A.NOAML,sum(NVL( SNDK_A.amount,0)),count(*) as count,1 as type, SNDK_A.DATES, USER_R.NAME_U AS name_s,amlh.namem as currencyname,amlh.no as currencyid FROM(SNDK_A INNER JOIN USER_R  ON SNDK_A.no_box = USER_R.NOA) INNER JOIN amlh ON SNDK_A.NOAML = amlh.no  "
+    },
+    {
+      "offset": 10081,
+      "token": "0x70002761",
+      "length": 365,
+      "value": " group by SNDK_A.no_box,SNDK_A.NOAML,SNDK_A.DATES, USER_R.NAME_U,amlh.namem  UNION SELECT SNDS_A.no_box,SNDS_A.NOAML,sum(NVL( SNDS_A.amount,0)),count(*) as count,2 as type, SNDS_A.DATES, USER_R.NAME_U AS name_s,amlh.namem as currencyname,amlh.no as currencyid FROM(SNDS_A INNER JOIN USER_R  ON SNDS_A.no_box = USER_R.NOA) INNER JOIN amlh ON SNDS_A.NOAML = amlh.no  "
+    },
+    {
+      "offset": 10814,
+      "token": "0x70002A3E",
+      "length": 97,
+      "value": " group by SNDS_A.no_box,SNDS_A.NOAML,SNDS_A.DATES, USER_R.NAME_U,amlh.namem  order by DATES,NOAML"
+    },
+    {
+      "offset": 11011,
+      "token": "0x70002B03",
+      "length": 75,
+      "value": " group by SNDK_A.no_box,SNDK_A.DATES, USER_R.NAME_U   order by SNDK_A.DATES"
+    },
+    {
+      "offset": 11164,
+      "token": "0x70002B9C",
+      "length": 113,
+      "value": " group by SNDK_A.no_box,SNDK_A.NOAML,SNDK_A.DATES, USER_R.NAME_U,amlh.namem    order by SNDK_A.DATES,SNDK_A.NOAML"
+    },
+    {
+      "offset": 11393,
+      "token": "0x70002C81",
+      "length": 18,
+      "value": " where SNDK_A.NOA="
+    },
+    {
+      "offset": 11431,
+      "token": "0x70002CA7",
+      "length": 16,
+      "value": " and SNDK_A.NOA="
+    },
+    {
+      "offset": 11465,
+      "token": "0x70002CC9",
+      "length": 21,
+      "value": " where SNDK_A.no_box="
+    },
+    {
+      "offset": 11509,
+      "token": "0x70002CF5",
+      "length": 19,
+      "value": " and SNDK_A.no_box="
+    },
+    {
+      "offset": 11549,
+      "token": "0x70002D1D",
+      "length": 487,
+      "value": "SELECT SNDK_A.NOAML,SNDK_A.SARSF, SNDK_A.stat, SNDK_A.NOS, SNDK_A.NOA, SNDK_A.amount, SNDK_A.DATES,SNDK_A.BIN, SNDK_A.MEMO,SNDK_A.MEMO_BOX, SNDK_A.no_box, data_acc.NAMEA, USER_R.NAME_U AS name_s,data_acc.no_tblh,data_acc.no_adad,data_acc.no_mstlm,data_acc.NOG,data_acc.tel,amlh.namem as currencyname,amlh.no as currencyid,1 as type FROM((SNDK_A INNER JOIN data_acc ON SNDK_A.NOA = data_acc.NOA) INNER JOIN USER_R  ON SNDK_A.no_box = USER_R.NOA) LEFT JOIN amlh ON SNDK_A.NOAML = amlh.no  "
+    },
+    {
+      "offset": 12526,
+      "token": "0x700030EE",
+      "length": 33,
+      "value": " order by SNDK_A.DATES,SNDK_A.NOS"
+    },
+    {
+      "offset": 12594,
+      "token": "0x70003132",
+      "length": 90,
+      "value": " where data_acc.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(sdad,0)>0 and NOU="
+    },
+    {
+      "offset": 12777,
+      "token": "0x700031E9",
+      "length": 88,
+      "value": " and data_acc.no_mstlm IN(SELECT no_mstlm  FROM  USER_MNATK where nvl(sdad,0)>0 and NOU="
+    },
+    {
+      "offset": 12956,
+      "token": "0x7000329C",
+      "length": 34,
+      "value": "Error GetListBondsElect  by date: "
+    },
+    {
+      "offset": 13026,
+      "token": "0x700032E2",
+      "length": 18,
+      "value": " where SNDS_A.NOA="
+    },
+    {
+      "offset": 13064,
+      "token": "0x70003308",
+      "length": 16,
+      "value": " and SNDS_A.NOA="
+    },
+    {
+      "offset": 13098,
+      "token": "0x7000332A",
+      "length": 21,
+      "value": " where SNDS_A.no_box="
+    },
+    {
+      "offset": 13142,
+      "token": "0x70003356",
+      "length": 19,
+      "value": " and SNDS_A.no_box="
+    },
+    {
+      "offset": 13182,
+      "token": "0x7000337E",
+      "length": 423,
+      "value": "SELECT SNDS_A.NOAML,SNDS_A.SARSF, SNDS_A.stat, SNDS_A.NOS, SNDS_A.NOA, SNDS_A.amount, SNDS_A.DATES,SNDS_A.BIN, SNDS_A.MEMO,SNDS_A.MEMO_BOX, SNDS_A.no_box, data_acc.NAMEA, USER_R.NAME_U AS name_s,amlh.namem as currencyname,amlh.no as currencyid,data_acc.typea as type FROM((SNDS_A INNER JOIN data_acc ON SNDS_A.NOA = data_acc.NOA) INNER JOIN USER_R  ON SNDS_A.no_box = USER_R.NOA) INNER JOIN amlh ON SNDS_A.NOAML = amlh.no  "
+    },
+    {
+      "offset": 14031,
+      "token": "0x700036CF",
+      "length": 33,
+      "value": " order by SNDS_A.DATES,SNDS_A.NOS"
+    },
+    {
+      "offset": 14099,
+      "token": "0x70003713",
+      "length": 21,
+      "value": "حساب الصندوق غير معين"
+    },
+    {
+      "offset": 14143,
+      "token": "0x7000373F",
+      "length": 17,
+      "value": "SNDK_A where NOS="
+    },
+    {
+      "offset": 14179,
+      "token": "0x70003763",
+      "length": 15,
+      "value": "رقم الستند مكرر"
+    },
+    {
+      "offset": 14211,
+      "token": "0x70003783",
+      "length": 6,
+      "value": "SNDK_A"
+    },
+    {
+      "offset": 14225,
+      "token": "0x70003791",
+      "length": 83,
+      "value": "insert into  SNDK_A(NOS,dates,NOA,amount,NOAML,SARSF,MEMO,no_box,MEMO_BOX,stat,bin)"
+    },
+    {
+      "offset": 14394,
+      "token": "0x7000383A",
+      "length": 7,
+      "value": "values("
+    },
+    {
+      "offset": 14410,
+      "token": "0x7000384A",
+      "length": 10,
+      "value": ",TO_DATE('"
+    },
+    {
+      "offset": 14432,
+      "token": "0x70003860",
+      "length": 16,
+      "value": "','DD MM,YYYY'),"
+    },
+    {
+      "offset": 14466,
+      "token": "0x70003882",
+      "length": 1,
+      "value": ","
+    },
+    {
+      "offset": 14470,
+      "token": "0x70003886",
+      "length": 2,
+      "value": ",'"
+    },
+    {
+      "offset": 14476,
+      "token": "0x7000388C",
+      "length": 2,
+      "value": "',"
+    },
+    {
+      "offset": 14482,
+      "token": "0x70003892",
+      "length": 2,
+      "value": "')"
+    },
+    {
+      "offset": 14488,
+      "token": "0x70003898",
+      "length": 7,
+      "value": "SMS_NEW"
+    },
+    {
+      "offset": 14504,
+      "token": "0x700038A8",
+      "length": 7,
+      "value": "sendsms"
+    },
+    {
+      "offset": 14520,
+      "token": "0x700038B8",
+      "length": 9,
+      "value": "customern"
+    },
+    {
+      "offset": 14540,
+      "token": "0x700038CC",
+      "length": 73,
+      "value": "insert into sendsms(customern,phoneno,customername,ms1,nos,issent)values("
+    },
+    {
+      "offset": 14689,
+      "token": "0x70003961",
+      "length": 3,
+      "value": "','"
+    },
+    {
+      "offset": 14697,
+      "token": "0x70003969",
+      "length": 2,
+      "value": ",0"
+    },
+    {
+      "offset": 14703,
+      "token": "0x7000396F",
+      "length": 17,
+      "value": "SNDS_A where NOS="
+    },
+    {
+      "offset": 14739,
+      "token": "0x70003993",
+      "length": 6,
+      "value": "SNDS_A"
+    },
+    {
+      "offset": 14753,
+      "token": "0x700039A1",
+      "length": 83,
+      "value": "insert into  SNDS_A(NOS,dates,NOA,amount,NOAML,SARSF,MEMO,no_box,MEMO_BOX,stat,bin)"
+    },
+    {
+      "offset": 14922,
+      "token": "0x70003A4A",
+      "length": 17,
+      "value": "التعديل غير متاح "
+    },
+    {
+      "offset": 14958,
+      "token": "0x70003A6E",
+      "length": 18,
+      "value": "Update SNDS_A set "
+    },
+    {
+      "offset": 14996,
+      "token": "0x70003A94",
+      "length": 15,
+      "value": "dates=TO_DATE('"
+    },
+    {
+      "offset": 15028,
+      "token": "0x70003AB4",
+      "length": 20,
+      "value": "','DD MM,YYYY'),NOA="
+    },
+    {
+      "offset": 15070,
+      "token": "0x70003ADE",
+      "length": 8,
+      "value": ",amount="
+    },
+    {
+      "offset": 15088,
+      "token": "0x70003AF0",
+      "length": 7,
+      "value": ",NOAML="
+    },
+    {
+      "offset": 15104,
+      "token": "0x70003B00",
+      "length": 7,
+      "value": ",SARSF="
+    },
+    {
+      "offset": 15120,
+      "token": "0x70003B10",
+      "length": 7,
+      "value": ",MEMO='"
+    },
+    {
+      "offset": 15136,
+      "token": "0x70003B20",
+      "length": 9,
+      "value": "',no_box="
+    },
+    {
+      "offset": 15156,
+      "token": "0x70003B34",
+      "length": 11,
+      "value": ",MEMO_BOX='"
+    },
+    {
+      "offset": 15180,
+      "token": "0x70003B4C",
+      "length": 7,
+      "value": "',bin='"
+    },
+    {
+      "offset": 15196,
+      "token": "0x70003B5C",
+      "length": 11,
+      "value": " where NOS="
+    },
+    {
+      "offset": 15220,
+      "token": "0x70003B74",
+      "length": 11,
+      "value": " and stat=0"
+    },
+    {
+      "offset": 15244,
+      "token": "0x70003B8C",
+      "length": 30,
+      "value": "delete  From SNDS_A where NOS="
+    },
+    {
+      "offset": 15306,
+      "token": "0x70003BCA",
+      "length": 33,
+      "value": "select * from t_qyod where nref2="
+    },
+    {
+      "offset": 15374,
+      "token": "0x70003C0E",
+      "length": 13,
+      "value": " and DATES>='"
+    },
+    {
+      "offset": 15402,
+      "token": "0x70003C2A",
+      "length": 13,
+      "value": " and DATES<='"
+    },
+    {
+      "offset": 15430,
+      "token": "0x70003C46",
+      "length": 18,
+      "value": " and DATA_D.NOAML="
+    },
+    {
+      "offset": 15468,
+      "token": "0x70003C6C",
+      "length": 162,
+      "value": "select  NOAML,SARSRF,NOMS,DATES,TYPEMS,NOA,NVL(MDIN,0) as mden,NVL(DAN,0) as dain,(NVL(MDIN,0)-NVL(DAN,0)) as balance,MDINAML,DANAML,MEMOS from DATA_D  where NOA="
+    },
+    {
+      "offset": 15795,
+      "token": "0x70003DB3",
+      "length": 15,
+      "value": " order by DATES"
+    },
+    {
+      "offset": 15827,
+      "token": "0x70003DD3",
+      "length": 168,
+      "value": "select  NOAML,SARSRF,NOMS,DATES,TYPEMS,NOA,MDIN,DAN,NVL(MDINAML,0) as mden,NVL(DANAML,0) as dain,(NVL(MDINAML,0)-NVL(DANAML,0)) as balance,MEMOS from DATA_D  where NOA="
+    },
+    {
+      "offset": 16166,
+      "token": "0x70003F26",
+      "length": 18,
+      "value": " where DATA_D.NOA="
+    },
+    {
+      "offset": 16204,
+      "token": "0x70003F4C",
+      "length": 20,
+      "value": " and DATA_D.DATES <'"
+    },
+    {
+      "offset": 16246,
+      "token": "0x70003F76",
+      "length": 110,
+      "value": "select DATA_D.NOA,sum(NVL(DATA_D.MDIN,0)-NVL(DATA_D.DAN,0)) as balance,max(DATA_D.DATES) as mdate from DATA_D "
+    },
+    {
+      "offset": 16469,
+      "token": "0x70004055",
+      "length": 20,
+      "value": " group by DATA_D.NOA"
+    },
+    {
+      "offset": 16511,
+      "token": "0x7000407F",
+      "length": 118,
+      "value": "select DATA_D.NOA,sum(NVL(DATA_D.MDINAML,0)-NVL(DATA_D.DANAML,0)) as balance,max(DATA_D.DATES) as mdate from DATA_D   "
+    },
+    {
+      "offset": 16750,
+      "token": "0x7000416E",
+      "length": 20,
+      "value": " and DATA_D.DATES<='"
+    },
+    {
+      "offset": 16792,
+      "token": "0x70004198",
+      "length": 20,
+      "value": " where DATA_D.NOAML="
+    },
+    {
+      "offset": 16834,
+      "token": "0x700041C2",
+      "length": 16,
+      "value": " and DATA_D.NOA="
+    },
+    {
+      "offset": 16868,
+      "token": "0x700041E4",
+      "length": 46,
+      "value": " where data_acc.TYPEA!=2 and data_acc.TYPEA!=3"
+    },
+    {
+      "offset": 16962,
+      "token": "0x70004242",
+      "length": 46,
+      "value": " and (data_acc.TYPEA!=2 and data_acc.TYPEA!=3)"
+    },
+    {
+      "offset": 17056,
+      "token": "0x700042A0",
+      "length": 22,
+      "value": " where data_acc.TYPEA="
+    },
+    {
+      "offset": 17102,
+      "token": "0x700042CE",
+      "length": 20,
+      "value": " and data_acc.TYPEA="
+    },
+    {
+      "offset": 17144,
+      "token": "0x700042F8",
+      "length": 236,
+      "value": "select DATA_D.NOA,data_acc.NAMEA,sum(NVL(DATA_D.MDIN,0)) as mden,sum(NVL(DATA_D.DAN,0)) as dain,sum(NVL(DATA_D.MDIN,0)-NVL(DATA_D.DAN,0)) as balance,max(DATA_D.DATES) as mdate from DATA_D inner join data_acc on  DATA_D.NOA=data_acc.NOA "
+    },
+    {
+      "offset": 17619,
+      "token": "0x700044D3",
+      "length": 115,
+      "value": " group by DATA_D.NOA,data_acc.NAMEA  HAVING sum(NVL(DATA_D.MDIN,0)-NVL(DATA_D.DAN,0)) !=0   order by data_acc.NAMEA"
+    },
+    {
+      "offset": 17852,
+      "token": "0x700045BC",
+      "length": 248,
+      "value": "select DATA_D.NOA,data_acc.NAMEA,sum(NVL(DATA_D.MDINAML,0)) as mden,sum(NVL(DATA_D.DANAML,0)) as dain,sum(NVL(DATA_D.MDINAML,0)-NVL(DATA_D.DANAML,0)) as balance,max(DATA_D.DATES) as mdate from DATA_D inner join data_acc on  DATA_D.NOA=data_acc.NOA "
+    },
+    {
+      "offset": 18351,
+      "token": "0x700047AF",
+      "length": 119,
+      "value": " group by DATA_D.NOA,data_acc.NAMEA HAVING sum(NVL(DATA_D.MDINAML,0)-NVL(DATA_D.DANAML,0)) !=0  order by data_acc.NAMEA"
+    },
+    {
+      "offset": 18592,
+      "token": "0x700048A0",
+      "length": 24,
+      "value": " where data_acc.no_tblh="
+    },
+    {
+      "offset": 18642,
+      "token": "0x700048D2",
+      "length": 22,
+      "value": " and data_acc.no_tblh="
+    },
+    {
+      "offset": 18688,
+      "token": "0x70004900",
+      "length": 25,
+      "value": " where data_acc.no_mstlm="
+    },
+    {
+      "offset": 18740,
+      "token": "0x70004934",
+      "length": 23,
+      "value": " and data_acc.no_mstlm="
+    },
+    {
+      "offset": 18788,
+      "token": "0x70004964",
+      "length": 20,
+      "value": " where data_acc.nog="
+    },
+    {
+      "offset": 18830,
+      "token": "0x7000498E",
+      "length": 18,
+      "value": " and data_acc.nog="
+    },
+    {
+      "offset": 18868,
+      "token": "0x700049B4",
+      "length": 240,
+      "value": "select amlh.NO,amlh.namem,sum(NVL(DATA_D.MDIN,0)-NVL(DATA_D.DAN,0)) as balance,sum(NVL(DATA_D.MDINAML,0)-NVL(DATA_D.DANAML,0)) as balancelocal,max(DATA_D.DATES) as mdate from DATA_D inner join amlh on  DATA_D.NOAML=amlh.no where DATA_D.NOA="
+    },
+    {
+      "offset": 19351,
+      "token": "0x70004B97",
+      "length": 112,
+      "value": " group by DATA_D.NOA,amlh.namem,amlh.no HAVING sum(NVL(DATA_D.MDIN,0)-NVL(DATA_D.DAN,0)) !=0    order by amlh.no"
+    },
+    {
+      "offset": 19578,
+      "token": "0x70004C7A",
+      "length": 35,
+      "value": "select * from USER_R where NAME_U='"
+    },
+    {
+      "offset": 19650,
+      "token": "0x70004CC2",
+      "length": 12,
+      "value": "' and PASS='"
+    },
+    {
+      "offset": 19676,
+      "token": "0x70004CDC",
+      "length": 13,
+      "value": "' and APPLD='"
+    },
+    {
+      "offset": 19704,
+      "token": "0x70004CF8",
+      "length": 23,
+      "value": "Update USER_R set PASS="
+    },
+    {
+      "offset": 19752,
+      "token": "0x70004D28",
+      "length": 15,
+      "value": " where NAME_U='"
+    },
+    {
+      "offset": 19784,
+      "token": "0x70004D48",
+      "length": 10,
+      "value": "' and nou="
+    },
+    {
+      "offset": 19806,
+      "token": "0x70004D5E",
+      "length": 35,
+      "value": "select no,namem,FLS,sars from amlh "
+    },
+    {
+      "offset": 19878,
+      "token": "0x70004DA6",
+      "length": 11,
+      "value": "select MAX("
+    },
+    {
+      "offset": 19902,
+      "token": "0x70004DBE",
+      "length": 7,
+      "value": ") from "
+    },
+    {
+      "offset": 19918,
+      "token": "0x70004DCE",
+      "length": 22,
+      "value": "Executing SQL Scalar: "
+    },
+    {
+      "offset": 19964,
+      "token": "0x70004DFC",
+      "length": 39,
+      "value": "Database connection opened successfully"
+    },
+    {
+      "offset": 20044,
+      "token": "0x70004E4C",
+      "length": 41,
+      "value": "Scalar executed successfully. Result: {0}"
+    },
+    {
+      "offset": 20128,
+      "token": "0x70004EA0",
+      "length": 28,
+      "value": "SQL Error executing scalar: "
+    },
+    {
+      "offset": 20186,
+      "token": "0x70004EDA",
+      "length": 32,
+      "value": "General error executing scalar: "
+    },
+    {
+      "offset": 20252,
+      "token": "0x70004F1C",
+      "length": 26,
+      "value": "Database connection closed"
+    },
+    {
+      "offset": 20306,
+      "token": "0x70004F52",
+      "length": 28,
+      "value": "select count(*) as cnt from "
+    },
+    {
+      "offset": 20364,
+      "token": "0x70004F8C",
+      "length": 25,
+      "value": "Executing SQL Non-Query: "
+    },
+    {
+      "offset": 20416,
+      "token": "0x70004FC0",
+      "length": 2,
+      "value": "A1"
+    },
+    {
+      "offset": 20422,
+      "token": "0x70004FC6",
+      "length": 2,
+      "value": "A2"
+    },
+    {
+      "offset": 20428,
+      "token": "0x70004FCC",
+      "length": 2,
+      "value": "A3"
+    },
+    {
+      "offset": 20434,
+      "token": "0x70004FD2",
+      "length": 2,
+      "value": "A4"
+    },
+    {
+      "offset": 20440,
+      "token": "0x70004FD8",
+      "length": 2,
+      "value": "A5"
+    },
+    {
+      "offset": 20446,
+      "token": "0x70004FDE",
+      "length": 65,
+      "value": "Command executed StoredProcedure successfully. Rows affected: {0}"
+    },
+    {
+      "offset": 20579,
+      "token": "0x70005063",
+      "length": 45,
+      "value": "SQL Error executing StoredProcedure command: "
+    },
+    {
+      "offset": 20671,
+      "token": "0x700050BF",
+      "length": 33,
+      "value": "General error executing command: "
+    },
+    {
+      "offset": 20739,
+      "token": "0x70005103",
+      "length": 49,
+      "value": "Command executed successfully. Rows affected: {0}"
+    },
+    {
+      "offset": 20839,
+      "token": "0x70005167",
+      "length": 29,
+      "value": "SQL Error executing command: "
+    },
+    {
+      "offset": 20899,
+      "token": "0x700051A3",
+      "length": 21,
+      "value": "Executing SQL Query: "
+    },
+    {
+      "offset": 20943,
+      "token": "0x700051CF",
+      "length": 46,
+      "value": "Query executed successfully. Returned {0} rows"
+    },
+    {
+      "offset": 21037,
+      "token": "0x7000522D",
+      "length": 27,
+      "value": "SQL Error executing query: "
+    },
+    {
+      "offset": 21093,
+      "token": "0x70005265",
+      "length": 31,
+      "value": "General error executing query: "
+    },
+    {
+      "offset": 21157,
+      "token": "0x700052A5",
+      "length": 12,
+      "value": "[^\\x20-\\x7F]"
+    },
+    {
+      "offset": 21183,
+      "token": "0x700052BF",
+      "length": 5,
+      "value": "en-us"
+    },
+    {
+      "offset": 21195,
+      "token": "0x700052CB",
+      "length": 163,
+      "value": "Data Source=<REDACTED>)(HOST=<REDACTED>)(PORT=<REDACTED>))(CONNECT_DATA=<REDACTED>)(SERVICE_NAME=<REDACTED>)));User id=<REDACTED>;Password=<REDACTED>;",
+      "value_redacted": true,
+      "redaction_note": "Embedded DB connection string — values redacted per RE golden rule 'no secrets'. Structural skeleton preserved as a security finding."
+    },
+    {
+      "offset": 21524,
+      "token": "0x70005414",
+      "length": 1,
+      "value": "["
+    },
+    {
+      "offset": 21528,
+      "token": "0x70005418",
+      "length": 1,
+      "value": "{"
+    },
+    {
+      "offset": 21532,
+      "token": "0x7000541C",
+      "length": 1,
+      "value": "\""
+    },
+    {
+      "offset": 21536,
+      "token": "0x70005420",
+      "length": 2,
+      "value": "\":"
+    },
+    {
+      "offset": 21542,
+      "token": "0x70005426",
+      "length": 2,
+      "value": "},"
+    },
+    {
+      "offset": 21548,
+      "token": "0x7000542C",
+      "length": 1,
+      "value": "}"
+    },
+    {
+      "offset": 21552,
+      "token": "0x70005430",
+      "length": 1,
+      "value": "]"
+    },
+    {
+      "offset": 21556,
+      "token": "0x70005434",
+      "length": 6,
+      "value": " null "
+    },
+    {
+      "offset": 21570,
+      "token": "0x70005442",
+      "length": 23,
+      "value": "yyyy-MM-dd HH':'mm':'ss"
+    },
+    {
+      "offset": 21618,
+      "token": "0x70005472",
+      "length": 5,
+      "value": "fasle"
+    },
+    {
+      "offset": 21630,
+      "token": "0x7000547E",
+      "length": 27,
+      "value": "DatabaseManager initialized"
+    },
+    {
+      "offset": 21686,
+      "token": "0x700054B6",
+      "length": 18,
+      "value": "Query parameters: "
+    },
+    {
+      "offset": 21724,
+      "token": "0x700054DC",
+      "length": 2,
+      "value": ", "
+    },
+    {
+      "offset": 21730,
+      "token": "0x700054E2",
+      "length": 20,
+      "value": "Command parameters: "
+    },
+    {
+      "offset": 21772,
+      "token": "0x7000550C",
+      "length": 19,
+      "value": "Scalar parameters: "
+    },
+    {
+      "offset": 21812,
+      "token": "0x70005534",
+      "length": 3,
+      "value": "{0:"
+    },
+    {
+      "offset": 21820,
+      "token": "0x7000553C",
+      "length": 14,
+      "value": "{0:yyyy/mm/dd}"
+    },
+    {
+      "offset": 21850,
+      "token": "0x7000555A",
+      "length": 1,
+      "value": "-"
+    },
+    {
+      "offset": 21854,
+      "token": "0x7000555E",
+      "length": 6,
+      "value": "yasser"
+    },
+    {
+      "offset": 21868,
+      "token": "0x7000556C",
+      "length": 3,
+      "value": "111"
+    },
+    {
+      "offset": 21876,
+      "token": "0x70005574",
+      "length": 37,
+      "value": "Global error handler caught exception"
+    },
+    {
+      "offset": 21952,
+      "token": "0x700055C0",
+      "length": 29,
+      "value": "Providing fault for exception"
+    },
+    {
+      "offset": 22012,
+      "token": "0x700055FC",
+      "length": 48,
+      "value": "An error occurred while processing your request."
+    },
+    {
+      "offset": 22110,
+      "token": "0x7000565E",
+      "length": 20,
+      "value": "Fehler in GetRegKey!"
+    },
+    {
+      "offset": 22152,
+      "token": "0x70005688",
+      "length": 23,
+      "value": "Fehler in DoesKeyExist!"
+    },
+    {
+      "offset": 22200,
+      "token": "0x700056B8",
+      "length": 22,
+      "value": "خطاء في تكوين المفتاح!"
+    },
+    {
+      "offset": 22246,
+      "token": "0x700056E6",
+      "length": 19,
+      "value": "Fehler in DeleteKey"
+    },
+    {
+      "offset": 22286,
+      "token": "0x7000570E",
+      "length": 29,
+      "value": "Fehler in QueryValue(string)!"
+    },
+    {
+      "offset": 22346,
+      "token": "0x7000574A",
+      "length": 29,
+      "value": "Fehler in QueryValue(byte[])!"
+    },
+    {
+      "offset": 22406,
+      "token": "0x70005786",
+      "length": 26,
+      "value": "Fehler in QueryValue(int)!"
+    },
+    {
+      "offset": 22460,
+      "token": "0x700057BC",
+      "length": 30,
+      "value": "Fehler in CreateValue(string)!"
+    },
+    {
+      "offset": 22522,
+      "token": "0x700057FA",
+      "length": 30,
+      "value": "Fehler in CreateValue(byte[])!"
+    },
+    {
+      "offset": 22584,
+      "token": "0x70005838",
+      "length": 22,
+      "value": "Fehler in DeleteValue!"
+    },
+    {
+      "offset": 22630,
+      "token": "0x70005866",
+      "length": 5,
+      "value": "*.log"
+    },
+    {
+      "offset": 22642,
+      "token": "0x70005872",
+      "length": 22,
+      "value": "Deleted old log file: "
+    },
+    {
+      "offset": 22688,
+      "token": "0x700058A0",
+      "length": 28,
+      "value": "Error cleaning old log files"
+    },
+    {
+      "offset": 22746,
+      "token": "0x700058DA",
+      "length": 5,
+      "value": "TYPEA"
+    },
+    {
+      "offset": 22758,
+      "token": "0x700058E6",
+      "length": 4,
+      "value": "name"
+    },
+    {
+      "offset": 22768,
+      "token": "0x700058F0",
+      "length": 3,
+      "value": "num"
+    },
+    {
+      "offset": 22776,
+      "token": "0x700058F8",
+      "length": 5,
+      "value": "nref2"
+    },
+    {
+      "offset": 22788,
+      "token": "0x70005904",
+      "length": 4,
+      "value": "bian"
+    },
+    {
+      "offset": 22798,
+      "token": "0x7000590E",
+      "length": 4,
+      "value": "date"
+    },
+    {
+      "offset": 22808,
+      "token": "0x70005918",
+      "length": 3,
+      "value": "typ"
+    },
+    {
+      "offset": 22816,
+      "token": "0x70005920",
+      "length": 6,
+      "value": "nmstnd"
+    },
+    {
+      "offset": 22830,
+      "token": "0x7000592E",
+      "length": 5,
+      "value": "1.0.0"
+    },
+    {
+      "offset": 22842,
+      "token": "0x7000593A",
+      "length": 7,
+      "value": "0000000"
+    },
+    {
+      "offset": 22858,
+      "token": "0x7000594A",
+      "length": 5,
+      "value": "Token"
+    },
+    {
+      "offset": 22870,
+      "token": "0x70005956",
+      "length": 4,
+      "value": "User"
+    },
+    {
+      "offset": 22880,
+      "token": "0x70005960",
+      "length": 6,
+      "value": "UserId"
+    },
+    {
+      "offset": 22894,
+      "token": "0x7000596E",
+      "length": 7,
+      "value": "Bearer "
+    },
+    {
+      "offset": 22910,
+      "token": "0x7000597E",
+      "length": 11,
+      "value": "{0}:{1}:{2}"
+    },
+    {
+      "offset": 22934,
+      "token": "0x70005996",
+      "length": 38,
+      "value": "{B709CE08-D2DE-4201-962B-3BBAC74C5952}"
+    },
+    {
+      "offset": 23012,
+      "token": "0x700059E4",
+      "length": 17,
+      "value": "Header value: {0}"
+    }
+  ],
+  "redactions": {
+    "count": 1,
+    "policy": "Sensitive literals (Oracle TNS connection strings containing DB host, port, service name, user id, and password) are stored with structural skeleton only (values replaced with <REDACTED>). The unredacted material is in the original binary under binaries/ for any future on-site forensic need."
+  }
+}

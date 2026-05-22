@@ -1,0 +1,714 @@
+{
+  "source": "OracleServiceMobile.exe",
+  "heap": "#US",
+  "note": "Every JWT-relevant or SQL/config literal referenced anywhere in the assembly's IL appears in this heap, even if the IL stream itself is obfuscated.",
+  "count": 116,
+  "strings": [
+    {
+      "offset": 1,
+      "token": "0x70000001",
+      "length": 11,
+      "value": "appSettings"
+    },
+    {
+      "offset": 25,
+      "token": "0x70000019",
+      "length": 2,
+      "value": "x2"
+    },
+    {
+      "offset": 33,
+      "token": "0x70000021",
+      "length": 9,
+      "value": "AnswerKey"
+    },
+    {
+      "offset": 53,
+      "token": "0x70000035",
+      "length": 3,
+      "value": "123"
+    },
+    {
+      "offset": 61,
+      "token": "0x7000003D",
+      "length": 2,
+      "value": "00"
+    },
+    {
+      "offset": 67,
+      "token": "0x70000043",
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "offset": 71,
+      "token": "0x70000047",
+      "length": 13,
+      "value": "DateEndPeriod"
+    },
+    {
+      "offset": 99,
+      "token": "0x70000063",
+      "length": 13,
+      "value": "PeriodExpired"
+    },
+    {
+      "offset": 127,
+      "token": "0x7000007F",
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "offset": 137,
+      "token": "0x70000089",
+      "length": 1,
+      "value": "\u0000"
+    },
+    {
+      "offset": 141,
+      "token": "0x7000008D",
+      "length": 3,
+      "value": "000"
+    },
+    {
+      "offset": 149,
+      "token": "0x70000095",
+      "length": 8,
+      "value": "00000000"
+    },
+    {
+      "offset": 167,
+      "token": "0x700000A7",
+      "length": 19,
+      "value": "MashineSerialNumber"
+    },
+    {
+      "offset": 207,
+      "token": "0x700000CF",
+      "length": 3,
+      "value": "c:\\"
+    },
+    {
+      "offset": 215,
+      "token": "0x700000D7",
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "offset": 219,
+      "token": "0x700000DB",
+      "length": 34,
+      "value": "{0}\\OracleServiceMobile.exe.config"
+    },
+    {
+      "offset": 289,
+      "token": "0x70000121",
+      "length": 45,
+      "value": " v1.2.0  سيرفر موبايل  CopyRight YDsoft 2024 "
+    },
+    {
+      "offset": 381,
+      "token": "0x7000017D",
+      "length": 11,
+      "value": " -773035387"
+    },
+    {
+      "offset": 405,
+      "token": "0x70000195",
+      "length": 10,
+      "value": "LicenseKey"
+    },
+    {
+      "offset": 427,
+      "token": "0x700001AB",
+      "length": 1,
+      "value": "C"
+    },
+    {
+      "offset": 431,
+      "token": "0x700001AF",
+      "length": 8,
+      "value": "C08B7745"
+    },
+    {
+      "offset": 449,
+      "token": "0x700001C1",
+      "length": 8,
+      "value": "72588D3C"
+    },
+    {
+      "offset": 467,
+      "token": "0x700001D3",
+      "length": 9,
+      "value": "92J9MIOL5"
+    },
+    {
+      "offset": 487,
+      "token": "0x700001E7",
+      "length": 9,
+      "value": "2GK2KL595"
+    },
+    {
+      "offset": 507,
+      "token": "0x700001FB",
+      "length": 13,
+      "value": "Device Serial"
+    },
+    {
+      "offset": 535,
+      "token": "0x70000217",
+      "length": 4,
+      "value": "1234"
+    },
+    {
+      "offset": 545,
+      "token": "0x70000221",
+      "length": 19,
+      "value": "التطبيق يعمل بالفعل"
+    },
+    {
+      "offset": 585,
+      "token": "0x70000249",
+      "length": 30,
+      "value": "http://localhost:3000/electric"
+    },
+    {
+      "offset": 647,
+      "token": "0x70000287",
+      "length": 163,
+      "value": "Data Source=<REDACTED>)(HOST=<REDACTED>)(PORT=<REDACTED>))(CONNECT_DATA=<REDACTED>)(SERVICE_NAME=<REDACTED>)));User id=<REDACTED>;Password=<REDACTED>;",
+      "value_redacted": true,
+      "redaction_note": "Embedded DB connection string — values redacted per RE golden rule 'no secrets'. Structural skeleton preserved as a security finding."
+    },
+    {
+      "offset": 976,
+      "token": "0x700003D0",
+      "length": 163,
+      "value": "Data Source=<REDACTED>)(HOST=<REDACTED>)(PORT=<REDACTED>))(CONNECT_DATA=<REDACTED>)(SERVICE_NAME=<REDACTED>)));User id=<REDACTED>;Password=<REDACTED>;",
+      "value_redacted": true,
+      "redaction_note": "Embedded DB connection string — values redacted per RE golden rule 'no secrets'. Structural skeleton preserved as a security finding."
+    },
+    {
+      "offset": 1305,
+      "token": "0x70000519",
+      "length": 163,
+      "value": "Data Source=<REDACTED>)(HOST=<REDACTED>)(PORT=<REDACTED>))(CONNECT_DATA=<REDACTED>)(SERVICE_NAME=<REDACTED>)));User id=<REDACTED>;Password=<REDACTED>;",
+      "value_redacted": true,
+      "redaction_note": "Embedded DB connection string — values redacted per RE golden rule 'no secrets'. Structural skeleton preserved as a security finding."
+    },
+    {
+      "offset": 1634,
+      "token": "0x70000662",
+      "length": 32,
+      "value": "Service host opened successfully"
+    },
+    {
+      "offset": 1700,
+      "token": "0x700006A4",
+      "length": 23,
+      "value": "Service base addresses:"
+    },
+    {
+      "offset": 1748,
+      "token": "0x700006D4",
+      "length": 6,
+      "value": " - {0}"
+    },
+    {
+      "offset": 1762,
+      "token": "0x700006E2",
+      "length": 11,
+      "value": "ايـــقـــاف"
+    },
+    {
+      "offset": 1786,
+      "token": "0x700006FA",
+      "length": 10,
+      "value": "قيدالتشغيل"
+    },
+    {
+      "offset": 1808,
+      "token": "0x70000710",
+      "length": 33,
+      "value": "Fatal error starting service host"
+    },
+    {
+      "offset": 1876,
+      "token": "0x70000754",
+      "length": 13,
+      "value": "Fatal error: "
+    },
+    {
+      "offset": 1904,
+      "token": "0x70000770",
+      "length": 17,
+      "value": "serverSetting.txt"
+    },
+    {
+      "offset": 1940,
+      "token": "0x70000794",
+      "length": 18,
+      "value": "ElectricServiceApp"
+    },
+    {
+      "offset": 1978,
+      "token": "0x700007BA",
+      "length": 23,
+      "value": "\\ElectricWinService.exe"
+    },
+    {
+      "offset": 2026,
+      "token": "0x700007EA",
+      "length": 10,
+      "value": "لايوجدخدمة"
+    },
+    {
+      "offset": 2048,
+      "token": "0x70000800",
+      "length": 9,
+      "value": "تـشـغـيـل"
+    },
+    {
+      "offset": 2068,
+      "token": "0x70000814",
+      "length": 6,
+      "value": "متوقفة"
+    },
+    {
+      "offset": 2082,
+      "token": "0x70000822",
+      "length": 4,
+      "value": "متصل"
+    },
+    {
+      "offset": 2092,
+      "token": "0x7000082C",
+      "length": 7,
+      "value": "غيرمتصل"
+    },
+    {
+      "offset": 2108,
+      "token": "0x7000083C",
+      "length": 6,
+      "value": "Tahoma"
+    },
+    {
+      "offset": 2122,
+      "token": "0x7000084A",
+      "length": 6,
+      "value": "label3"
+    },
+    {
+      "offset": 2136,
+      "token": "0x70000858",
+      "length": 6,
+      "value": "label5"
+    },
+    {
+      "offset": 2150,
+      "token": "0x70000866",
+      "length": 8,
+      "value": "عنوان IP"
+    },
+    {
+      "offset": 2168,
+      "token": "0x70000878",
+      "length": 6,
+      "value": "labUrl"
+    },
+    {
+      "offset": 2182,
+      "token": "0x70000886",
+      "length": 6,
+      "value": "label7"
+    },
+    {
+      "offset": 2196,
+      "token": "0x70000894",
+      "length": 6,
+      "value": "المنفذ"
+    },
+    {
+      "offset": 2210,
+      "token": "0x700008A2",
+      "length": 6,
+      "value": "label8"
+    },
+    {
+      "offset": 2224,
+      "token": "0x700008B0",
+      "length": 4,
+      "value": "3000"
+    },
+    {
+      "offset": 2234,
+      "token": "0x700008BA",
+      "length": 9,
+      "value": "checkBox1"
+    },
+    {
+      "offset": 2254,
+      "token": "0x700008CE",
+      "length": 16,
+      "value": "تشغيل في الخلفية"
+    },
+    {
+      "offset": 2288,
+      "token": "0x700008F0",
+      "length": 9,
+      "value": "groupBox1"
+    },
+    {
+      "offset": 2308,
+      "token": "0x70000904",
+      "length": 6,
+      "value": "label1"
+    },
+    {
+      "offset": 2322,
+      "token": "0x70000912",
+      "length": 6,
+      "value": "الحالة"
+    },
+    {
+      "offset": 2336,
+      "token": "0x70000920",
+      "length": 9,
+      "value": "checkBox2"
+    },
+    {
+      "offset": 2356,
+      "token": "0x70000934",
+      "length": 9,
+      "value": "تشغيل الي"
+    },
+    {
+      "offset": 2376,
+      "token": "0x70000948",
+      "length": 9,
+      "value": "groupBox2"
+    },
+    {
+      "offset": 2396,
+      "token": "0x7000095C",
+      "length": 9,
+      "value": "checkBox3"
+    },
+    {
+      "offset": 2416,
+      "token": "0x70000970",
+      "length": 29,
+      "value": "التحقق بالرقم التسلسلي للجهاز"
+    },
+    {
+      "offset": 2476,
+      "token": "0x700009AC",
+      "length": 6,
+      "value": "label4"
+    },
+    {
+      "offset": 2490,
+      "token": "0x700009BA",
+      "length": 5,
+      "value": "....."
+    },
+    {
+      "offset": 2502,
+      "token": "0x700009C6",
+      "length": 6,
+      "value": "label2"
+    },
+    {
+      "offset": 2516,
+      "token": "0x700009D4",
+      "length": 27,
+      "value": "فحص الاتصال بقاعدة البيانات"
+    },
+    {
+      "offset": 2572,
+      "token": "0x70000A0C",
+      "length": 10,
+      "value": "linkLabel1"
+    },
+    {
+      "offset": 2594,
+      "token": "0x70000A22",
+      "length": 6,
+      "value": "تشغيل "
+    },
+    {
+      "offset": 2608,
+      "token": "0x70000A30",
+      "length": 13,
+      "value": "MobileService"
+    },
+    {
+      "offset": 2636,
+      "token": "0x70000A4C",
+      "length": 17,
+      "value": "contextMenuStrip1"
+    },
+    {
+      "offset": 2672,
+      "token": "0x70000A70",
+      "length": 18,
+      "value": "toolStripMenuItem1"
+    },
+    {
+      "offset": 2710,
+      "token": "0x70000A96",
+      "length": 3,
+      "value": "فتح"
+    },
+    {
+      "offset": 2718,
+      "token": "0x70000A9E",
+      "length": 18,
+      "value": "toolStripMenuItem2"
+    },
+    {
+      "offset": 2756,
+      "token": "0x70000AC4",
+      "length": 5,
+      "value": "انهاء"
+    },
+    {
+      "offset": 2768,
+      "token": "0x70000AD0",
+      "length": 6,
+      "value": "panel2"
+    },
+    {
+      "offset": 2782,
+      "token": "0x70000ADE",
+      "length": 10,
+      "value": "$this.Icon"
+    },
+    {
+      "offset": 2804,
+      "token": "0x70000AF4",
+      "length": 21,
+      "value": "FrmOracleServiceMobil"
+    },
+    {
+      "offset": 2848,
+      "token": "0x70000B20",
+      "length": 11,
+      "value": "سيرفرموبايل"
+    },
+    {
+      "offset": 2872,
+      "token": "0x70000B38",
+      "length": 28,
+      "value": "software/MyAppReg/YDService/"
+    },
+    {
+      "offset": 2930,
+      "token": "0x70000B72",
+      "length": 8,
+      "value": "HH:mm:ss"
+    },
+    {
+      "offset": 2948,
+      "token": "0x70000B84",
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "offset": 2952,
+      "token": "0x70000B88",
+      "length": 41,
+      "value": " تم التفعيل بنجاح يجب اعادة تشغيل التطبيق"
+    },
+    {
+      "offset": 3036,
+      "token": "0x70000BDC",
+      "length": 16,
+      "value": "رقم التفعيل خاطئ"
+    },
+    {
+      "offset": 3070,
+      "token": "0x70000BFE",
+      "length": 14,
+      "value": "الرقم التسلسلي"
+    },
+    {
+      "offset": 3100,
+      "token": "0x70000C1C",
+      "length": 8,
+      "value": "textBox1"
+    },
+    {
+      "offset": 3118,
+      "token": "0x70000C2E",
+      "length": 8,
+      "value": "textBox2"
+    },
+    {
+      "offset": 3136,
+      "token": "0x70000C40",
+      "length": 11,
+      "value": "كود التفعيل"
+    },
+    {
+      "offset": 3160,
+      "token": "0x70000C58",
+      "length": 7,
+      "value": "button1"
+    },
+    {
+      "offset": 3176,
+      "token": "0x70000C68",
+      "length": 5,
+      "value": "موافق"
+    },
+    {
+      "offset": 3188,
+      "token": "0x70000C74",
+      "length": 7,
+      "value": "button2"
+    },
+    {
+      "offset": 3204,
+      "token": "0x70000C84",
+      "length": 5,
+      "value": "الغاء"
+    },
+    {
+      "offset": 3216,
+      "token": "0x70000C90",
+      "length": 9,
+      "value": "FrmActive"
+    },
+    {
+      "offset": 3236,
+      "token": "0x70000CA4",
+      "length": 12,
+      "value": "تفعيل النظام"
+    },
+    {
+      "offset": 3262,
+      "token": "0x70000CBE",
+      "length": 20,
+      "value": "Fehler in GetRegKey!"
+    },
+    {
+      "offset": 3304,
+      "token": "0x70000CE8",
+      "length": 23,
+      "value": "Fehler in DoesKeyExist!"
+    },
+    {
+      "offset": 3352,
+      "token": "0x70000D18",
+      "length": 22,
+      "value": "خطاء في تكوين المفتاح!"
+    },
+    {
+      "offset": 3398,
+      "token": "0x70000D46",
+      "length": 19,
+      "value": "Fehler in DeleteKey"
+    },
+    {
+      "offset": 3438,
+      "token": "0x70000D6E",
+      "length": 29,
+      "value": "Fehler in QueryValue(string)!"
+    },
+    {
+      "offset": 3498,
+      "token": "0x70000DAA",
+      "length": 29,
+      "value": "Fehler in QueryValue(byte[])!"
+    },
+    {
+      "offset": 3558,
+      "token": "0x70000DE6",
+      "length": 26,
+      "value": "Fehler in QueryValue(int)!"
+    },
+    {
+      "offset": 3612,
+      "token": "0x70000E1C",
+      "length": 30,
+      "value": "Fehler in CreateValue(string)!"
+    },
+    {
+      "offset": 3674,
+      "token": "0x70000E5A",
+      "length": 30,
+      "value": "Fehler in CreateValue(byte[])!"
+    },
+    {
+      "offset": 3736,
+      "token": "0x70000E98",
+      "length": 22,
+      "value": "Fehler in DeleteValue!"
+    },
+    {
+      "offset": 3782,
+      "token": "0x70000EC6",
+      "length": 45,
+      "value": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
+    },
+    {
+      "offset": 3874,
+      "token": "0x70000F22",
+      "length": 22,
+      "value": "Service not installed."
+    },
+    {
+      "offset": 3920,
+      "token": "0x70000F50",
+      "length": 25,
+      "value": "Could not delete service "
+    },
+    {
+      "offset": 3972,
+      "token": "0x70000F84",
+      "length": 26,
+      "value": "Failed to install service."
+    },
+    {
+      "offset": 4026,
+      "token": "0x70000FBA",
+      "length": 23,
+      "value": "Could not open service."
+    },
+    {
+      "offset": 4074,
+      "token": "0x70000FEA",
+      "length": 23,
+      "value": "Unable to start service"
+    },
+    {
+      "offset": 4122,
+      "token": "0x7000101A",
+      "length": 22,
+      "value": "Unable to stop service"
+    },
+    {
+      "offset": 4168,
+      "token": "0x70001048",
+      "length": 31,
+      "value": "Failed to query service status."
+    },
+    {
+      "offset": 4232,
+      "token": "0x70001088",
+      "length": 45,
+      "value": "Could not connect to service control manager."
+    },
+    {
+      "offset": 4324,
+      "token": "0x700010E4",
+      "length": 40,
+      "value": "OracleServiceMobile.Properties.Resources"
+    }
+  ],
+  "redactions": {
+    "count": 3,
+    "policy": "Sensitive literals (Oracle TNS connection strings containing DB host, port, service name, user id, and password) are stored with structural skeleton only (values replaced with <REDACTED>). The unredacted material is in the original binary under binaries/ for any future on-site forensic need."
+  }
+}
