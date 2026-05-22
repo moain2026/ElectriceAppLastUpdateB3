@@ -1,6 +1,6 @@
 # 00 — Executive Overview
 
-> **Status:** 🟡 updated after Phase 3. Will be finalised in Phase 8.
+> **Status:** 🟡 updated after Phase 4. Will be finalised in Phase 8.
 > **Audience:** the AbbasiTahseel React-Native rewrite team (`app1`).
 > **Reading time (current state):** ~7 minutes.
 
@@ -60,8 +60,17 @@ service** authenticated by **JWT**.
   - `TokenValidationServiceBehavior` adds…
   - `TokenValidationInspector` (an `IDispatchMessageInspector`) that runs **per request**.
   - Validation delegates to `DatabaseTokenValidator` (impl of `ITokenValidator`).
-  - Token construction at login goes `Login → AuthTokenService → DatabaseTokenBuilder` → JWT signed via `jose-jwt`.
-  - **`Authenticate` body is obfuscated** — exact algorithm & key recovered in Phase 4 via APK reverse, not from this binary.
+  - Token construction at login goes `Login → AuthTokenService → DatabaseTokenBuilder` → JWT signed via `jose-jwt` **v5.0.0.0**.
+  - **`Authenticate` body is obfuscated** — see Phase 4 below for what we recovered through `#US`-heap mining.
+
+### Auth — Phase-4 findings (new)
+- **JWT library:** `jose-jwt v5.0.0.0` (confirmed via `AssemblyReferences[7]`).
+- **Header presentation:** `Authorization: Bearer <token>` — confirmed in `#US` heap at offsets `+0x43` (`Authorization`) and `+0x596e` (`"Bearer "` with trailing space).
+- **JWT claims confirmed:** `iat`, `typ`, `UserId` (offsets `+0xa0d` / `+0x5918` / `+0x5960`). **No `exp`** — TTL is enforced server-side by `DatabaseTokenValidator.IsExpired(Token)` using `DefaultSecondsUntilTokenExpires` against `Token.CreateDate`.
+- **JWT algorithm:** HS-family with 85% confidence, most likely HS256 with 60% confidence. The algorithm enum is supplied via `ldc.i4` in the (tampered) IL, not `ldstr`, so it does not appear in `#US`. Definitive resolution requires capturing a live token. See `02_JWT_AUTHENTICATION.md §5`.
+- **`BasicAuth` fallback:** `MProgService.Business.BasicAuth` (4 ctors, `Base64UrlDecode`) — shape consistent with RFC 7617 Basic Auth, presumably for the WinForms admin app. The RN client should never use this path.
+- 🔴 **P0 security finding:** the Oracle TNS connection string (host, port, service name, user id, **plain password**) is embedded in `MProgService.dll` (`#US +0x52cb`, 1 copy) and `OracleServiceMobile.exe` (`#US +0x287`, `+0x3d0`, `+0x519`, 3 copies). The secret values are **redacted in this repo** per the RE golden rule, but the engineering team must rotate them before production rollout. See `02_JWT_AUTHENTICATION.md §6.1`.
+- 🔴 **P0 security finding:** `/Login` and `/ChangePassword` use raw SQL string concatenation (templates at `#US +0x4c7a`, `+0x4cc2`, `+0x4cf8`) — classic SQL injection. Server-side patch required. See `02_JWT_AUTHENTICATION.md §6.2`.
 
 ### Multi-tenant
 - The DTO/method evidence is overwhelming: **every operation takes `appId: string`** as a parameter. **`appId` is the tenant id.**
@@ -90,7 +99,7 @@ service** authenticated by **JWT**.
 ### API contracts (Phase-3 finding)
 - **60 endpoints** documented end-to-end (33 modern operations + 27 legacy endpoints = 26 legacy `[OperationContract]` + 1 legacy root `[WebGet]`) with HTTP verb, URI template, body style, request/response format, fault contracts, parameter location (query vs body) and return type — all recovered from binary metadata, **no manual transcription**.
 - **HTTP verb distribution** (modern contract): **GET** 22 (66%), **POST** 7 (21%), **PUT** 2 (6%), **DELETE** 2 (6%).
-- **Auth boundary:** 30 of 33 operations require `Authorization: Bearer <jwt>`; the 3 public ops are `Authenticate`, `Login`, `test`.
+- **Auth boundary:** 53 of 60 endpoints require `Authorization: Bearer <jwt>`. **The 7 public endpoints** are (modern) `Authenticate`, `Login`, `test`, `GetCallerIdentity`, `Index`; (legacy aliases) `Login`, `Authenticate`. Full rationale in `01_WCF_ENDPOINTS.md → Public endpoints rationale`.
 - **FaultContract:** every non-bootstrap op declares `MProgService.models.ServiceFault` — the response envelope for business errors (Phase 3 deliverable: `ServiceFault` schema landed in `api_contracts/openapi.yaml`).
 - **Deliverables:** `api_contracts/openapi.yaml` (OpenAPI 3.0.3, validates clean), `api_contracts/postman_collection.json` (Postman v2.1 with JWT auto-inject on Login/Authenticate), `for_main_repo/endpoints.ts` (TS 5 `--strict` compiles clean).
 - Full per-endpoint detail in [`01_WCF_ENDPOINTS.md`](./01_WCF_ENDPOINTS.md).
@@ -101,12 +110,14 @@ service** authenticated by **JWT**.
 
 | # | Question | Where it will be answered |
 |---|----------|---------------------------|
-| 1 | JWT signing algorithm + key source | Phase 4 (cross-check with APK login flow) |
-| 2 | Exact SQL queries (table names, joins) | Phase 5 + APK client SQLite mirror + DBA |
+| 1 | ~~JWT signing algorithm + key source~~ | **Partial in Phase 4**: HS-family (85%), HS256 (60%); definitive answer needs a live-token capture. Key source: `DatabaseTokenBuilder.BuildSecureToken(TokenSize)` — symmetric secret regenerated server-side. |
+| 2 | Exact SQL queries (table names, joins) | **Auth path resolved Phase 4** from `#US`; remainder Phase 5 + APK + DBA |
 | 3 | `appId → connectionString` mapping mechanism | Phase 7 (APK) + post-mortem of `.exe.config` |
 | 4 | Base URL of the WCF host (`Service1.svc` mounting path) | Phase 7 (APK) |
 | 5 | Is `IService1` still routed or only `IServiceElect`? | Phase 7 (which one does the APK call?) |
 | 6 | Meaning of `NOA` (number-of-accounts vs no-account boolean) | Phase 6 — search for usages |
+| 7 | 🔴 Hard-coded DB credentials in distributed binaries | **Surfaced in Phase 4 §6.1** — escalate to engineering team |
+| 8 | 🔴 SQL injection on `/Login`, `/ChangePassword` | **Surfaced in Phase 4 §6.2** — escalate to engineering team |
 
 ---
 
@@ -117,7 +128,7 @@ service** authenticated by **JWT**.
 | 1 | Lab structure + tooling                                                  | 🟢 done    | 95% |
 | 2 | C# decompile + metadata extraction for 3 priority assemblies             | 🟢 done    | 95% |
 | 3 | 60/60 endpoints documented; OpenAPI 3.0 (valid); Postman v2.1; endpoints.ts | 🟢 done    | 95% |
-| 4 | JWT scheme + interceptor template                                        | ⚪ next    | — |
+| 4 | JWT scheme reconstructed + Axios interceptor template                    | 🟢 done    | 87.5% |
 | 5 | 27 models + Oracle DDL + ERD + TS types                                  | ⚪         | — |
 | 6 | Permissions matrix                                                       | ⚪         | — |
 | 7 | APK v26 deep dive                                                        | ⚪         | — |

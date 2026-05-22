@@ -11,7 +11,7 @@
 |---|----------|:-----:|:------:|
 | 00 | [`00_OVERVIEW.md`](./analysis/00_OVERVIEW.md)                 | all | 🟢 Phase-2 facts landed |
 | 01 | [`01_WCF_ENDPOINTS.md`](./analysis/01_WCF_ENDPOINTS.md)        | 3   | 🟢 full 60-endpoint table + per-endpoint detail blocks (Phase 3) |
-| 02 | [`02_JWT_AUTHENTICATION.md`](./analysis/02_JWT_AUTHENTICATION.md) | 4 | ⚪ pending |
+| 02 | [`02_JWT_AUTHENTICATION.md`](./analysis/02_JWT_AUTHENTICATION.md) | 4 | 🟢 full WCF auth pipeline reconstructed · jose-jwt v5.0.0.0 · claims `iat`/`typ`/`UserId` confirmed · 4 security findings (Phase 4) |
 | 03 | [`03_DATA_MODELS.md`](./analysis/03_DATA_MODELS.md)            | 5   | ⚪ pending |
 | 04 | [`04_PERMISSIONS_SYSTEM.md`](./analysis/04_PERMISSIONS_SYSTEM.md) | 6 | ⚪ pending |
 | 05 | [`05_ORACLE_INTEGRATION.md`](./analysis/05_ORACLE_INTEGRATION.md) | 5 | ⚪ pending |
@@ -36,6 +36,9 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `decompiled_csharp/OracleServiceMobile/` | `binaries/OracleServiceMobile.exe`| ilspycmd | 2 |
 | `decompiled_csharp/License/`             | `binaries/License.dll`            | ilspycmd | 2 |
 | `apk_decompiled/`                | `binaries/ElectricCollector26.apk`| JADX      | 7 |
+| `userstrings/MProgService.userstrings.json`     | `binaries/MProgService.dll`        | `UserStringDump` (.NET 8) — `#US` heap walker | 4 |
+| `userstrings/OracleServiceMobile.userstrings.json` | `binaries/OracleServiceMobile.exe` | `UserStringDump`                              | 4 |
+| `userstrings/License.userstrings.json`          | `binaries/License.dll`             | `UserStringDump`                              | 4 |
 
 ---
 
@@ -65,7 +68,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 |------|---------|:-----:|:------:|
 | `README.md`              | How to copy artefacts into `app1` | 8 | ⚪ |
 | `endpoints.ts`           | Const map of all 60 endpoints + `EndpointDescriptor` interface. Compiles clean under TS 5 `--strict`. | 3 | 🟢 |
-| `jwt_interceptor.ts`     | Axios interceptor template | 4 | ⚪ |
+| `jwt_interceptor.ts`     | Axios interceptor template — Bearer header attach, single-retry 401 reauth, typed `call()` wrapper, compiles clean under `tsc --strict` | 4 | 🟢 |
 | `permissions_matrix.md`  | Human reference for permission flags | 6 | ⚪ |
 | `bond_dto.ts`            | Bond model | 5 | ⚪ |
 | `reading_dto.ts`         | Reading model | 5 | ⚪ |
@@ -88,6 +91,7 @@ Status legend: ⚪ pending  · 🟡 stub/WIP  · 🟢 complete · 🔵 reviewed
 | `generate_artifacts.py`    | Single source emits `api_contracts/openapi.yaml` + `api_contracts/postman_collection.json` + `for_main_repo/endpoints.ts` from `endpoints.json` (added Phase 3). |
 | `generate_endpoint_details.py` | Emits per-endpoint detail blocks (modern + legacy) for `01_WCF_ENDPOINTS.md` (added Phase 3). |
 | `splice_endpoint_details.py`   | Idempotently splices the output of `generate_endpoint_details.py` between sentinels in `01_WCF_ENDPOINTS.md` (added Phase 3). |
+| `userstrings_extract/`         | Custom .NET 8 tool — walks the ECMA-335 `#US` (UserString) heap directly to recover every `ldstr`-able literal even when method bodies are damaged by ConfuserEx (added Phase 4). |
 
 ---
 
