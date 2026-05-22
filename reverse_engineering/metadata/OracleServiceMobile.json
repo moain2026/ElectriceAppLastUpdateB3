@@ -1,0 +1,4059 @@
+{
+  "File": "OracleServiceMobile.exe",
+  "AssemblyName": "OracleServiceMobile",
+  "AssemblyVersion": "1.0.0.0",
+  "ModuleName": "OracleServiceMobile.exe",
+  "AssemblyReferences": [
+    "mscorlib v4.0.0.0",
+    "System.Configuration v4.0.0.0",
+    "System.Windows.Forms v4.0.0.0",
+    "System v4.0.0.0",
+    "System.ServiceModel.Web v4.0.0.0",
+    "System.Core v4.0.0.0",
+    "System.ServiceModel v4.0.0.0",
+    "License v1.0.0.0",
+    "MProgService v1.0.0.0",
+    "System.Runtime.Serialization v4.0.0.0",
+    "System.Drawing v4.0.0.0",
+    "Newtonsoft.Json v9.0.0.0"
+  ],
+  "AssemblyAttributes": [
+    {
+      "Ctor": "System.Reflection.AssemblyTrademarkAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyCopyrightAttribute::.ctor",
+      "BlobLength": 23,
+      "BlobBase64": "AQASQ29weXJpZ2h0IMKpICAyMDI0AAA=",
+      "BlobStrings": [
+        "Copyright ",
+        "  2024"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyProductAttribute::.ctor",
+      "BlobLength": 24,
+      "BlobBase64": "AQATT3JhY2xlU2VydmljZU1vYmlsZQAA",
+      "BlobStrings": [
+        "OracleServiceMobile"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.InteropServices.ComVisibleAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Runtime.Versioning.TargetFrameworkAttribute::.ctor",
+      "BlobLength": 77,
+      "BlobBase64": "AQAcLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUuMQEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUULk5FVCBGcmFtZXdvcmsgNC41LjE=",
+      "BlobStrings": [
+        ".NETFramework,Version=v4.5.1",
+        "FrameworkDisplayName",
+        ".NET Framework 4.5.1"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyFileVersionAttribute::.ctor",
+      "BlobLength": 12,
+      "BlobBase64": "AQAHMS4wLjAuMAAA",
+      "BlobStrings": [
+        "1.0.0.0"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.InteropServices.GuidAttribute::.ctor",
+      "BlobLength": 41,
+      "BlobBase64": "AQAkMTQyOWQ1YjQtZDkyOC00OGYyLWJkNTMtZjM4ZjNiM2IxNWFlAAA=",
+      "BlobStrings": [
+        "$1429d5b4-d928-48f2-bd53-f38f3b3b15ae"
+      ]
+    },
+    {
+      "Ctor": "System.Diagnostics.DebuggableAttribute::.ctor",
+      "BlobLength": 8,
+      "BlobBase64": "AQAHAQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor",
+      "BlobLength": 30,
+      "BlobBase64": "AQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MB",
+      "BlobStrings": [
+        "WrapNonExceptionThrows"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor",
+      "BlobLength": 8,
+      "BlobBase64": "AQAIAAAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyTitleAttribute::.ctor",
+      "BlobLength": 24,
+      "BlobBase64": "AQATT3JhY2xlU2VydmljZU1vYmlsZQAA",
+      "BlobStrings": [
+        "OracleServiceMobile"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyCompanyAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyConfigurationAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyDescriptionAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    }
+  ],
+  "Types": [
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "AppConfigHelper",
+      "FullName": "OracleServiceMobile.AppConfigHelper",
+      "Attributes": "Public, Abstract, Sealed, BeforeFieldInit",
+      "IsAbstract": true,
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "SECTION_NAME",
+          "Signature": "String",
+          "Attributes": "Private, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "SECTION_NAME2",
+          "Signature": "String",
+          "Attributes": "Private, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "IsSectionExist",
+          "Signature": "Boolean (String, System.Configuration.AppSettingsSection)",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sectionName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "appSetting",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetValue",
+          "Signature": "String (String, String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sectionName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "appConfigFile",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "defaultValue",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetValueList",
+          "Signature": "System.Collections.Generic.List\u00601\u003CString\u003E (String, String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sectionName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "appConfigFile",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "defaultValue",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "SaveValue",
+          "Signature": "Void (String, String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sectionName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "value",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "appConfigFile",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "KeyValuePair",
+      "FullName": "KeyValuePair",
+      "Attributes": "NestedPrivate, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "\u003CName\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CValues\u003Ek__BackingField",
+          "Signature": "String[]",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Name",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Values",
+          "Signature": "String[] ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_Name",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_Name",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_Values",
+          "Signature": "String[] ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_Values",
+          "Signature": "Void (String[])",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "\u003C\u003Ec__DisplayClass2_0",
+      "FullName": "\u003C\u003Ec__DisplayClass2_0",
+      "Attributes": "NestedPrivate, Sealed, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "sectionName",
+          "Signature": "String",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "\u003CIsSectionExist\u003Eb__0",
+          "Signature": "Boolean (String)",
+          "Attributes": "Assembly, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "key",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "\u003C\u003Ec__DisplayClass4_0",
+      "FullName": "\u003C\u003Ec__DisplayClass4_0",
+      "Attributes": "NestedPrivate, Sealed, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "sectionName",
+          "Signature": "String",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "section",
+          "Signature": "System.Configuration.AppSettingsSection",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "\u003CGetValueList\u003Eb__0",
+          "Signature": "Boolean (String)",
+          "Attributes": "Assembly, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "key",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CGetValueList\u003Eb__1",
+          "Signature": "String (String)",
+          "Attributes": "Assembly, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "k",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "AppSetting",
+      "FullName": "OracleServiceMobile.AppSetting",
+      "Attributes": "Public, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "\u003Cport\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003Cpin\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CsendWhtsApp\u003Ek__BackingField",
+          "Signature": "Boolean",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CsendSMS\u003Ek__BackingField",
+          "Signature": "Boolean",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003Cautorun\u003Ek__BackingField",
+          "Signature": "Boolean",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003Cshownotifiay\u003Ek__BackingField",
+          "Signature": "Boolean",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CtypeConnection\u003Ek__BackingField",
+          "Signature": "Int32",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CaddressHost\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CuserName\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003Cpassword\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CaccessTokin\u003Ek__BackingField",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "\u003CauthBySerialNo\u003Ek__BackingField",
+          "Signature": "Boolean",
+          "Attributes": "Private",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQAAAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "port",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "pin",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "sendWhtsApp",
+          "Signature": "Boolean ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "sendSMS",
+          "Signature": "Boolean ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "autorun",
+          "Signature": "Boolean ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "shownotifiay",
+          "Signature": "Boolean ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "typeConnection",
+          "Signature": "Int32 ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "addressHost",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "userName",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "password",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "accessTokin",
+          "Signature": "String ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "authBySerialNo",
+          "Signature": "Boolean ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_port",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_port",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_pin",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_pin",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_sendWhtsApp",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_sendWhtsApp",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_sendSMS",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_sendSMS",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_autorun",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_autorun",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_shownotifiay",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_shownotifiay",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_typeConnection",
+          "Signature": "Int32 ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_typeConnection",
+          "Signature": "Void (Int32)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_addressHost",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_addressHost",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_userName",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_userName",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_password",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_password",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_accessTokin",
+          "Signature": "String ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_accessTokin",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_authBySerialNo",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "set_authBySerialNo",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "CryptoHelper",
+      "FullName": "OracleServiceMobile.CryptoHelper",
+      "Attributes": "Public, Abstract, Sealed, BeforeFieldInit",
+      "IsAbstract": true,
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetMD5Hash",
+          "Signature": "String (String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "plainText",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "key",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetTripleDESEncryptHash",
+          "Signature": "String (String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "plainText",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "key",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetTripleDESDecryptHash",
+          "Signature": "String (String, String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "encryptText",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "key",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "Defence",
+      "FullName": "OracleServiceMobile.Defence",
+      "Attributes": "Abstract, Sealed, BeforeFieldInit",
+      "IsAbstract": true,
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "_appConfigFile",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "AddKey",
+          "Signature": "Int64 ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "bool_to_oct",
+          "Signature": "String (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_bool",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "bool_to_oct_triade",
+          "Signature": "String (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_bool",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "bool_to_val",
+          "Signature": "Double (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_bool",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "clear_key",
+          "Signature": "String ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "cut_str",
+          "Signature": "String (String, Int64, Int64)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_str",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "pos",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "len_cut",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "d_r",
+          "Signature": "System.DateTime ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "data_demo",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "ErrorReport2",
+          "Signature": "Boolean (String, System.Exception)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "72",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "MyFunction",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "ex",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "MashineSerialNumber",
+          "Signature": "Int64 (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "strDrive",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "oct_to_bool",
+          "Signature": "String (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_val",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "text_out",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "val_to_bool",
+          "Signature": "String (Double)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "in_val",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "FrmOracleServiceMobil",
+      "FullName": "OracleServiceMobile.FrmOracleServiceMobil",
+      "Attributes": "Public, BeforeFieldInit",
+      "BaseType": "System.Windows.Forms.Form",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "_StartTimer",
+          "Signature": "System.Windows.Forms.Timer",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "SubKey",
+          "Signature": "String",
+          "Attributes": "Public, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Actreg",
+          "Signature": "OracleServiceMobile.IdealRegistry",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "actv",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "p",
+          "Signature": "System.Diagnostics.Process",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "appId",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "_appConfigFile",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "host",
+          "Signature": "System.ServiceModel.Web.WebServiceHost",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "components",
+          "Signature": "System.ComponentModel.IContainer",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label3",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label5",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "labUrl",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label7",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label8",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "checkBox1",
+          "Signature": "System.Windows.Forms.CheckBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "groupBox1",
+          "Signature": "System.Windows.Forms.GroupBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label1",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "groupBox2",
+          "Signature": "System.Windows.Forms.GroupBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "linkLabel1",
+          "Signature": "System.Windows.Forms.LinkLabel",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "checkBox2",
+          "Signature": "System.Windows.Forms.CheckBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "notifyIcon1",
+          "Signature": "System.Windows.Forms.NotifyIcon",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "contextMenuStrip1",
+          "Signature": "System.Windows.Forms.ContextMenuStrip",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "toolStripMenuItem1",
+          "Signature": "System.Windows.Forms.ToolStripMenuItem",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "toolStripMenuItem2",
+          "Signature": "System.Windows.Forms.ToolStripMenuItem",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "panel2",
+          "Signature": "System.Windows.Forms.Panel",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label4",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label2",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "checkBox3",
+          "Signature": "System.Windows.Forms.CheckBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "button1_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "OpenPort",
+          "Signature": "Void (Int32)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "port",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button2_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button3_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox1_CheckedChanged",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "NotifyIcon1_MouseDoubleClick",
+          "Signature": "Void (Object, System.Windows.Forms.MouseEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "Form1_FormClosing",
+          "Signature": "Void (Object, System.Windows.Forms.FormClosingEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StartTimer_Tick",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "FrmOracleServiceMobil_Load",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "MenuItemClose_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "MenuItemProperties_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button3_Click_1",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox1_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button4_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "FrmOracleServiceMobil_FormClosing",
+          "Signature": "Void (Object, System.Windows.Forms.FormClosingEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button5_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "label6_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "label9_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "linkLabel1_LinkClicked",
+          "Signature": "Void (Object, System.Windows.Forms.LinkLabelLinkClickedEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox2_CheckedChanged",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox2_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "FrmOracleServiceMobil_FormClosed",
+          "Signature": "Void (Object, System.Windows.Forms.FormClosedEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "label2_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "SaveSetting",
+          "Signature": "Void (String)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "fileName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "LoadSetting",
+          "Signature": "Void (String)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "fileName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox3_CheckedChanged",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "checkBox3_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "Dispose",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Family, Virtual, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "disposing",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "InitializeComponent",
+          "Signature": "Void ()",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "FrmActive",
+      "FullName": "OracleServiceMobile.FrmActive",
+      "Attributes": "Public, BeforeFieldInit",
+      "BaseType": "System.Windows.Forms.Form",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "_appConfigFile",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "p",
+          "Signature": "System.Diagnostics.Process",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "appId",
+          "Signature": "String",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HDDSerial",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "PrimaryKey",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "FnalKey",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "LicenseKey",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "actvQuiq",
+          "Signature": "String",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "SubKey",
+          "Signature": "String",
+          "Attributes": "Public, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Actreg",
+          "Signature": "OracleServiceMobile.IdealRegistry",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "components",
+          "Signature": "System.ComponentModel.IContainer",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label1",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "textBox1",
+          "Signature": "System.Windows.Forms.TextBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "textBox2",
+          "Signature": "System.Windows.Forms.TextBox",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "label2",
+          "Signature": "System.Windows.Forms.Label",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "button1",
+          "Signature": "System.Windows.Forms.Button",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "button2",
+          "Signature": "System.Windows.Forms.Button",
+          "Attributes": "Private",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "button2_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "FrmActive_FormClosing",
+          "Signature": "Void (Object, System.Windows.Forms.FormClosingEventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button2_Click_1",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "button1_Click",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "FrmActive_Load",
+          "Signature": "Void (Object, System.EventArgs)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "sender",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "Dispose",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Family, Virtual, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "disposing",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "InitializeComponent",
+          "Signature": "Void ()",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ERegistryPossibleRoots",
+      "FullName": "OracleServiceMobile.ERegistryPossibleRoots",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_CLASSES_ROOT",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_CURRENT_CONFIG",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_CURRENT_USER",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_DYNDATA",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_LOCALE_MACHINE",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_PERFORMANCE_DATA",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "HKEY_USERS",
+          "Signature": "OracleServiceMobile.ERegistryPossibleRoots",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "IdealRegistry",
+      "FullName": "OracleServiceMobile.IdealRegistry",
+      "Attributes": "BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetRegKey",
+          "Signature": "Microsoft.Win32.RegistryKey (OracleServiceMobile.ERegistryPossibleRoots)",
+          "Attributes": "Private, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngRoot",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "DoesKeyExist",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngRootKey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateKey",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "DeleteKey",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String, Boolean[])",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "bRecursive",
+              "SequenceNumber": 3,
+              "CustomAttributes": [
+                {
+                  "Ctor": "System.ParamArrayAttribute::.ctor",
+                  "BlobLength": 4,
+                  "BlobBase64": "AQAAAA==",
+                  "BlobStrings": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "QueryValue",
+          "Signature": "String (OracleServiceMobile.ERegistryPossibleRoots, String, String, String)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objDefault",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "QueryValue",
+          "Signature": "Byte[] (OracleServiceMobile.ERegistryPossibleRoots, String, String, Byte[])",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objDefault",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "QueryValue",
+          "Signature": "Int32 (OracleServiceMobile.ERegistryPossibleRoots, String, String, Int32)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objDefault",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateValue",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String, String, String)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objVal",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateValue",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String, String, Byte[])",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objVal",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateValue",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String, String, Int32)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "objVal",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "DeleteValue",
+          "Signature": "Boolean (OracleServiceMobile.ERegistryPossibleRoots, String, String)",
+          "Attributes": "Public, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "lngrootkey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strKey",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "strValName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "Program",
+      "FullName": "OracleServiceMobile.Program",
+      "Attributes": "Abstract, Sealed, BeforeFieldInit",
+      "IsAbstract": true,
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Main",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.STAThreadAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "PublicVariables",
+      "FullName": "OracleServiceMobile.PublicVariables",
+      "Attributes": "Public, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "MyMutex",
+          "Signature": "System.Threading.Mutex",
+          "Attributes": "Public, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "GetAutoRun",
+          "Signature": "Boolean ()",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "SetAutoRun",
+          "Signature": "Void (Boolean)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "SetAuto",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceHelper",
+      "FullName": "OracleServiceMobile.ServiceHelper",
+      "Attributes": "Public, Abstract, Sealed, BeforeFieldInit",
+      "IsAbstract": true,
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "STANDARD_RIGHTS_REQUIRED",
+          "Signature": "Int32",
+          "Attributes": "Private, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "SERVICE_WIN32_OWN_PROCESS",
+          "Signature": "Int32",
+          "Attributes": "Private, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "OpenSCManager",
+          "Signature": "IntPtr (String, String, OracleServiceMobile.ScmAccessRights)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "machineName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "databaseName",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwDesiredAccess",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "OpenService",
+          "Signature": "IntPtr (IntPtr, String, OracleServiceMobile.ServiceAccessRights)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "hSCManager",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpServiceName",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwDesiredAccess",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateService",
+          "Signature": "IntPtr (IntPtr, String, String, OracleServiceMobile.ServiceAccessRights, Int32, OracleServiceMobile.ServiceBootFlag, OracleServiceMobile.ServiceError, String, String, IntPtr, String, String, String)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "hSCManager",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpServiceName",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpDisplayName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwDesiredAccess",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwServiceType",
+              "SequenceNumber": 5,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwStartType",
+              "SequenceNumber": 6,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwErrorControl",
+              "SequenceNumber": 7,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpBinaryPathName",
+              "SequenceNumber": 8,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpLoadOrderGroup",
+              "SequenceNumber": 9,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpdwTagId",
+              "SequenceNumber": 10,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpDependencies",
+              "SequenceNumber": 11,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lp",
+              "SequenceNumber": 12,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpPassword",
+              "SequenceNumber": 13,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CloseServiceHandle",
+          "Signature": "Boolean (IntPtr)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "",
+              "CustomAttributes": []
+            },
+            {
+              "Name": "hSCObject",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "QueryServiceStatus",
+          "Signature": "Int32 (IntPtr, .SERVICE_STATUS)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "hService",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpServiceStatus",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "DeleteService",
+          "Signature": "Boolean (IntPtr)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "",
+              "CustomAttributes": []
+            },
+            {
+              "Name": "hService",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "ControlService",
+          "Signature": "Int32 (IntPtr, OracleServiceMobile.ServiceControl, .SERVICE_STATUS)",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "hService",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwControl",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpServiceStatus",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StartService",
+          "Signature": "Int32 (IntPtr, Int32, String[])",
+          "Attributes": "Private, Static, HideBySig, PinvokeImpl",
+          "ImplAttributes": "PreserveSig",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "hService",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "dwNumServiceArgs",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "lpServiceArgVectors",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "Uninstall",
+          "Signature": "Void (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "ServiceIsInstalled",
+          "Signature": "Boolean (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "InstallAndStart",
+          "Signature": "Void (String, String, String, String[])",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "displayName",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "fileName",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "args",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StartService",
+          "Signature": "Void (String, String[])",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "args",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StopService",
+          "Signature": "Void (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StartService",
+          "Signature": "Void (IntPtr, String[])",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "service",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "args",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "StopService",
+          "Signature": "Void (IntPtr)",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "service",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetServiceStatus",
+          "Signature": "OracleServiceMobile.ServiceState (String)",
+          "Attributes": "Public, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "serviceName",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetServiceStatus",
+          "Signature": "OracleServiceMobile.ServiceState (IntPtr)",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "service",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "WaitForServiceStatus",
+          "Signature": "Boolean (IntPtr, OracleServiceMobile.ServiceState, OracleServiceMobile.ServiceState)",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "service",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "waitStatus",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "desiredStatus",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "OpenSCManager",
+          "Signature": "IntPtr (OracleServiceMobile.ScmAccessRights)",
+          "Attributes": "Private, Static, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "rights",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "SERVICE_STATUS",
+      "FullName": "SERVICE_STATUS",
+      "Attributes": "NestedPrivate, SequentialLayout, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "dwServiceType",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwCurrentState",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwControlsAccepted",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwWin32ExitCode",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwServiceSpecificExitCode",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwCheckPoint",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "dwWaitHint",
+          "Signature": "Int32",
+          "Attributes": "Public",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceState",
+      "FullName": "OracleServiceMobile.ServiceState",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Unknown",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "NotFound",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Stopped",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "StartPending",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "StopPending",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Running",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "ContinuePending",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "PausePending",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Paused",
+          "Signature": "OracleServiceMobile.ServiceState",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ScmAccessRights",
+      "FullName": "OracleServiceMobile.ScmAccessRights",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.FlagsAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Connect",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "CreateService",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "EnumerateService",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Lock",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "QueryLockStatus",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "ModifyBootConfig",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "StandardRightsRequired",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "AllAccess",
+          "Signature": "OracleServiceMobile.ScmAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceAccessRights",
+      "FullName": "OracleServiceMobile.ServiceAccessRights",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.FlagsAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "QueryConfig",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "ChangeConfig",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "QueryStatus",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "EnumerateDependants",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Start",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Stop",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "PauseContinue",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Interrogate",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "UserDefinedControl",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Delete",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "StandardRightsRequired",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "AllAccess",
+          "Signature": "OracleServiceMobile.ServiceAccessRights",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceBootFlag",
+      "FullName": "OracleServiceMobile.ServiceBootFlag",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Start",
+          "Signature": "OracleServiceMobile.ServiceBootFlag",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "SystemStart",
+          "Signature": "OracleServiceMobile.ServiceBootFlag",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "AutoStart",
+          "Signature": "OracleServiceMobile.ServiceBootFlag",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "DemandStart",
+          "Signature": "OracleServiceMobile.ServiceBootFlag",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Disabled",
+          "Signature": "OracleServiceMobile.ServiceBootFlag",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceControl",
+      "FullName": "OracleServiceMobile.ServiceControl",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Stop",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Pause",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Continue",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Interrogate",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Shutdown",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "ParamChange",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "NetBindAdd",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "NetBindRemove",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "NetBindEnable",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "NetBindDisable",
+          "Signature": "OracleServiceMobile.ServiceControl",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile",
+      "Name": "ServiceError",
+      "FullName": "OracleServiceMobile.ServiceError",
+      "Attributes": "Public, Sealed",
+      "BaseType": "System.Enum",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [
+        {
+          "Name": "value__",
+          "Signature": "Int32",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Ignore",
+          "Signature": "OracleServiceMobile.ServiceError",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Normal",
+          "Signature": "OracleServiceMobile.ServiceError",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Severe",
+          "Signature": "OracleServiceMobile.ServiceError",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "Critical",
+          "Signature": "OracleServiceMobile.ServiceError",
+          "Attributes": "Public, Static, Literal, HasDefault",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": []
+    },
+    {
+      "Namespace": "OracleServiceMobile.Properties",
+      "Name": "Resources",
+      "FullName": "OracleServiceMobile.Properties.Resources",
+      "Attributes": "BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 65,
+          "BlobBase64": "AQAzU3lzdGVtLlJlc291cmNlcy5Ub29scy5TdHJvbmdseVR5cGVkUmVzb3VyY2VCdWlsZGVyCDE3LjAuMC4wAAA=",
+          "BlobStrings": [
+            "3System.Resources.Tools.StronglyTypedResourceBuilder",
+            "17.0.0.0"
+          ]
+        },
+        {
+          "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "resourceMan",
+          "Signature": "System.Resources.ResourceManager",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "resourceCulture",
+          "Signature": "System.Globalization.CultureInfo",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "ResourceManager",
+          "Signature": "System.Resources.ResourceManager ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQACAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "Culture",
+          "Signature": "System.Globalization.CultureInfo ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQACAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        }
+      ],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Assembly, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "get_ResourceManager",
+          "Signature": "System.Resources.ResourceManager ()",
+          "Attributes": "Assembly, Static, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Culture",
+          "Signature": "System.Globalization.CultureInfo ()",
+          "Attributes": "Assembly, Static, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "set_Culture",
+          "Signature": "Void (System.Globalization.CultureInfo)",
+          "Attributes": "Assembly, Static, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "OracleServiceMobile.Properties",
+      "Name": "Settings",
+      "FullName": "OracleServiceMobile.Properties.Settings",
+      "Attributes": "Sealed, BeforeFieldInit",
+      "BaseType": "System.Configuration.ApplicationSettingsBase",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 90,
+          "BlobBase64": "AQBLTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5FZGl0b3JzLlNldHRpbmdzRGVzaWduZXIuU2V0dGluZ3NTaW5nbGVGaWxlR2VuZXJhdG9yCTE3LjE0LjAuMAAA",
+          "BlobStrings": [
+            "KMicrosoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "17.14.0.0"
+          ]
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "defaultInstance",
+          "Signature": "OracleServiceMobile.Properties.Settings",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Default",
+          "Signature": "OracleServiceMobile.Properties.Settings ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_Default",
+          "Signature": "OracleServiceMobile.Properties.Settings ()",
+          "Attributes": "Public, Static, HideBySig, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "ConfusedByAttribute",
+      "FullName": "ConfusedByAttribute",
+      "Attributes": "NotPublic",
+      "BaseType": "System.Attribute",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void (String)",
+          "Attributes": "Public, HideBySig, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1481 @@
+{
+  "File": "License.dll",
+  "AssemblyName": "License",
+  "AssemblyVersion": "1.0.0.0",
+  "ModuleName": "License.dll",
+  "AssemblyReferences": [
+    "mscorlib v4.0.0.0",
+    "Microsoft.VisualBasic v10.0.0.0",
+    "System.Xml.Linq v4.0.0.0",
+    "System v4.0.0.0",
+    "System.Core v4.0.0.0",
+    "System.Management v4.0.0.0"
+  ],
+  "AssemblyAttributes": [
+    {
+      "Ctor": "System.Reflection.AssemblyCompanyAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyProductAttribute::.ctor",
+      "BlobLength": 12,
+      "BlobBase64": "AQAHTGljZW5zZQAA",
+      "BlobStrings": [
+        "License"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor",
+      "BlobLength": 30,
+      "BlobBase64": "AQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MB",
+      "BlobStrings": [
+        "WrapNonExceptionThrows"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyCopyrightAttribute::.ctor",
+      "BlobLength": 23,
+      "BlobBase64": "AQASQ29weXJpZ2h0IMKpICAyMDE0AAA=",
+      "BlobStrings": [
+        "Copyright ",
+        "  2014"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyDescriptionAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyTitleAttribute::.ctor",
+      "BlobLength": 12,
+      "BlobBase64": "AQAHTGljZW5zZQAA",
+      "BlobStrings": [
+        "License"
+      ]
+    },
+    {
+      "Ctor": "System.Diagnostics.DebuggableAttribute::.ctor",
+      "BlobLength": 8,
+      "BlobBase64": "AQAHAQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor",
+      "BlobLength": 8,
+      "BlobBase64": "AQAIAAAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Runtime.Versioning.TargetFrameworkAttribute::.ctor",
+      "BlobLength": 101,
+      "BlobBase64": "AQApLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjAsUHJvZmlsZT1DbGllbnQBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lHy5ORVQgRnJhbWV3b3JrIDQgQ2xpZW50IFByb2ZpbGU=",
+      "BlobStrings": [
+        ").NETFramework,Version=v4.0,Profile=Client",
+        "FrameworkDisplayName",
+        ".NET Framework 4 Client Profile"
+      ]
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyFileVersionAttribute::.ctor",
+      "BlobLength": 12,
+      "BlobBase64": "AQAHMS4wLjAuMAAA",
+      "BlobStrings": [
+        "1.0.0.0"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.InteropServices.GuidAttribute::.ctor",
+      "BlobLength": 41,
+      "BlobBase64": "AQAkM2I1NGQ0YzktZWI2YS00MGRjLWI2MTktYmRjZjM0ZjkzZGNiAAA=",
+      "BlobStrings": [
+        "$3b54d4c9-eb6a-40dc-b619-bdcf34f93dcb"
+      ]
+    },
+    {
+      "Ctor": "System.Runtime.InteropServices.ComVisibleAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    },
+    {
+      "Ctor": "System.Reflection.AssemblyTrademarkAttribute::.ctor",
+      "BlobLength": 5,
+      "BlobBase64": "AQAAAAA=",
+      "BlobStrings": []
+    }
+  ],
+  "Types": [
+    {
+      "Namespace": "License.My",
+      "Name": "MyApplication",
+      "FullName": "License.My.MyApplication",
+      "Attributes": "NotPublic",
+      "BaseType": "Microsoft.VisualBasic.ApplicationServices.ApplicationBase",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 24,
+          "BlobBase64": "AQAKTXlUZW1wbGF0ZQgxMC4wLjAuMAAA",
+          "BlobStrings": [
+            "MyTemplate",
+            "10.0.0.0"
+          ]
+        }
+      ],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My",
+      "Name": "MyComputer",
+      "FullName": "License.My.MyComputer",
+      "Attributes": "NotPublic",
+      "BaseType": "Microsoft.VisualBasic.Devices.Computer",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 24,
+          "BlobBase64": "AQAKTXlUZW1wbGF0ZQgxMC4wLjAuMAAA",
+          "BlobStrings": [
+            "MyTemplate",
+            "10.0.0.0"
+          ]
+        },
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My",
+      "Name": "MyProject",
+      "FullName": "License.My.MyProject",
+      "Attributes": "Sealed, BeforeFieldInit",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 24,
+          "BlobBase64": "AQAKTXlUZW1wbGF0ZQgxMC4wLjAuMAAA",
+          "BlobStrings": [
+            "MyTemplate",
+            "10.0.0.0"
+          ]
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.HideModuleNameAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "m_ComputerObjectProvider",
+          "Signature": ".ThreadSafeObjectProvider\u00601\u003CLicense.My.MyComputer\u003E",
+          "Attributes": "Private, Static, InitOnly",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "m_AppObjectProvider",
+          "Signature": ".ThreadSafeObjectProvider\u00601\u003CLicense.My.MyApplication\u003E",
+          "Attributes": "Private, Static, InitOnly",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "m_UserObjectProvider",
+          "Signature": ".ThreadSafeObjectProvider\u00601\u003CMicrosoft.VisualBasic.ApplicationServices.User\u003E",
+          "Attributes": "Private, Static, InitOnly",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "m_MyWebServicesObjectProvider",
+          "Signature": ".ThreadSafeObjectProvider\u00601\u003C.MyWebServices\u003E",
+          "Attributes": "Private, Static, InitOnly",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Computer",
+          "Signature": "License.My.MyComputer ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.Design.HelpKeywordAttribute::.ctor",
+              "BlobLength": 16,
+              "BlobBase64": "AQALTXkuQ29tcHV0ZXIAAA==",
+              "BlobStrings": [
+                "My.Computer"
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "Application",
+          "Signature": "License.My.MyApplication ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.Design.HelpKeywordAttribute::.ctor",
+              "BlobLength": 19,
+              "BlobBase64": "AQAOTXkuQXBwbGljYXRpb24AAA==",
+              "BlobStrings": [
+                "My.Application"
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "User",
+          "Signature": "Microsoft.VisualBasic.ApplicationServices.User ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.Design.HelpKeywordAttribute::.ctor",
+              "BlobLength": 12,
+              "BlobBase64": "AQAHTXkuVXNlcgAA",
+              "BlobStrings": [
+                "My.User"
+              ]
+            }
+          ]
+        },
+        {
+          "Name": "WebServices",
+          "Signature": ".MyWebServices ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.Design.HelpKeywordAttribute::.ctor",
+              "BlobLength": 19,
+              "BlobBase64": "AQAOTXkuV2ViU2VydmljZXMAAA==",
+              "BlobStrings": [
+                "My.WebServices"
+              ]
+            }
+          ]
+        }
+      ],
+      "Methods": [
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Computer",
+          "Signature": "License.My.MyComputer ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Application",
+          "Signature": "License.My.MyApplication ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_User",
+          "Signature": "Microsoft.VisualBasic.ApplicationServices.User ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_WebServices",
+          "Signature": ".MyWebServices ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "MyWebServices",
+      "FullName": "MyWebServices",
+      "Attributes": "NestedAssembly, Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.MyGroupCollectionAttribute::.ctor",
+          "BlobLength": 97,
+          "BlobBase64": "AQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAAAA==",
+          "BlobStrings": [
+            "4System.Web.Services.Protocols.SoapHttpClientProtocol",
+            "Create__Instance__",
+            "Dispose__Instance__"
+          ]
+        }
+      ],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": "Equals",
+          "Signature": "Boolean (Object)",
+          "Attributes": "Public, Virtual, CheckAccessOnOverride",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "o",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetHashCode",
+          "Signature": "Int32 ()",
+          "Attributes": "Public, Virtual, CheckAccessOnOverride",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "GetType",
+          "Signature": "System.Type ()",
+          "Attributes": "Assembly, HideBySig",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "ToString",
+          "Signature": "String ()",
+          "Attributes": "Public, Virtual, CheckAccessOnOverride",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "Create__Instance__",
+          "Signature": "!!0 (!!0)",
+          "Attributes": "Private, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "instance",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "Dispose__Instance__",
+          "Signature": "Void (!!0\u0026)",
+          "Attributes": "Private",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "instance",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "ThreadSafeObjectProvider\u00601",
+      "FullName": "ThreadSafeObjectProvider\u00601",
+      "Attributes": "NestedAssembly, Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Runtime.InteropServices.ComVisibleAttribute::.ctor",
+          "BlobLength": 5,
+          "BlobBase64": "AQAAAAA=",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "m_Context",
+          "Signature": "Microsoft.VisualBasic.MyServices.Internal.ContextValue\u00601\u003C!0\u003E",
+          "Attributes": "Private, InitOnly",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "GetInstance",
+          "Signature": "!0 ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_GetInstance",
+          "Signature": "!0 ()",
+          "Attributes": "Assembly, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            },
+            {
+              "Ctor": "System.Diagnostics.DebuggerHiddenAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My",
+      "Name": "InternalXmlHelper",
+      "FullName": "License.My.InternalXmlHelper",
+      "Attributes": "Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [],
+      "Properties": [
+        {
+          "Name": "Value",
+          "Signature": "String (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E)",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.ExtensionAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "AttributeValue",
+          "Signature": "String (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E, System.Xml.Linq.XName)",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.ExtensionAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "AttributeValue",
+          "Signature": "String (System.Xml.Linq.XElement, System.Xml.Linq.XName)",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Runtime.CompilerServices.ExtensionAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ]
+        }
+      ],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Value",
+          "Signature": "String (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "set_Value",
+          "Signature": "Void (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E, String)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "value",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_AttributeValue",
+          "Signature": "String (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E, System.Xml.Linq.XName)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "name",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "set_AttributeValue",
+          "Signature": "Void (System.Collections.Generic.IEnumerable\u00601\u003CSystem.Xml.Linq.XElement\u003E, System.Xml.Linq.XName, String)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "name",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "value",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "get_AttributeValue",
+          "Signature": "String (System.Xml.Linq.XElement, System.Xml.Linq.XName)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "name",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "set_AttributeValue",
+          "Signature": "Void (System.Xml.Linq.XElement, System.Xml.Linq.XName, String)",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "source",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "name",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "value",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateAttribute",
+          "Signature": "System.Xml.Linq.XAttribute (System.Xml.Linq.XName, Object)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "name",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "value",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "CreateNamespaceAttribute",
+          "Signature": "System.Xml.Linq.XAttribute (System.Xml.Linq.XName, System.Xml.Linq.XNamespace)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "name",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "ns",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "RemoveNamespaceAttributes",
+          "Signature": "Object (String[], System.Xml.Linq.XNamespace[], System.Collections.Generic.List\u00601\u003CSystem.Xml.Linq.XAttribute\u003E, Object)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "inScopePrefixes",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "inScopeNs",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "attributes",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "obj",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "RemoveNamespaceAttributes",
+          "Signature": "System.Collections.IEnumerable (String[], System.Xml.Linq.XNamespace[], System.Collections.Generic.List\u00601\u003CSystem.Xml.Linq.XAttribute\u003E, System.Collections.IEnumerable)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "inScopePrefixes",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "inScopeNs",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "attributes",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "obj",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "RemoveNamespaceAttributes",
+          "Signature": "System.Xml.Linq.XElement (String[], System.Xml.Linq.XNamespace[], System.Collections.Generic.List\u00601\u003CSystem.Xml.Linq.XAttribute\u003E, System.Xml.Linq.XElement)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "inScopePrefixes",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "inScopeNs",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "attributes",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "e",
+              "SequenceNumber": 4,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "",
+      "Name": "RemoveNamespaceAttributesClosure",
+      "FullName": "RemoveNamespaceAttributesClosure",
+      "Attributes": "NestedPrivate, Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQABAAAAAAA=",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "m_inScopePrefixes",
+          "Signature": "String[]",
+          "Attributes": "Private, InitOnly",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "m_inScopeNs",
+          "Signature": "System.Xml.Linq.XNamespace[]",
+          "Attributes": "Private, InitOnly",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "m_attributes",
+          "Signature": "System.Collections.Generic.List\u00601\u003CSystem.Xml.Linq.XAttribute\u003E",
+          "Attributes": "Private, InitOnly",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void (String[], System.Xml.Linq.XNamespace[], System.Collections.Generic.List\u00601\u003CSystem.Xml.Linq.XAttribute\u003E)",
+          "Attributes": "Assembly, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "inScopePrefixes",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "inScopeNs",
+              "SequenceNumber": 2,
+              "CustomAttributes": []
+            },
+            {
+              "Name": "attributes",
+              "SequenceNumber": 3,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "ProcessXElement",
+          "Signature": "System.Xml.Linq.XElement (System.Xml.Linq.XElement)",
+          "Attributes": "Assembly",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "elem",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "ProcessObject",
+          "Signature": "Object (Object)",
+          "Attributes": "Assembly",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQABAAAAAAA=",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": [
+            {
+              "Name": "obj",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "License",
+      "Name": "License",
+      "FullName": "License.License",
+      "Attributes": "Public",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [],
+      "Fields": [],
+      "Properties": [],
+      "Methods": [
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "GetHDDSerialN",
+          "Signature": "Object (String)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "DriveLetter",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "PrimaryKey",
+          "Signature": "Object (String)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "HDDSerial",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        },
+        {
+          "Name": "GetFinalKey",
+          "Signature": "String (String)",
+          "Attributes": "Public, Static",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "PrimaryKey",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My.Resources",
+      "Name": "Resources",
+      "FullName": "License.My.Resources.Resources",
+      "Attributes": "Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 64,
+          "BlobBase64": "AQAzU3lzdGVtLlJlc291cmNlcy5Ub29scy5TdHJvbmdseVR5cGVkUmVzb3VyY2VCdWlsZGVyBzQuMC4wLjAAAA==",
+          "BlobStrings": [
+            "3System.Resources.Tools.StronglyTypedResourceBuilder",
+            "4.0.0.0"
+          ]
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.HideModuleNameAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "resourceMan",
+          "Signature": "System.Resources.ResourceManager",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        },
+        {
+          "Name": "resourceCulture",
+          "Signature": "System.Globalization.CultureInfo",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "ResourceManager",
+          "Signature": "System.Resources.ResourceManager ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQACAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        },
+        {
+          "Name": "Culture",
+          "Signature": "System.Globalization.CultureInfo ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+              "BlobLength": 8,
+              "BlobBase64": "AQACAAAAAAA=",
+              "BlobStrings": []
+            }
+          ]
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_ResourceManager",
+          "Signature": "System.Resources.ResourceManager ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Culture",
+          "Signature": "System.Globalization.CultureInfo ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": "set_Culture",
+          "Signature": "Void (System.Globalization.CultureInfo)",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": [
+            {
+              "Name": "Value",
+              "SequenceNumber": 1,
+              "CustomAttributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My",
+      "Name": "MySettings",
+      "FullName": "License.My.MySettings",
+      "Attributes": "Sealed, BeforeFieldInit",
+      "BaseType": "System.Configuration.ApplicationSettingsBase",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor",
+          "BlobLength": 89,
+          "BlobBase64": "AQBLTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5FZGl0b3JzLlNldHRpbmdzRGVzaWduZXIuU2V0dGluZ3NTaW5nbGVGaWxlR2VuZXJhdG9yCDEwLjAuMC4wAAA=",
+          "BlobStrings": [
+            "KMicrosoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator",
+            "10.0.0.0"
+          ]
+        },
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.ComponentModel.EditorBrowsableAttribute::.ctor",
+          "BlobLength": 8,
+          "BlobBase64": "AQACAAAAAAA=",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [
+        {
+          "Name": "defaultInstance",
+          "Signature": "License.My.MySettings",
+          "Attributes": "Private, Static",
+          "CustomAttributes": []
+        }
+      ],
+      "Properties": [
+        {
+          "Name": "Default",
+          "Signature": "License.My.MySettings ()",
+          "Attributes": "None",
+          "CustomAttributes": []
+        }
+      ],
+      "Methods": [
+        {
+          "Name": ".cctor",
+          "Signature": "Void ()",
+          "Attributes": "Private, Static, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        },
+        {
+          "Name": ".ctor",
+          "Signature": "Void ()",
+          "Attributes": "Public, SpecialName, RTSpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+              "BlobLength": 4,
+              "BlobBase64": "AQAAAA==",
+              "BlobStrings": []
+            }
+          ],
+          "Parameters": []
+        },
+        {
+          "Name": "get_Default",
+          "Signature": "License.My.MySettings ()",
+          "Attributes": "Public, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    },
+    {
+      "Namespace": "License.My",
+      "Name": "MySettingsProperty",
+      "FullName": "License.My.MySettingsProperty",
+      "Attributes": "Sealed",
+      "BaseType": "System.Object",
+      "Interfaces": [],
+      "CustomAttributes": [
+        {
+          "Ctor": "System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        },
+        {
+          "Ctor": "Microsoft.VisualBasic.HideModuleNameAttribute::.ctor",
+          "BlobLength": 4,
+          "BlobBase64": "AQAAAA==",
+          "BlobStrings": []
+        }
+      ],
+      "Fields": [],
+      "Properties": [
+        {
+          "Name": "Settings",
+          "Signature": "License.My.MySettings ()",
+          "Attributes": "None",
+          "CustomAttributes": [
+            {
+              "Ctor": "System.ComponentModel.Design.HelpKeywordAttribute::.ctor",
+              "BlobLength": 16,
+              "BlobBase64": "AQALTXkuU2V0dGluZ3MAAA==",
+              "BlobStrings": [
+                "My.Settings"
+              ]
+            }
+          ]
+        }
+      ],
+      "Methods": [
+        {
+          "Name": "get_Settings",
+          "Signature": "License.My.MySettings ()",
+          "Attributes": "Assembly, Static, SpecialName",
+          "ImplAttributes": "IL",
+          "CustomAttributes": [],
+          "Parameters": []
+        }
+      ]
+    }
+  ]
+}
